@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
@@ -11,12 +12,21 @@ import javax.persistence.OneToMany;
 @Entity
 public class TestCase extends Persistable {
 	String lastVerdict;
+
+	@Column(columnDefinition = "TEXT")
 	String objective;
+
+	@Column(columnDefinition = "TEXT")
 	String postConditions;
+
+	@Column(columnDefinition = "TEXT")
 	String preConditions;
+
 	String priority;
 	String type;
+	@Column(columnDefinition = "TEXT")
 	String validationExpectedResult;
+	@Column(columnDefinition = "TEXT")
 	String validationInput;
 
 	@OneToMany(cascade = CascadeType.ALL)

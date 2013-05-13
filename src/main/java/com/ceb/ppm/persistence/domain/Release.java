@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
@@ -12,16 +13,23 @@ import javax.persistence.OneToOne;
 
 @Entity
 public class Release extends Persistable {
+	@Column(columnDefinition = "TEXT")
 	String name;
+
+	@Column(columnDefinition = "TEXT")
 	String notes;
+
 	Date releaseDate;
 	Date releaseStartDate;
 	String state;
-	String theme;
-	String version;
-	String objectId;
 
-	@OneToOne
+	@Column(columnDefinition = "TEXT")
+	String theme;
+
+	String version;
+	long objectId;
+
+	@OneToOne(cascade = CascadeType.ALL)
 	RevisionHistory revisionHistory;
 
 	@OneToMany(cascade = CascadeType.ALL)
@@ -112,11 +120,11 @@ public class Release extends Persistable {
 		return iterations;
 	}
 
-	public String getObjectId() {
+	public long getObjectId() {
 		return objectId;
 	}
 
-	public void setObjectId(String objectId) {
+	public void setObjectId(long objectId) {
 		this.objectId = objectId;
 	}
 

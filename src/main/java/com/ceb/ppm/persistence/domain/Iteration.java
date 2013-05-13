@@ -5,17 +5,24 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 @Entity
 public class Iteration extends Persistable {
+	@Column(columnDefinition = "TEXT")
 	String name;
+
+	@Column(columnDefinition = "TEXT")
 	String notes;
+
 	Date startDate;
 	Date endDate;
+
 	String state;
+	@Column(columnDefinition = "TEXT")
 	String theme;
 
 	@OneToMany(cascade = CascadeType.ALL)

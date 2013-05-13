@@ -33,6 +33,7 @@ public class Mapper {
 		release.setState(releaseType.getState());
 		release.setTheme(releaseType.getTheme());
 		release.setVersion(releaseType.getVersion());
+		release.setObjectId(releaseType.getObjectID());
 		RevisionHistory revisionHistory = new RevisionHistory();
 		release.setRevisionHistory(revisionHistory);
 
