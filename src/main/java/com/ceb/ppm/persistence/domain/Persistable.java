@@ -10,4 +10,10 @@ public abstract class Persistable {
 	@GeneratedValue
 	private int id;
 
+	public int getId() {
+		return id;
+	}
+	
+	
+
 }

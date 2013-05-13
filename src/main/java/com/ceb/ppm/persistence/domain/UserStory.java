@@ -11,6 +11,10 @@ import javax.persistence.OneToMany;
 @Entity
 public class UserStory extends Artifact {
 
+	Double taskEstimateTotal;
+	Double taskActualTotal;
+	Double taskRemainingTotal;
+	
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "parent_id", referencedColumnName = "id")
 	List<UserStory> childUserStories = new ArrayList<UserStory>();
@@ -50,5 +54,30 @@ public class UserStory extends Artifact {
 	public List<Attachment> getAttachments() {
 		return attachments;
 	}
+
+	public Double getTaskEstimateTotal() {
+		return taskEstimateTotal;
+	}
+
+	public void setTaskEstimateTotal(Double taskEstimateTotal) {
+		this.taskEstimateTotal = taskEstimateTotal;
+	}
+
+	public Double getTaskActualTotal() {
+		return taskActualTotal;
+	}
+
+	public void setTaskActualTotal(Double taskActualTotal) {
+		this.taskActualTotal = taskActualTotal;
+	}
+
+	public Double getTaskRemainingTotal() {
+		return taskRemainingTotal;
+	}
+
+	public void setTaskRemainingTotal(Double taskRemainingTotal) {
+		this.taskRemainingTotal = taskRemainingTotal;
+	}
+	
 
 }

@@ -1,5 +1,8 @@
 package com.ceb.ppm.export;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
@@ -18,8 +21,16 @@ public class RallyRestXMLApi {
 		client = Client.create();
 	}
 
-	public String doGet(String url) {
-		url = server + url;
+	public String doGet(String url) throws UnsupportedEncodingException {
+		return doGet(url, null);
+	}
+
+	public String doGet(String url, String query) throws UnsupportedEncodingException {
+		if (query == null) {
+			url = server + url;
+		} else {
+			url = server + url + "?query=" + URLEncoder.encode(query, "UTF-8");
+		}
 		System.out.println("doGet: " + url);
 		WebResource webResource = client.resource(url);
 		ClientResponse response = webResource

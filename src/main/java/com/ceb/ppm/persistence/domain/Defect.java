@@ -20,6 +20,10 @@ public class Defect extends Artifact {
 	String resolution;
 	String severity;
 	
+	Double taskEstimateTotal;
+	Double taskActualTotal;
+	Double taskRemainingTotal;
+	
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "defect_id", referencedColumnName = "id")
 	List<Task> tasks = new ArrayList<Task>();
@@ -92,17 +96,10 @@ public class Defect extends Artifact {
 		return tasks;
 	}
 
-	public void setTasks(List<Task> tasks) {
-		this.tasks = tasks;
-	}
-
 	public List<TestCase> getTestCases() {
 		return testCases;
 	}
 
-	public void setTestCases(List<TestCase> testCases) {
-		this.testCases = testCases;
-	}
 
 	public List<Attachment> getAttachments() {
 		return attachments;
@@ -110,6 +107,30 @@ public class Defect extends Artifact {
 
 	public void setAttachments(List<Attachment> attachments) {
 		this.attachments = attachments;
+	}
+
+	public Double getTaskEstimateTotal() {
+		return taskEstimateTotal;
+	}
+
+	public void setTaskEstimateTotal(Double taskEstimateTotal) {
+		this.taskEstimateTotal = taskEstimateTotal;
+	}
+
+	public Double getTaskActualTotal() {
+		return taskActualTotal;
+	}
+
+	public void setTaskActualTotal(Double taskActualTotal) {
+		this.taskActualTotal = taskActualTotal;
+	}
+
+	public Double getTaskRemainingTotal() {
+		return taskRemainingTotal;
+	}
+
+	public void setTaskRemainingTotal(Double taskRemainingTotal) {
+		this.taskRemainingTotal = taskRemainingTotal;
 	}
 
 

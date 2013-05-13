@@ -11,35 +11,35 @@ import javax.persistence.OneToMany;
 @Entity
 public class Task extends Artifact {
 
-	double actuals;
-	double estimate;
-	double toDo;
+	Double actuals;
+	Double estimate;
+	Double toDo;
 
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "task_id", referencedColumnName = "id")
 	List<Attachment> attachments = new ArrayList<Attachment>();
 
-	public double getActuals() {
+	public Double getActuals() {
 		return actuals;
 	}
 
-	public void setActuals(double actuals) {
+	public void setActuals(Double actuals) {
 		this.actuals = actuals;
 	}
 
-	public double getEstimate() {
+	public Double getEstimate() {
 		return estimate;
 	}
 
-	public void setEstimate(double estimate) {
+	public void setEstimate(Double estimate) {
 		this.estimate = estimate;
 	}
 
-	public double getToDo() {
+	public Double getToDo() {
 		return toDo;
 	}
 
-	public void setToDo(double toDo) {
+	public void setToDo(Double toDo) {
 		this.toDo = toDo;
 	}
 
