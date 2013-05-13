@@ -25,6 +25,8 @@ public class Iteration extends Persistable {
 	@Column(columnDefinition = "TEXT")
 	String theme;
 
+	long objectId;
+
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "iteration_id", referencedColumnName = "id")
 	List<Defect> defects = new ArrayList<Defect>();
@@ -96,5 +98,14 @@ public class Iteration extends Persistable {
 	public List<IterationCapacity> getIterationCapacities() {
 		return iterationCapacities;
 	}
+
+	public long getObjectId() {
+		return objectId;
+	}
+
+	public void setObjectId(long objectId) {
+		this.objectId = objectId;
+	}
+	
 
 }

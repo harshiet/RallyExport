@@ -10,13 +10,16 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.transform.stream.StreamSource;
 
+import com.ceb.ppm.persistence.domain.Iteration;
 import com.ceb.ppm.persistence.domain.Project;
 import com.ceb.ppm.persistence.domain.Release;
 import com.ceb.ppm.schema.mfw.DomainObjectType;
+import com.ceb.ppm.schema.mfw.IterationType;
 import com.ceb.ppm.schema.mfw.ProjectType;
 import com.ceb.ppm.schema.mfw.QueryResultType;
 import com.ceb.ppm.schema.mfw.ReleaseType;
 import com.ceb.ppm.schema.mfw.RevisionHistoryType;
+import com.ceb.ppm.schema.mfw.UserIterationCapacityType;
 import com.ceb.ppm.schema.mfw.WSObject;
 
 public class ExportFromRally {
@@ -48,8 +51,14 @@ public class ExportFromRally {
 				releaseType = findOne(releaseType, ReleaseType.class);
 				RevisionHistoryType revisionHistoryType = findOne(releaseType.getRevisionHistory(), RevisionHistoryType.class);
 				Release release = Mapper.addRelease(project, releaseType, revisionHistoryType);
-				List<DomainObjectType> iterations = findAll("iteration?");
-				
+			}
+			for (IterationType iterationType : projectType.getIterations().getIteration()) {
+				iterationType = findOne(iterationType, IterationType.class);
+				Iteration iteration = Mapper.addIteration(project, iterationType);
+				for (UserIterationCapacityType iterationCapacityType : iterationType.getUserIterationCapacities().getUserIterationCapacity()) {
+					iterationCapacityType = findOne(iterationCapacityType, UserIterationCapacityType.class);
+					Mapper.addIterationCapacity(iteration, iterationCapacityType);
+				}
 			}
 
 			em.persist(project);

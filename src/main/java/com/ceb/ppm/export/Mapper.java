@@ -1,15 +1,17 @@
 package com.ceb.ppm.export;
 
-import java.util.Date;
-
+import com.ceb.ppm.persistence.domain.Iteration;
+import com.ceb.ppm.persistence.domain.IterationCapacity;
 import com.ceb.ppm.persistence.domain.Project;
 import com.ceb.ppm.persistence.domain.Release;
 import com.ceb.ppm.persistence.domain.Revision;
 import com.ceb.ppm.persistence.domain.RevisionHistory;
+import com.ceb.ppm.schema.mfw.IterationType;
 import com.ceb.ppm.schema.mfw.ProjectType;
 import com.ceb.ppm.schema.mfw.ReleaseType;
 import com.ceb.ppm.schema.mfw.RevisionHistoryType;
 import com.ceb.ppm.schema.mfw.RevisionType;
+import com.ceb.ppm.schema.mfw.UserIterationCapacityType;
 
 public class Mapper {
 	public static Project mapProject(ProjectType projectType) {
@@ -28,8 +30,8 @@ public class Mapper {
 		project.getReleases().add(release);
 		release.setName(releaseType.getName());
 		release.setNotes(releaseType.getNotes());
-		release.setReleaseDate(new Date(releaseType.getReleaseDate().getMillisecond()));
-		release.setReleaseStartDate(new Date(releaseType.getReleaseStartDate().getMillisecond()));
+		release.setReleaseDate(releaseType.getReleaseDate().toGregorianCalendar().getTime());
+		release.setReleaseStartDate(releaseType.getReleaseStartDate().toGregorianCalendar().getTime());
 		release.setState(releaseType.getState());
 		release.setTheme(releaseType.getTheme());
 		release.setVersion(releaseType.getVersion());
@@ -44,5 +46,30 @@ public class Mapper {
 			revisionHistory.getRevisions().add(revision);
 		}
 		return release;
+	}
+
+	public static Iteration addIteration(Project project, IterationType iterationType) {
+		Iteration iteration = new Iteration();
+		project.getIterations().add(iteration);
+		iteration.setEndDate(iterationType.getEndDate().toGregorianCalendar().getTime());
+		iteration.setName(iterationType.getName());
+		iteration.setNotes(iterationType.getNotes());
+		iteration.setStartDate(iterationType.getStartDate().toGregorianCalendar().getTime());
+		iteration.setState(iterationType.getState());
+		iteration.setTheme(iterationType.getTheme());
+		iteration.setObjectId(iterationType.getObjectID());
+
+		return iteration;
+	}
+
+	public static IterationCapacity addIterationCapacity(Iteration iteration, UserIterationCapacityType iterationCapacityType) {
+		IterationCapacity iterationCapacity = new IterationCapacity();
+		iteration.getIterationCapacities().add(iterationCapacity);
+		iterationCapacity.setCapacity(iterationCapacityType.getCapacity());
+		iterationCapacity.setLoad(iterationCapacityType.getLoad());
+		iterationCapacity.setTaskEstimates(iterationCapacityType.getTaskEstimates());
+
+		return iterationCapacity;
+
 	}
 }
