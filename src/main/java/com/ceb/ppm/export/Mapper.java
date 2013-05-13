@@ -23,7 +23,7 @@ public class Mapper {
 
 	}
 
-	public static void addRelease(Project project, ReleaseType releaseType,RevisionHistoryType revisionHistoryType) {
+	public static Release addRelease(Project project, ReleaseType releaseType, RevisionHistoryType revisionHistoryType) {
 		Release release = new Release();
 		project.getReleases().add(release);
 		release.setName(releaseType.getName());
@@ -43,5 +43,6 @@ public class Mapper {
 			revision.setNumber(revisionType.getRevisionNumber());
 			revisionHistory.getRevisions().add(revision);
 		}
+		return release;
 	}
 }

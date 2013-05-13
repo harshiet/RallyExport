@@ -31,7 +31,11 @@ public class Iteration extends Persistable {
 
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "iteration_id", referencedColumnName = "id")
-	List<Iteration> iterations = new ArrayList<Iteration>();
+	List<UserStory> userStories = new ArrayList<UserStory>();
+
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name = "iteration_id", referencedColumnName = "id")
+	List<IterationCapacity> iterationCapacities = new ArrayList<IterationCapacity>();
 
 	public String getName() {
 		return name;
@@ -85,8 +89,12 @@ public class Iteration extends Persistable {
 		return defects;
 	}
 
-	public List<Iteration> getIterations() {
-		return iterations;
+	public List<UserStory> getUserStories() {
+		return userStories;
+	}
+
+	public List<IterationCapacity> getIterationCapacities() {
+		return iterationCapacities;
 	}
 
 }

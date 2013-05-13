@@ -11,6 +11,7 @@ import javax.xml.bind.Unmarshaller;
 import javax.xml.transform.stream.StreamSource;
 
 import com.ceb.ppm.persistence.domain.Project;
+import com.ceb.ppm.persistence.domain.Release;
 import com.ceb.ppm.schema.mfw.DomainObjectType;
 import com.ceb.ppm.schema.mfw.ProjectType;
 import com.ceb.ppm.schema.mfw.QueryResultType;
@@ -46,9 +47,11 @@ public class ExportFromRally {
 			for (ReleaseType releaseType : projectType.getReleases().getRelease()) {
 				releaseType = findOne(releaseType, ReleaseType.class);
 				RevisionHistoryType revisionHistoryType = findOne(releaseType.getRevisionHistory(), RevisionHistoryType.class);
-				Mapper.addRelease(project, releaseType, revisionHistoryType);
+				Release release = Mapper.addRelease(project, releaseType, revisionHistoryType);
+				List<DomainObjectType> iterations = findAll("iteration?");
+				
 			}
-			
+
 			em.persist(project);
 			em.getTransaction().commit();
 		}
