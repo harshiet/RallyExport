@@ -198,7 +198,7 @@ public class ExportFromRally {
 		String response = rally.doGetRef(o.getRef());
 		StringBuffer xmlStr = new StringBuffer(response);
 		T object = u.unmarshal(new StreamSource(new StringReader(xmlStr.toString())), objectClass).getValue();
-
+		
 		return object;
 	}
 }
