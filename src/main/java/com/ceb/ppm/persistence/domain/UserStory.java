@@ -14,7 +14,10 @@ public class UserStory extends Artifact {
 	Double taskEstimateTotal;
 	Double taskActualTotal;
 	Double taskRemainingTotal;
+	Boolean hasParent;
+	Boolean amParent;
 	
+
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "parent_id", referencedColumnName = "id")
 	List<UserStory> childUserStories = new ArrayList<UserStory>();
@@ -77,6 +80,22 @@ public class UserStory extends Artifact {
 
 	public void setTaskRemainingTotal(Double taskRemainingTotal) {
 		this.taskRemainingTotal = taskRemainingTotal;
+	}
+
+	public Boolean getHasParent() {
+		return hasParent;
+	}
+
+	public void setHasParent(Boolean hasParent) {
+		this.hasParent = hasParent;
+	}
+
+	public Boolean getAmParent() {
+		return amParent;
+	}
+
+	public void setAmParent(Boolean amParent) {
+		this.amParent = amParent;
 	}
 	
 

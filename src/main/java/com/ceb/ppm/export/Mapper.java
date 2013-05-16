@@ -1,7 +1,5 @@
 package com.ceb.ppm.export;
 
-import java.util.Arrays;
-
 import com.ceb.ppm.persistence.domain.Defect;
 import com.ceb.ppm.persistence.domain.Iteration;
 import com.ceb.ppm.persistence.domain.IterationCapacity;
@@ -19,6 +17,7 @@ import com.ceb.ppm.schema.mfw.ProjectType;
 import com.ceb.ppm.schema.mfw.ReleaseType;
 import com.ceb.ppm.schema.mfw.RevisionHistoryType;
 import com.ceb.ppm.schema.mfw.RevisionType;
+import com.ceb.ppm.schema.mfw.TagType;
 import com.ceb.ppm.schema.mfw.TaskType;
 import com.ceb.ppm.schema.mfw.TestCaseType;
 import com.ceb.ppm.schema.mfw.UserIterationCapacityType;
@@ -72,7 +71,8 @@ public class Mapper {
 		return iteration;
 	}
 
-	public static IterationCapacity addIterationCapacity(Iteration iteration, UserIterationCapacityType iterationCapacityType) {
+	public static IterationCapacity addIterationCapacity(Iteration iteration,
+			UserIterationCapacityType iterationCapacityType) {
 		IterationCapacity iterationCapacity = new IterationCapacity();
 		iteration.getIterationCapacities().add(iterationCapacity);
 		iterationCapacity.setCapacity(iterationCapacityType.getCapacity());
@@ -85,7 +85,8 @@ public class Mapper {
 
 	public static UserStory mapUserStory(HierarchicalRequirementType hierarchicalRequirementType) {
 		UserStory userStory = new UserStory();
-		userStory.setAcceptedDate(hierarchicalRequirementType.getAcceptedDate() == null ? null : hierarchicalRequirementType.getAcceptedDate().toGregorianCalendar().getTime());
+		userStory.setAcceptedDate(hierarchicalRequirementType.getAcceptedDate() == null ? null
+				: hierarchicalRequirementType.getAcceptedDate().toGregorianCalendar().getTime());
 		userStory.setDescription(hierarchicalRequirementType.getDescription());
 		userStory.setFormattedId(hierarchicalRequirementType.getFormattedID());
 		userStory.setName(hierarchicalRequirementType.getName());
@@ -93,15 +94,20 @@ public class Mapper {
 		userStory.setOwner(hierarchicalRequirementType.getOwner().getDisplayName());
 		userStory.setPlanEstimate(hierarchicalRequirementType.getPlanEstimate());
 		userStory.setScheduleState(hierarchicalRequirementType.getScheduleState());
-		userStory.setTags(Arrays.toString(hierarchicalRequirementType.getTags().getTag().toArray()));
+		for (TagType tt : hierarchicalRequirementType.getTags().getTag()) {
+			userStory.setTags(tt.getRefObjectName() + ";" + userStory.getTags());
+		}
 		userStory.setTaskActualTotal(hierarchicalRequirementType.getTaskActualTotal());
 		userStory.setTaskEstimateTotal(hierarchicalRequirementType.getTaskEstimateTotal());
 		userStory.setTaskRemainingTotal(hierarchicalRequirementType.getTaskRemainingTotal());
+		userStory.setHasParent(hierarchicalRequirementType.isHasParent());
+		userStory.setAmParent(hierarchicalRequirementType.isIsParent());
 		return userStory;
 	}
 
-	public static Task addTask(UserStory userStory, TaskType taskType) {
+	public static Task addTask(Defect defect, TaskType taskType) {
 		Task task = new Task();
+		defect.getTasks().add(task);
 		task.setActuals(taskType.getActuals());
 		task.setDescription(taskType.getDescription());
 		task.setEstimate(taskType.getEstimate());
@@ -110,21 +116,38 @@ public class Mapper {
 		task.setNotes(taskType.getNotes());
 		task.setState(taskType.getState());
 		task.setToDo(taskType.getToDo());
+		return task;
+	}
+
+	public static Task addTask(UserStory userStory, TaskType taskType) {
+		Task task = new Task();
 		userStory.getTasks().add(task);
+		task.setActuals(taskType.getActuals());
+		task.setDescription(taskType.getDescription());
+		task.setEstimate(taskType.getEstimate());
+		task.setFormattedId(taskType.getFormattedID());
+		task.setName(taskType.getName());
+		task.setNotes(taskType.getNotes());
+		task.setState(taskType.getState());
+		task.setToDo(taskType.getToDo());
 		return task;
 	}
 
 	public static Defect addDefect(UserStory userStory, DefectType defectType) {
 		Defect defect = new Defect();
-		userStory.getDefects().add(defect);
+		if (userStory != null) {
+			userStory.getDefects().add(defect);
+		}
 		defect.setCategory(defectType.getDefectCategory());
-		defect.setClosedDate(defectType.getClosedDate() == null ? null : defectType.getClosedDate().toGregorianCalendar().getTime());
+		defect.setClosedDate(defectType.getClosedDate() == null ? null : defectType.getClosedDate()
+				.toGregorianCalendar().getTime());
 		defect.setDescription(defectType.getDescription());
 		defect.setEnvironment(defectType.getEnvironment());
 		defect.setFormattedId(defectType.getFormattedID());
 		defect.setName(defectType.getName());
 		defect.setNotes(defectType.getNotes());
-		defect.setOpenedDate(defectType.getOpenedDate() == null ? null : defectType.getOpenedDate().toGregorianCalendar().getTime());
+		defect.setOpenedDate(defectType.getOpenedDate() == null ? null : defectType.getOpenedDate()
+				.toGregorianCalendar().getTime());
 		defect.setPlanEstimate(defectType.getPlanEstimate());
 		defect.setPriority(defectType.getPriority());
 		defect.setResolution(defectType.getResolution());
@@ -138,9 +161,14 @@ public class Mapper {
 		return defect;
 	}
 
-	public static TestCase addTestCase(UserStory userStory, TestCaseType testCaseType) {
+	public static TestCase addTestCase(UserStory userStory, Defect defect, TestCaseType testCaseType) {
 		TestCase testCase = new TestCase();
-		userStory.getTestCases().add(testCase);
+		if (userStory != null) {
+			userStory.getTestCases().add(testCase);
+		}
+		if (defect != null) {
+			defect.getTestCases().add(testCase);
+		}
 		testCase.setLastVerdict(testCaseType.getLastVerdict());
 		testCase.setObjective(testCaseType.getObjective());
 		testCase.setPostConditions(testCaseType.getPostConditions());
@@ -151,4 +179,5 @@ public class Mapper {
 		testCase.setValidationInput(testCaseType.getValidationInput());
 		return testCase;
 	}
+
 }

@@ -19,7 +19,7 @@ public abstract class Artifact extends Persistable {
 
 	String owner;
 	@Column(columnDefinition = "TEXT")
-	String tags;
+	String tags = ";";
 	Double planEstimate;
 	String priority;
 	String scheduleState;

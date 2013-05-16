@@ -8,6 +8,7 @@ import java.util.Map;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
@@ -17,8 +18,6 @@ import com.ceb.ppm.persistence.domain.Defect;
 import com.ceb.ppm.persistence.domain.Iteration;
 import com.ceb.ppm.persistence.domain.Project;
 import com.ceb.ppm.persistence.domain.Release;
-import com.ceb.ppm.persistence.domain.Task;
-import com.ceb.ppm.persistence.domain.TestCase;
 import com.ceb.ppm.persistence.domain.UserStory;
 import com.ceb.ppm.schema.mfw.DefectType;
 import com.ceb.ppm.schema.mfw.DomainObjectType;
@@ -27,7 +26,6 @@ import com.ceb.ppm.schema.mfw.IterationType;
 import com.ceb.ppm.schema.mfw.ProjectType;
 import com.ceb.ppm.schema.mfw.QueryResultType;
 import com.ceb.ppm.schema.mfw.ReleaseType;
-import com.ceb.ppm.schema.mfw.RevisionHistoryType;
 import com.ceb.ppm.schema.mfw.TaskType;
 import com.ceb.ppm.schema.mfw.TestCaseType;
 import com.ceb.ppm.schema.mfw.UserIterationCapacityType;
@@ -48,7 +46,8 @@ public class ExportFromRally {
 	public ExportFromRally() throws JAXBException {
 		jc = JAXBContext.newInstance("com.ceb.ppm.schema.mfw");
 		u = jc.createUnmarshaller();
-		rally = new RallyRestXMLApi("https://rally1.rallydev.com/slm/webservice/1.43/", "hagarwal@executiveboard.com", "harshag12");
+		rally = new RallyRestXMLApi("https://rally1.rallydev.com/slm/webservice/1.43/", "hagarwal@executiveboard.com",
+				"harshag12");
 		em = Persistence.createEntityManagerFactory("rally_export").createEntityManager();
 	}
 
@@ -63,54 +62,65 @@ public class ExportFromRally {
 			Project project = Mapper.mapProject(projectType);
 			Map<String, Release> projectReleases = new HashMap<String, Release>();
 			Map<String, Iteration> projectIterations = new HashMap<String, Iteration>();
-
-			for (ReleaseType releaseType : projectType.getReleases().getRelease()) {
-				releaseType = findOne(releaseType, ReleaseType.class);
-				RevisionHistoryType revisionHistoryType = findOne(releaseType.getRevisionHistory(), RevisionHistoryType.class);
-				Release release = Mapper.addRelease(project, releaseType, revisionHistoryType);
-				projectReleases.put(releaseType.getRef(), release);
-			}
+			em.persist(project);
+			// for (ReleaseType releaseType :
+			// projectType.getReleases().getRelease()) {
+			// releaseType = findOne(releaseType, ReleaseType.class);
+			// RevisionHistoryType revisionHistoryType =
+			// findOne(releaseType.getRevisionHistory(),
+			// RevisionHistoryType.class);
+			// Release release = Mapper.addRelease(project, releaseType,
+			// revisionHistoryType);
+			// em.persist(release);
+			// projectReleases.put(releaseType.getRef(), release);
+			// }
 			for (IterationType iterationType : projectType.getIterations().getIteration()) {
 				iterationType = findOne(iterationType, IterationType.class);
 				Iteration iteration = Mapper.addIteration(project, iterationType);
-				for (UserIterationCapacityType iterationCapacityType : iterationType.getUserIterationCapacities().getUserIterationCapacity()) {
+				for (UserIterationCapacityType iterationCapacityType : iterationType.getUserIterationCapacities()
+						.getUserIterationCapacity()) {
 					iterationCapacityType = findOne(iterationCapacityType, UserIterationCapacityType.class);
 					Mapper.addIterationCapacity(iteration, iterationCapacityType);
 				}
+				em.persist(iteration);
 				projectIterations.put(iterationType.getRef(), iteration);
+				List<DomainObjectType> userStories = findAll("hierarchicalrequirement", "(((Project.ObjectID = "
+						+ projectType.getObjectID() + ") AND (Iteration.ObjectID = " + iterationType.getObjectID()
+						+ ")) AND (IsParent = false))");
+				for (DomainObjectType oUS : userStories) {
+					HierarchicalRequirementType hierarchicalRequirementType = findOne(oUS,
+							HierarchicalRequirementType.class);
+					persistUserStory(project, projectReleases, hierarchicalRequirementType, iteration);
+				}
+				List<DomainObjectType> defects = findAll("defect", "(((Project.ObjectID = " + projectType.getObjectID()
+						+ ") AND (Iteration.ObjectID = " + iterationType.getObjectID() + ")) AND (Requirement = NULL))");
+				for (DomainObjectType oD : defects) {
+					DefectType defectType = findOne(oD, DefectType.class);
+					persistDefect(project, projectReleases, defectType, iteration);
+				}
+
+				break;
 			}
-			List<DomainObjectType> userStories = findAll("hierarchicalrequirement", "(Project.ObjectID = " + projectType.getObjectID() + ")");
-			for (DomainObjectType oUS : userStories) {
-				HierarchicalRequirementType hierarchicalRequirementType = findOne(oUS, HierarchicalRequirementType.class);
-				persistUserStory(project, projectReleases, projectIterations, hierarchicalRequirementType, null);
-			}
-			// List<DomainObjectType> defects = findAll("defect",
-			// "(Project.ObjectID = " + projectType.getObjectID() + ")");
-			// for (DomainObjectType oDefect : defects) {
-			// DefectType defectType = findOne(oDefect, DefectType.class);
-			// persistDefect(project, projectReleases, projectIterations,
-			// defectType, null);
-			// }
 			em.persist(project);
 			em.getTransaction().commit();
 			return;
 		}
 	}
 
-	private UserStory persistUserStory(Project project, Map<String, Release> projectReleases, Map<String, Iteration> projectIterations, HierarchicalRequirementType hierarchicalRequirementType,
-			UserStory parentUserStory) throws JAXBException {
+	private UserStory persistUserStory(Project project, Map<String, Release> projectReleases,
+			HierarchicalRequirementType hierarchicalRequirementType, Iteration iteration) throws JAXBException {
 		UserStory userStory = Mapper.mapUserStory(hierarchicalRequirementType);
 		for (TaskType taskType : hierarchicalRequirementType.getTasks().getTask()) {
 			taskType = findOne(taskType, TaskType.class);
-			Task task = Mapper.addTask(userStory, taskType);
+			Mapper.addTask(userStory, taskType);
 		}
 		for (DefectType defectType : hierarchicalRequirementType.getDefects().getDefect()) {
 			defectType = findOne(defectType, DefectType.class);
-			Defect defect = Mapper.addDefect(userStory, defectType);
+			persistDefect(project, projectReleases, defectType, iteration);
 		}
 		for (TestCaseType testCaseType : hierarchicalRequirementType.getTestCases().getTestCase()) {
 			testCaseType = findOne(testCaseType, TestCaseType.class);
-			TestCase testCase = Mapper.addTestCase(userStory, testCaseType);
+			Mapper.addTestCase(userStory, null, testCaseType);
 		}
 
 		em.persist(userStory);
@@ -119,64 +129,67 @@ public class ExportFromRally {
 		if (release != null) {
 			release.getUserStories().add(userStory);
 		}
-		Iteration iteration = findProjectIterationForUserStory(projectIterations, hierarchicalRequirementType);
-		if (iteration != null) {
-			iteration.getUserStories().add(userStory);
-		}
-		if (parentUserStory != null) {
+		iteration.getUserStories().add(userStory);
+		if (hierarchicalRequirementType.isHasParent()) {
+			HierarchicalRequirementType parentUserStoryType = hierarchicalRequirementType.getParent();
+			parentUserStoryType = findOne(parentUserStoryType, HierarchicalRequirementType.class);
+			Query q = em.createQuery("select u from userstory u where u.formattedid=?1");
+			q.setParameter(1, parentUserStoryType.getFormattedID());
+			List result = q.getResultList();
+			UserStory parentUserStory = null;
+			if (result.size() > 0) {
+				parentUserStory = (UserStory) result.get(0);
+			} else {
+				parentUserStory = persistUserStory(project, projectReleases, parentUserStoryType, iteration);
+			}
 			parentUserStory.getChildUserStories().add(userStory);
 		}
-		for (HierarchicalRequirementType childUserStoryType : hierarchicalRequirementType.getChildren().getHierarchicalRequirement()) {
-			childUserStoryType = findOne(childUserStoryType, HierarchicalRequirementType.class);
-			persistUserStory(project, projectReleases, projectIterations, childUserStoryType, userStory);
-		}
 
+		em.persist(userStory);
 		return userStory;
 	}
 
-	// private UserStory persistDefect(Project project, Map<String, Release>
-	// projectReleases, Map<String, Iteration> projectIterations, DefectType
-	// defectType,
-	// UserStory parentUserStory) throws JAXBException {
-	// Defect defect = Mapper.mapDefect(defectType);
-	// em.persist(defect);
-	// project.getDefects().add(defect);
-	// Release release = findProjectReleaseForUserStory(projectReleases,
-	// hierarchicalRequirementType);
-	// if (release != null) {
-	// release.getUserStories().add(userStory);
-	// }
-	// Iteration iteration = findProjectIterationForUserStory(projectIterations,
-	// hierarchicalRequirementType);
-	// if (iteration != null) {
-	// iteration.getUserStories().add(userStory);
-	// }
-	// if (parentUserStory != null) {
-	// parentUserStory.getChildUserStories().add(userStory);
-	// }
-	// for (HierarchicalRequirementType childUserStoryType :
-	// hierarchicalRequirementType.getChildren().getHierarchicalRequirement()) {
-	// childUserStoryType = findOne(childUserStoryType,
-	// HierarchicalRequirementType.class);
-	// persistUserStory(project, projectReleases, projectIterations,
-	// childUserStoryType, userStory);
-	// }
-	//
-	// return userStory;
-	// }
+	private void persistDefect(Project project, Map<String, Release> projectReleases, DefectType defectType,
+			Iteration iteration) throws JAXBException {
+		Defect defect = Mapper.addDefect(null, defectType);
+		for (TaskType taskType : defectType.getTasks().getTask()) {
+			taskType = findOne(taskType, TaskType.class);
+			Mapper.addTask(defect, taskType);
+		}
+		for (TestCaseType testCaseType : defectType.getTestCases().getTestCase()) {
+			testCaseType = findOne(testCaseType, TestCaseType.class);
+			Mapper.addTestCase(null, defect, testCaseType);
+		}
+		em.persist(defect);
+		Release release = findProjectReleaseForDefecty(projectReleases, defectType);
+		if (release != null) {
+			release.getDefects().add(defect);
+		}
+		iteration.getDefects().add(defect);
 
-	private Release findProjectReleaseForUserStory(Map<String, Release> projectReleases, HierarchicalRequirementType hierarchicalRequirementType) {
-		ReleaseType releaseType = hierarchicalRequirementType.getRelease();
+	}
+
+	private Release findProjectReleaseForDefecty(Map<String, Release> projectReleases, DefectType defectType) {
+		ReleaseType releaseType = defectType.getRelease();
 		if (releaseType != null) {
 			return projectReleases.get(releaseType.getRef());
 		}
 		return null;
 	}
 
-	private Iteration findProjectIterationForUserStory(Map<String, Iteration> projectIterations, HierarchicalRequirementType hierarchicalRequirementType) {
-		IterationType iterationType = hierarchicalRequirementType.getIteration();
+	private Iteration findProjectIterationForDefect(Map<String, Iteration> projectIterations, DefectType defectType) {
+		IterationType iterationType = defectType.getIteration();
 		if (iterationType != null) {
 			return projectIterations.get(iterationType.getRef());
+		}
+		return null;
+	}
+
+	private Release findProjectReleaseForUserStory(Map<String, Release> projectReleases,
+			HierarchicalRequirementType hierarchicalRequirementType) {
+		ReleaseType releaseType = hierarchicalRequirementType.getRelease();
+		if (releaseType != null) {
+			return projectReleases.get(releaseType.getRef());
 		}
 		return null;
 	}
@@ -185,10 +198,12 @@ public class ExportFromRally {
 		return findAll(objectType, null);
 	}
 
-	private List<DomainObjectType> findAll(String objectType, String query) throws JAXBException, UnsupportedEncodingException {
+	private List<DomainObjectType> findAll(String objectType, String query) throws JAXBException,
+			UnsupportedEncodingException {
 		String response = rally.doGet(objectType, query);
 		StringBuffer xmlStr = new StringBuffer(response);
-		QueryResultType results = u.unmarshal(new StreamSource(new StringReader(xmlStr.toString())), QueryResultType.class).getValue();
+		QueryResultType results = u.unmarshal(new StreamSource(new StringReader(xmlStr.toString())),
+				QueryResultType.class).getValue();
 
 		List<DomainObjectType> objects = results.getResults().getObject();
 		return objects;
@@ -198,7 +213,7 @@ public class ExportFromRally {
 		String response = rally.doGetRef(o.getRef());
 		StringBuffer xmlStr = new StringBuffer(response);
 		T object = u.unmarshal(new StreamSource(new StringReader(xmlStr.toString())), objectClass).getValue();
-		
+
 		return object;
 	}
 }
