@@ -26,6 +26,7 @@ import com.ceb.ppm.schema.mfw.IterationType;
 import com.ceb.ppm.schema.mfw.ProjectType;
 import com.ceb.ppm.schema.mfw.QueryResultType;
 import com.ceb.ppm.schema.mfw.ReleaseType;
+import com.ceb.ppm.schema.mfw.RevisionHistoryType;
 import com.ceb.ppm.schema.mfw.TaskType;
 import com.ceb.ppm.schema.mfw.TestCaseType;
 import com.ceb.ppm.schema.mfw.UserIterationCapacityType;
@@ -52,6 +53,7 @@ public class ExportFromRally {
 	}
 
 	private void export() throws JAXBException, UnsupportedEncodingException {
+		int i = 0;
 		List<DomainObjectType> objects = findAll("project");
 		for (DomainObjectType o : objects) {
 			ProjectType projectType = findOne(o, ProjectType.class);
@@ -63,17 +65,14 @@ public class ExportFromRally {
 			Map<String, Release> projectReleases = new HashMap<String, Release>();
 			Map<String, Iteration> projectIterations = new HashMap<String, Iteration>();
 			em.persist(project);
-			// for (ReleaseType releaseType :
-			// projectType.getReleases().getRelease()) {
-			// releaseType = findOne(releaseType, ReleaseType.class);
-			// RevisionHistoryType revisionHistoryType =
-			// findOne(releaseType.getRevisionHistory(),
-			// RevisionHistoryType.class);
-			// Release release = Mapper.addRelease(project, releaseType,
-			// revisionHistoryType);
-			// em.persist(release);
-			// projectReleases.put(releaseType.getRef(), release);
-			// }
+			for (ReleaseType releaseType : projectType.getReleases().getRelease()) {
+				releaseType = findOne(releaseType, ReleaseType.class);
+				RevisionHistoryType revisionHistoryType = findOne(releaseType.getRevisionHistory(),
+						RevisionHistoryType.class);
+				Release release = Mapper.addRelease(project, releaseType, revisionHistoryType);
+				em.persist(release);
+				projectReleases.put(releaseType.getRef(), release);
+			}
 			for (IterationType iterationType : projectType.getIterations().getIteration()) {
 				iterationType = findOne(iterationType, IterationType.class);
 				Iteration iteration = Mapper.addIteration(project, iterationType);
@@ -96,10 +95,14 @@ public class ExportFromRally {
 						+ ") AND (Iteration.ObjectID = " + iterationType.getObjectID() + ")) AND (Requirement = NULL))");
 				for (DomainObjectType oD : defects) {
 					DefectType defectType = findOne(oD, DefectType.class);
-					persistDefect(project, projectReleases, defectType, iteration);
+					persistDefect(project, projectReleases, defectType, iteration, null);
 				}
-
-				break;
+				em.persist(iteration);
+				em.flush();
+				i++;
+				if (i == 4) {
+					break;
+				}
 			}
 			em.persist(project);
 			em.getTransaction().commit();
@@ -116,7 +119,7 @@ public class ExportFromRally {
 		}
 		for (DefectType defectType : hierarchicalRequirementType.getDefects().getDefect()) {
 			defectType = findOne(defectType, DefectType.class);
-			persistDefect(project, projectReleases, defectType, iteration);
+			persistDefect(project, projectReleases, defectType, iteration,userStory);
 		}
 		for (TestCaseType testCaseType : hierarchicalRequirementType.getTestCases().getTestCase()) {
 			testCaseType = findOne(testCaseType, TestCaseType.class);
@@ -133,7 +136,7 @@ public class ExportFromRally {
 		if (hierarchicalRequirementType.isHasParent()) {
 			HierarchicalRequirementType parentUserStoryType = hierarchicalRequirementType.getParent();
 			parentUserStoryType = findOne(parentUserStoryType, HierarchicalRequirementType.class);
-			Query q = em.createQuery("select u from userstory u where u.formattedid=?1");
+			Query q = em.createQuery("select u from UserStory u where u.formattedId=?1");
 			q.setParameter(1, parentUserStoryType.getFormattedID());
 			List result = q.getResultList();
 			UserStory parentUserStory = null;
@@ -150,7 +153,7 @@ public class ExportFromRally {
 	}
 
 	private void persistDefect(Project project, Map<String, Release> projectReleases, DefectType defectType,
-			Iteration iteration) throws JAXBException {
+			Iteration iteration, UserStory userStory) throws JAXBException {
 		Defect defect = Mapper.addDefect(null, defectType);
 		for (TaskType taskType : defectType.getTasks().getTask()) {
 			taskType = findOne(taskType, TaskType.class);
@@ -161,12 +164,15 @@ public class ExportFromRally {
 			Mapper.addTestCase(null, defect, testCaseType);
 		}
 		em.persist(defect);
+		project.getDefects().add(defect);
 		Release release = findProjectReleaseForDefecty(projectReleases, defectType);
 		if (release != null) {
 			release.getDefects().add(defect);
 		}
 		iteration.getDefects().add(defect);
-
+		if(userStory != null){
+			userStory.getDefects().add(defect);
+		}
 	}
 
 	private Release findProjectReleaseForDefecty(Map<String, Release> projectReleases, DefectType defectType) {
