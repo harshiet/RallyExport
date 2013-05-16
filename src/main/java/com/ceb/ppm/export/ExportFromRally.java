@@ -100,7 +100,7 @@ public class ExportFromRally {
 				em.persist(iteration);
 				em.flush();
 				i++;
-				if (i == 4) {
+				if (i == 3) {
 					break;
 				}
 			}
@@ -119,7 +119,7 @@ public class ExportFromRally {
 		}
 		for (DefectType defectType : hierarchicalRequirementType.getDefects().getDefect()) {
 			defectType = findOne(defectType, DefectType.class);
-			persistDefect(project, projectReleases, defectType, iteration,userStory);
+			persistDefect(project, projectReleases, defectType, iteration, userStory);
 		}
 		for (TestCaseType testCaseType : hierarchicalRequirementType.getTestCases().getTestCase()) {
 			testCaseType = findOne(testCaseType, TestCaseType.class);
@@ -133,6 +133,7 @@ public class ExportFromRally {
 			release.getUserStories().add(userStory);
 		}
 		iteration.getUserStories().add(userStory);
+		em.persist(userStory);
 		if (hierarchicalRequirementType.isHasParent()) {
 			HierarchicalRequirementType parentUserStoryType = hierarchicalRequirementType.getParent();
 			parentUserStoryType = findOne(parentUserStoryType, HierarchicalRequirementType.class);
@@ -170,7 +171,7 @@ public class ExportFromRally {
 			release.getDefects().add(defect);
 		}
 		iteration.getDefects().add(defect);
-		if(userStory != null){
+		if (userStory != null) {
 			userStory.getDefects().add(defect);
 		}
 	}
@@ -179,14 +180,6 @@ public class ExportFromRally {
 		ReleaseType releaseType = defectType.getRelease();
 		if (releaseType != null) {
 			return projectReleases.get(releaseType.getRef());
-		}
-		return null;
-	}
-
-	private Iteration findProjectIterationForDefect(Map<String, Iteration> projectIterations, DefectType defectType) {
-		IterationType iterationType = defectType.getIteration();
-		if (iterationType != null) {
-			return projectIterations.get(iterationType.getRef());
 		}
 		return null;
 	}
