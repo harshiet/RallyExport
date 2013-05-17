@@ -5,7 +5,6 @@
 // Generated on: 2013.05.13 at 12:50:52 PM EDT 
 //
 
-
 package com.ceb.ppm.schema.mfw;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -13,11 +12,13 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for AllowedQueryOperatorType complex type.
+ * <p>
+ * Java class for AllowedQueryOperatorType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="AllowedQueryOperatorType">
@@ -34,38 +35,31 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "AllowedQueryOperatorType", propOrder = {
-    "operatorName"
-})
-public class AllowedQueryOperatorType
-    extends PersistableObjectType
-{
+@XmlType(name = "AllowedQueryOperatorType", propOrder = { "operatorName" })
+public class AllowedQueryOperatorType extends PersistableObjectType {
 
-    @XmlElement(name = "OperatorName")
-    protected String operatorName;
+	@XmlElement(name = "OperatorName")
+	protected String operatorName;
 
-    /**
-     * Gets the value of the operatorName property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getOperatorName() {
-        return operatorName;
-    }
+	/**
+	 * Gets the value of the operatorName property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getOperatorName() {
+		return operatorName;
+	}
 
-    /**
-     * Sets the value of the operatorName property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setOperatorName(String value) {
-        this.operatorName = value;
-    }
+	/**
+	 * Sets the value of the operatorName property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setOperatorName(String value) {
+		this.operatorName = value;
+	}
 
 }

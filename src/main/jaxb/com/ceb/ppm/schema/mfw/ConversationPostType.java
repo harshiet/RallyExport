@@ -5,7 +5,6 @@
 // Generated on: 2013.05.13 at 12:50:52 PM EDT 
 //
 
-
 package com.ceb.ppm.schema.mfw;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -13,11 +12,13 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for ConversationPostType complex type.
+ * <p>
+ * Java class for ConversationPostType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="ConversationPostType">
@@ -37,119 +38,100 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ConversationPostType", propOrder = {
-    "artifact",
-    "postNumber",
-    "text",
-    "user"
-})
-public class ConversationPostType
-    extends WorkspaceDomainObjectType
-{
+@XmlType(name = "ConversationPostType", propOrder = { "artifact", "postNumber", "text", "user" })
+public class ConversationPostType extends WorkspaceDomainObjectType {
 
-    @XmlElement(name = "Artifact")
-    protected ArtifactType artifact;
-    @XmlElement(name = "PostNumber")
-    protected Long postNumber;
-    @XmlElement(name = "Text")
-    protected String text;
-    @XmlElement(name = "User")
-    protected UserType user;
+	@XmlElement(name = "Artifact")
+	protected ArtifactType artifact;
+	@XmlElement(name = "PostNumber")
+	protected Long postNumber;
+	@XmlElement(name = "Text")
+	protected String text;
+	@XmlElement(name = "User")
+	protected UserType user;
 
-    /**
-     * Gets the value of the artifact property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ArtifactType }
-     *     
-     */
-    public ArtifactType getArtifact() {
-        return artifact;
-    }
+	/**
+	 * Gets the value of the artifact property.
+	 * 
+	 * @return possible object is {@link ArtifactType }
+	 * 
+	 */
+	public ArtifactType getArtifact() {
+		return artifact;
+	}
 
-    /**
-     * Sets the value of the artifact property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ArtifactType }
-     *     
-     */
-    public void setArtifact(ArtifactType value) {
-        this.artifact = value;
-    }
+	/**
+	 * Sets the value of the artifact property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link ArtifactType }
+	 * 
+	 */
+	public void setArtifact(ArtifactType value) {
+		this.artifact = value;
+	}
 
-    /**
-     * Gets the value of the postNumber property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
-     */
-    public Long getPostNumber() {
-        return postNumber;
-    }
+	/**
+	 * Gets the value of the postNumber property.
+	 * 
+	 * @return possible object is {@link Long }
+	 * 
+	 */
+	public Long getPostNumber() {
+		return postNumber;
+	}
 
-    /**
-     * Sets the value of the postNumber property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setPostNumber(Long value) {
-        this.postNumber = value;
-    }
+	/**
+	 * Sets the value of the postNumber property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Long }
+	 * 
+	 */
+	public void setPostNumber(Long value) {
+		this.postNumber = value;
+	}
 
-    /**
-     * Gets the value of the text property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getText() {
-        return text;
-    }
+	/**
+	 * Gets the value of the text property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getText() {
+		return text;
+	}
 
-    /**
-     * Sets the value of the text property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setText(String value) {
-        this.text = value;
-    }
+	/**
+	 * Sets the value of the text property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setText(String value) {
+		this.text = value;
+	}
 
-    /**
-     * Gets the value of the user property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link UserType }
-     *     
-     */
-    public UserType getUser() {
-        return user;
-    }
+	/**
+	 * Gets the value of the user property.
+	 * 
+	 * @return possible object is {@link UserType }
+	 * 
+	 */
+	public UserType getUser() {
+		return user;
+	}
 
-    /**
-     * Sets the value of the user property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link UserType }
-     *     
-     */
-    public void setUser(UserType value) {
-        this.user = value;
-    }
+	/**
+	 * Sets the value of the user property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link UserType }
+	 * 
+	 */
+	public void setUser(UserType value) {
+		this.user = value;
+	}
 
 }

@@ -5,7 +5,6 @@
 // Generated on: 2013.05.13 at 12:50:52 PM EDT 
 //
 
-
 package com.ceb.ppm.schema.mfw;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -13,11 +12,13 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for TestCaseStepType complex type.
+ * <p>
+ * Java class for TestCaseStepType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="TestCaseStepType">
@@ -37,119 +38,100 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TestCaseStepType", propOrder = {
-    "expectedResult",
-    "input",
-    "stepIndex",
-    "testCase"
-})
-public class TestCaseStepType
-    extends WorkspaceDomainObjectType
-{
+@XmlType(name = "TestCaseStepType", propOrder = { "expectedResult", "input", "stepIndex", "testCase" })
+public class TestCaseStepType extends WorkspaceDomainObjectType {
 
-    @XmlElement(name = "ExpectedResult")
-    protected String expectedResult;
-    @XmlElement(name = "Input")
-    protected String input;
-    @XmlElement(name = "StepIndex")
-    protected Long stepIndex;
-    @XmlElement(name = "TestCase")
-    protected TestCaseType testCase;
+	@XmlElement(name = "ExpectedResult")
+	protected String expectedResult;
+	@XmlElement(name = "Input")
+	protected String input;
+	@XmlElement(name = "StepIndex")
+	protected Long stepIndex;
+	@XmlElement(name = "TestCase")
+	protected TestCaseType testCase;
 
-    /**
-     * Gets the value of the expectedResult property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getExpectedResult() {
-        return expectedResult;
-    }
+	/**
+	 * Gets the value of the expectedResult property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getExpectedResult() {
+		return expectedResult;
+	}
 
-    /**
-     * Sets the value of the expectedResult property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setExpectedResult(String value) {
-        this.expectedResult = value;
-    }
+	/**
+	 * Sets the value of the expectedResult property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setExpectedResult(String value) {
+		this.expectedResult = value;
+	}
 
-    /**
-     * Gets the value of the input property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getInput() {
-        return input;
-    }
+	/**
+	 * Gets the value of the input property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getInput() {
+		return input;
+	}
 
-    /**
-     * Sets the value of the input property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setInput(String value) {
-        this.input = value;
-    }
+	/**
+	 * Sets the value of the input property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setInput(String value) {
+		this.input = value;
+	}
 
-    /**
-     * Gets the value of the stepIndex property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
-     */
-    public Long getStepIndex() {
-        return stepIndex;
-    }
+	/**
+	 * Gets the value of the stepIndex property.
+	 * 
+	 * @return possible object is {@link Long }
+	 * 
+	 */
+	public Long getStepIndex() {
+		return stepIndex;
+	}
 
-    /**
-     * Sets the value of the stepIndex property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setStepIndex(Long value) {
-        this.stepIndex = value;
-    }
+	/**
+	 * Sets the value of the stepIndex property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Long }
+	 * 
+	 */
+	public void setStepIndex(Long value) {
+		this.stepIndex = value;
+	}
 
-    /**
-     * Gets the value of the testCase property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link TestCaseType }
-     *     
-     */
-    public TestCaseType getTestCase() {
-        return testCase;
-    }
+	/**
+	 * Gets the value of the testCase property.
+	 * 
+	 * @return possible object is {@link TestCaseType }
+	 * 
+	 */
+	public TestCaseType getTestCase() {
+		return testCase;
+	}
 
-    /**
-     * Sets the value of the testCase property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link TestCaseType }
-     *     
-     */
-    public void setTestCase(TestCaseType value) {
-        this.testCase = value;
-    }
+	/**
+	 * Sets the value of the testCase property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link TestCaseType }
+	 * 
+	 */
+	public void setTestCase(TestCaseType value) {
+		this.testCase = value;
+	}
 
 }

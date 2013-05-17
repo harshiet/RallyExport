@@ -8,7 +8,10 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
+@Table(uniqueConstraints = @UniqueConstraint(columnNames = { "project_id", "formattedId" }))
 @Entity
 public class Defect extends Artifact {
 
@@ -19,15 +22,15 @@ public class Defect extends Artifact {
 	Date openedDate;
 	String resolution;
 	String severity;
-	
+
 	Double taskEstimateTotal;
 	Double taskActualTotal;
 	Double taskRemainingTotal;
-	
+
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "defect_id", referencedColumnName = "id")
 	List<Task> tasks = new ArrayList<Task>();
-	
+
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "defect_id", referencedColumnName = "id")
 	List<TestCase> testCases = new ArrayList<TestCase>();
@@ -100,7 +103,6 @@ public class Defect extends Artifact {
 		return testCases;
 	}
 
-
 	public List<Attachment> getAttachments() {
 		return attachments;
 	}
@@ -132,7 +134,5 @@ public class Defect extends Artifact {
 	public void setTaskRemainingTotal(Double taskRemainingTotal) {
 		this.taskRemainingTotal = taskRemainingTotal;
 	}
-
-
 
 }

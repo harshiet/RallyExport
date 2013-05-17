@@ -5,7 +5,6 @@
 // Generated on: 2013.05.13 at 12:50:52 PM EDT 
 //
 
-
 package com.ceb.ppm.schema.mfw;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -13,11 +12,13 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for WebLink complex type.
+ * <p>
+ * Java class for WebLink complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="WebLink">
@@ -35,63 +36,54 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "WebLink", propOrder = {
-    "linkID",
-    "displayString"
-})
+@XmlType(name = "WebLink", propOrder = { "linkID", "displayString" })
 public class WebLink {
 
-    @XmlElement(name = "LinkID", required = true)
-    protected String linkID;
-    @XmlElement(name = "DisplayString")
-    protected String displayString;
+	@XmlElement(name = "LinkID", required = true)
+	protected String linkID;
+	@XmlElement(name = "DisplayString")
+	protected String displayString;
 
-    /**
-     * Gets the value of the linkID property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getLinkID() {
-        return linkID;
-    }
+	/**
+	 * Gets the value of the linkID property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getLinkID() {
+		return linkID;
+	}
 
-    /**
-     * Sets the value of the linkID property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setLinkID(String value) {
-        this.linkID = value;
-    }
+	/**
+	 * Sets the value of the linkID property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setLinkID(String value) {
+		this.linkID = value;
+	}
 
-    /**
-     * Gets the value of the displayString property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getDisplayString() {
-        return displayString;
-    }
+	/**
+	 * Gets the value of the displayString property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getDisplayString() {
+		return displayString;
+	}
 
-    /**
-     * Sets the value of the displayString property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDisplayString(String value) {
-        this.displayString = value;
-    }
+	/**
+	 * Sets the value of the displayString property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setDisplayString(String value) {
+		this.displayString = value;
+	}
 
 }

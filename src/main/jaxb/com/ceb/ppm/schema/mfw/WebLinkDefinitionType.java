@@ -5,7 +5,6 @@
 // Generated on: 2013.05.13 at 12:50:52 PM EDT 
 //
 
-
 package com.ceb.ppm.schema.mfw;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -13,11 +12,13 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for WebLinkDefinitionType complex type.
+ * <p>
+ * Java class for WebLinkDefinitionType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="WebLinkDefinitionType">
@@ -34,38 +35,31 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "WebLinkDefinitionType", propOrder = {
-    "url"
-})
-public class WebLinkDefinitionType
-    extends AttributeDefinitionType
-{
+@XmlType(name = "WebLinkDefinitionType", propOrder = { "url" })
+public class WebLinkDefinitionType extends AttributeDefinitionType {
 
-    @XmlElement(name = "URL")
-    protected String url;
+	@XmlElement(name = "URL")
+	protected String url;
 
-    /**
-     * Gets the value of the url property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getURL() {
-        return url;
-    }
+	/**
+	 * Gets the value of the url property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getURL() {
+		return url;
+	}
 
-    /**
-     * Sets the value of the url property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setURL(String value) {
-        this.url = value;
-    }
+	/**
+	 * Sets the value of the url property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setURL(String value) {
+		this.url = value;
+	}
 
 }

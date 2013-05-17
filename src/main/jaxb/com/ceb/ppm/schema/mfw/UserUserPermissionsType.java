@@ -5,7 +5,6 @@
 // Generated on: 2013.05.13 at 12:50:52 PM EDT 
 //
 
-
 package com.ceb.ppm.schema.mfw;
 
 import java.util.ArrayList;
@@ -15,11 +14,13 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for UserUserPermissionsType complex type.
+ * <p>
+ * Java class for UserUserPermissionsType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="UserUserPermissionsType">
@@ -36,41 +37,40 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "UserUserPermissionsType", propOrder = {
-    "userPermission"
-})
+@XmlType(name = "UserUserPermissionsType", propOrder = { "userPermission" })
 public class UserUserPermissionsType {
 
-    @XmlElement(name = "UserPermission")
-    protected List<UserPermissionType> userPermission;
+	@XmlElement(name = "UserPermission")
+	protected List<UserPermissionType> userPermission;
 
-    /**
-     * Gets the value of the userPermission property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the userPermission property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getUserPermission().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link UserPermissionType }
-     * 
-     * 
-     */
-    public List<UserPermissionType> getUserPermission() {
-        if (userPermission == null) {
-            userPermission = new ArrayList<UserPermissionType>();
-        }
-        return this.userPermission;
-    }
+	/**
+	 * Gets the value of the userPermission property.
+	 * 
+	 * <p>
+	 * This accessor method returns a reference to the live list, not a
+	 * snapshot. Therefore any modification you make to the returned list will
+	 * be present inside the JAXB object. This is why there is not a
+	 * <CODE>set</CODE> method for the userPermission property.
+	 * 
+	 * <p>
+	 * For example, to add a new item, do as follows:
+	 * 
+	 * <pre>
+	 * getUserPermission().add(newItem);
+	 * </pre>
+	 * 
+	 * 
+	 * <p>
+	 * Objects of the following type(s) are allowed in the list
+	 * {@link UserPermissionType }
+	 * 
+	 * 
+	 */
+	public List<UserPermissionType> getUserPermission() {
+		if (userPermission == null) {
+			userPermission = new ArrayList<UserPermissionType>();
+		}
+		return this.userPermission;
+	}
 
 }

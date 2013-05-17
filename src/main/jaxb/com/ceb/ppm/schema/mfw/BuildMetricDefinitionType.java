@@ -5,18 +5,19 @@
 // Generated on: 2013.05.13 at 12:50:52 PM EDT 
 //
 
-
 package com.ceb.ppm.schema.mfw;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for BuildMetricDefinitionType complex type.
+ * <p>
+ * Java class for BuildMetricDefinitionType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="BuildMetricDefinitionType">
@@ -31,9 +32,6 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "BuildMetricDefinitionType")
-public class BuildMetricDefinitionType
-    extends WorkspaceDomainObjectType
-{
-
+public class BuildMetricDefinitionType extends WorkspaceDomainObjectType {
 
 }

@@ -5,7 +5,6 @@
 // Generated on: 2013.05.13 at 12:50:52 PM EDT 
 //
 
-
 package com.ceb.ppm.schema.mfw;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -14,11 +13,13 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for DomainObjectType complex type.
+ * <p>
+ * Java class for DomainObjectType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="DomainObjectType">
@@ -35,46 +36,33 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "DomainObjectType", propOrder = {
-    "subscription"
-})
-@XmlSeeAlso({
-    UserType.class,
-    WorkspaceType.class,
-    BlockerType.class,
-    UserPermissionType.class,
-    UserProfileType.class,
-    WorkspaceDomainObjectType.class
-})
-public class DomainObjectType
-    extends PersistableObjectType
-{
+@XmlType(name = "DomainObjectType", propOrder = { "subscription" })
+@XmlSeeAlso({ UserType.class, WorkspaceType.class, BlockerType.class, UserPermissionType.class, UserProfileType.class,
+		WorkspaceDomainObjectType.class })
+public class DomainObjectType extends PersistableObjectType {
 
-    @XmlElement(name = "Subscription")
-    protected SubscriptionType subscription;
+	@XmlElement(name = "Subscription")
+	protected SubscriptionType subscription;
 
-    /**
-     * Gets the value of the subscription property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link SubscriptionType }
-     *     
-     */
-    public SubscriptionType getSubscription() {
-        return subscription;
-    }
+	/**
+	 * Gets the value of the subscription property.
+	 * 
+	 * @return possible object is {@link SubscriptionType }
+	 * 
+	 */
+	public SubscriptionType getSubscription() {
+		return subscription;
+	}
 
-    /**
-     * Sets the value of the subscription property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SubscriptionType }
-     *     
-     */
-    public void setSubscription(SubscriptionType value) {
-        this.subscription = value;
-    }
+	/**
+	 * Sets the value of the subscription property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link SubscriptionType }
+	 * 
+	 */
+	public void setSubscription(SubscriptionType value) {
+		this.subscription = value;
+	}
 
 }

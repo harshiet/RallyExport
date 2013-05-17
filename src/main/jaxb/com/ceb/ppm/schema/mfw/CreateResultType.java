@@ -5,7 +5,6 @@
 // Generated on: 2013.05.13 at 12:50:52 PM EDT 
 //
 
-
 package com.ceb.ppm.schema.mfw;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -13,11 +12,13 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for CreateResultType complex type.
+ * <p>
+ * Java class for CreateResultType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="CreateResultType">
@@ -34,38 +35,31 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "CreateResultType", propOrder = {
-    "object"
-})
-public class CreateResultType
-    extends OperationResultType
-{
+@XmlType(name = "CreateResultType", propOrder = { "object" })
+public class CreateResultType extends OperationResultType {
 
-    @XmlElement(name = "Object")
-    protected DomainObjectType object;
+	@XmlElement(name = "Object")
+	protected DomainObjectType object;
 
-    /**
-     * Gets the value of the object property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link DomainObjectType }
-     *     
-     */
-    public DomainObjectType getObject() {
-        return object;
-    }
+	/**
+	 * Gets the value of the object property.
+	 * 
+	 * @return possible object is {@link DomainObjectType }
+	 * 
+	 */
+	public DomainObjectType getObject() {
+		return object;
+	}
 
-    /**
-     * Sets the value of the object property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link DomainObjectType }
-     *     
-     */
-    public void setObject(DomainObjectType value) {
-        this.object = value;
-    }
+	/**
+	 * Sets the value of the object property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link DomainObjectType }
+	 * 
+	 */
+	public void setObject(DomainObjectType value) {
+		this.object = value;
+	}
 
 }

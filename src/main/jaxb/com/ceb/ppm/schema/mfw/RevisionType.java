@@ -5,7 +5,6 @@
 // Generated on: 2013.05.13 at 12:50:52 PM EDT 
 //
 
-
 package com.ceb.ppm.schema.mfw;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -13,11 +12,13 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for RevisionType complex type.
+ * <p>
+ * Java class for RevisionType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="RevisionType">
@@ -37,119 +38,100 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "RevisionType", propOrder = {
-    "description",
-    "revisionHistory",
-    "revisionNumber",
-    "user"
-})
-public class RevisionType
-    extends WorkspaceDomainObjectType
-{
+@XmlType(name = "RevisionType", propOrder = { "description", "revisionHistory", "revisionNumber", "user" })
+public class RevisionType extends WorkspaceDomainObjectType {
 
-    @XmlElement(name = "Description")
-    protected String description;
-    @XmlElement(name = "RevisionHistory")
-    protected RevisionHistoryType revisionHistory;
-    @XmlElement(name = "RevisionNumber")
-    protected Long revisionNumber;
-    @XmlElement(name = "User")
-    protected UserType user;
+	@XmlElement(name = "Description")
+	protected String description;
+	@XmlElement(name = "RevisionHistory")
+	protected RevisionHistoryType revisionHistory;
+	@XmlElement(name = "RevisionNumber")
+	protected Long revisionNumber;
+	@XmlElement(name = "User")
+	protected UserType user;
 
-    /**
-     * Gets the value of the description property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getDescription() {
-        return description;
-    }
+	/**
+	 * Gets the value of the description property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getDescription() {
+		return description;
+	}
 
-    /**
-     * Sets the value of the description property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDescription(String value) {
-        this.description = value;
-    }
+	/**
+	 * Sets the value of the description property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setDescription(String value) {
+		this.description = value;
+	}
 
-    /**
-     * Gets the value of the revisionHistory property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link RevisionHistoryType }
-     *     
-     */
-    public RevisionHistoryType getRevisionHistory() {
-        return revisionHistory;
-    }
+	/**
+	 * Gets the value of the revisionHistory property.
+	 * 
+	 * @return possible object is {@link RevisionHistoryType }
+	 * 
+	 */
+	public RevisionHistoryType getRevisionHistory() {
+		return revisionHistory;
+	}
 
-    /**
-     * Sets the value of the revisionHistory property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RevisionHistoryType }
-     *     
-     */
-    public void setRevisionHistory(RevisionHistoryType value) {
-        this.revisionHistory = value;
-    }
+	/**
+	 * Sets the value of the revisionHistory property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link RevisionHistoryType }
+	 * 
+	 */
+	public void setRevisionHistory(RevisionHistoryType value) {
+		this.revisionHistory = value;
+	}
 
-    /**
-     * Gets the value of the revisionNumber property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
-     */
-    public Long getRevisionNumber() {
-        return revisionNumber;
-    }
+	/**
+	 * Gets the value of the revisionNumber property.
+	 * 
+	 * @return possible object is {@link Long }
+	 * 
+	 */
+	public Long getRevisionNumber() {
+		return revisionNumber;
+	}
 
-    /**
-     * Sets the value of the revisionNumber property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setRevisionNumber(Long value) {
-        this.revisionNumber = value;
-    }
+	/**
+	 * Sets the value of the revisionNumber property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Long }
+	 * 
+	 */
+	public void setRevisionNumber(Long value) {
+		this.revisionNumber = value;
+	}
 
-    /**
-     * Gets the value of the user property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link UserType }
-     *     
-     */
-    public UserType getUser() {
-        return user;
-    }
+	/**
+	 * Gets the value of the user property.
+	 * 
+	 * @return possible object is {@link UserType }
+	 * 
+	 */
+	public UserType getUser() {
+		return user;
+	}
 
-    /**
-     * Sets the value of the user property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link UserType }
-     *     
-     */
-    public void setUser(UserType value) {
-        this.user = value;
-    }
+	/**
+	 * Sets the value of the user property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link UserType }
+	 * 
+	 */
+	public void setUser(UserType value) {
+		this.user = value;
+	}
 
 }

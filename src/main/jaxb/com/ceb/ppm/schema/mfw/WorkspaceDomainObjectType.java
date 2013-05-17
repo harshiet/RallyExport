@@ -5,7 +5,6 @@
 // Generated on: 2013.05.13 at 12:50:52 PM EDT 
 //
 
-
 package com.ceb.ppm.schema.mfw;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -14,11 +13,13 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for WorkspaceDomainObjectType complex type.
+ * <p>
+ * Java class for WorkspaceDomainObjectType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="WorkspaceDomainObjectType">
@@ -35,68 +36,39 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "WorkspaceDomainObjectType", propOrder = {
-    "workspace"
-})
-@XmlSeeAlso({
-    AttachmentType.class,
-    RevisionHistoryType.class,
-    TestCaseStepType.class,
-    BuildMetricType.class,
-    AttachmentContentType.class,
-    BuildType.class,
-    TagType.class,
-    ProjectType.class,
-    ScopedAttributeDefinitionType.class,
-    AttributeDefinitionType.class,
-    WorkspaceConfigurationType.class,
-    ChangeType.class,
-    ConversationPostType.class,
-    BuildDefinitionType.class,
-    ReleaseType.class,
-    TimeEntryItemType.class,
-    ArtifactNotificationType.class,
-    SCMRepositoryType.class,
-    IterationType.class,
-    TypeDefinitionType.class,
-    ChangesetType.class,
-    CumulativeFlowDataType.class,
-    TestCaseResultType.class,
-    BuildMetricDefinitionType.class,
-    ArtifactType.class,
-    RevisionType.class,
-    TimeEntryValueType.class,
-    UserIterationCapacityType.class
-})
-public class WorkspaceDomainObjectType
-    extends DomainObjectType
-{
+@XmlType(name = "WorkspaceDomainObjectType", propOrder = { "workspace" })
+@XmlSeeAlso({ AttachmentType.class, RevisionHistoryType.class, TestCaseStepType.class, BuildMetricType.class,
+		AttachmentContentType.class, BuildType.class, TagType.class, ProjectType.class,
+		ScopedAttributeDefinitionType.class, AttributeDefinitionType.class, WorkspaceConfigurationType.class,
+		ChangeType.class, ConversationPostType.class, BuildDefinitionType.class, ReleaseType.class,
+		TimeEntryItemType.class, ArtifactNotificationType.class, SCMRepositoryType.class, IterationType.class,
+		TypeDefinitionType.class, ChangesetType.class, CumulativeFlowDataType.class, TestCaseResultType.class,
+		BuildMetricDefinitionType.class, ArtifactType.class, RevisionType.class, TimeEntryValueType.class,
+		UserIterationCapacityType.class })
+public class WorkspaceDomainObjectType extends DomainObjectType {
 
-    @XmlElement(name = "Workspace")
-    protected WorkspaceType workspace;
+	@XmlElement(name = "Workspace")
+	protected WorkspaceType workspace;
 
-    /**
-     * Gets the value of the workspace property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link WorkspaceType }
-     *     
-     */
-    public WorkspaceType getWorkspace() {
-        return workspace;
-    }
+	/**
+	 * Gets the value of the workspace property.
+	 * 
+	 * @return possible object is {@link WorkspaceType }
+	 * 
+	 */
+	public WorkspaceType getWorkspace() {
+		return workspace;
+	}
 
-    /**
-     * Sets the value of the workspace property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link WorkspaceType }
-     *     
-     */
-    public void setWorkspace(WorkspaceType value) {
-        this.workspace = value;
-    }
+	/**
+	 * Sets the value of the workspace property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link WorkspaceType }
+	 * 
+	 */
+	public void setWorkspace(WorkspaceType value) {
+		this.workspace = value;
+	}
 
 }

@@ -5,7 +5,6 @@
 // Generated on: 2013.05.13 at 12:50:52 PM EDT 
 //
 
-
 package com.ceb.ppm.schema.mfw;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -13,11 +12,13 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for ProjectType complex type.
+ * <p>
+ * Java class for ProjectType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="ProjectType">
@@ -45,335 +46,285 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ProjectType", propOrder = {
-    "buildDefinitions",
-    "children",
-    "description",
-    "editors",
-    "iterations",
-    "name",
-    "notes",
-    "owner",
-    "parent",
-    "releases",
-    "state",
-    "teamMembers"
-})
-public class ProjectType
-    extends WorkspaceDomainObjectType
-{
+@XmlType(name = "ProjectType", propOrder = { "buildDefinitions", "children", "description", "editors", "iterations",
+		"name", "notes", "owner", "parent", "releases", "state", "teamMembers" })
+public class ProjectType extends WorkspaceDomainObjectType {
 
-    @XmlElement(name = "BuildDefinitions")
-    protected ProjectBuildDefinitionsType buildDefinitions;
-    @XmlElement(name = "Children")
-    protected ProjectChildrenType children;
-    @XmlElement(name = "Description")
-    protected String description;
-    @XmlElement(name = "Editors")
-    protected ProjectEditorsType editors;
-    @XmlElement(name = "Iterations")
-    protected ProjectIterationsType iterations;
-    @XmlElement(name = "Name")
-    protected String name;
-    @XmlElement(name = "Notes")
-    protected String notes;
-    @XmlElement(name = "Owner")
-    protected UserType owner;
-    @XmlElement(name = "Parent")
-    protected ProjectType parent;
-    @XmlElement(name = "Releases")
-    protected ProjectReleasesType releases;
-    @XmlElement(name = "State")
-    protected String state;
-    @XmlElement(name = "TeamMembers")
-    protected ProjectTeamMembersType teamMembers;
+	@XmlElement(name = "BuildDefinitions")
+	protected ProjectBuildDefinitionsType buildDefinitions;
+	@XmlElement(name = "Children")
+	protected ProjectChildrenType children;
+	@XmlElement(name = "Description")
+	protected String description;
+	@XmlElement(name = "Editors")
+	protected ProjectEditorsType editors;
+	@XmlElement(name = "Iterations")
+	protected ProjectIterationsType iterations;
+	@XmlElement(name = "Name")
+	protected String name;
+	@XmlElement(name = "Notes")
+	protected String notes;
+	@XmlElement(name = "Owner")
+	protected UserType owner;
+	@XmlElement(name = "Parent")
+	protected ProjectType parent;
+	@XmlElement(name = "Releases")
+	protected ProjectReleasesType releases;
+	@XmlElement(name = "State")
+	protected String state;
+	@XmlElement(name = "TeamMembers")
+	protected ProjectTeamMembersType teamMembers;
 
-    /**
-     * Gets the value of the buildDefinitions property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ProjectBuildDefinitionsType }
-     *     
-     */
-    public ProjectBuildDefinitionsType getBuildDefinitions() {
-        return buildDefinitions;
-    }
+	/**
+	 * Gets the value of the buildDefinitions property.
+	 * 
+	 * @return possible object is {@link ProjectBuildDefinitionsType }
+	 * 
+	 */
+	public ProjectBuildDefinitionsType getBuildDefinitions() {
+		return buildDefinitions;
+	}
 
-    /**
-     * Sets the value of the buildDefinitions property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ProjectBuildDefinitionsType }
-     *     
-     */
-    public void setBuildDefinitions(ProjectBuildDefinitionsType value) {
-        this.buildDefinitions = value;
-    }
+	/**
+	 * Sets the value of the buildDefinitions property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link ProjectBuildDefinitionsType }
+	 * 
+	 */
+	public void setBuildDefinitions(ProjectBuildDefinitionsType value) {
+		this.buildDefinitions = value;
+	}
 
-    /**
-     * Gets the value of the children property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ProjectChildrenType }
-     *     
-     */
-    public ProjectChildrenType getChildren() {
-        return children;
-    }
+	/**
+	 * Gets the value of the children property.
+	 * 
+	 * @return possible object is {@link ProjectChildrenType }
+	 * 
+	 */
+	public ProjectChildrenType getChildren() {
+		return children;
+	}
 
-    /**
-     * Sets the value of the children property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ProjectChildrenType }
-     *     
-     */
-    public void setChildren(ProjectChildrenType value) {
-        this.children = value;
-    }
+	/**
+	 * Sets the value of the children property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link ProjectChildrenType }
+	 * 
+	 */
+	public void setChildren(ProjectChildrenType value) {
+		this.children = value;
+	}
 
-    /**
-     * Gets the value of the description property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getDescription() {
-        return description;
-    }
+	/**
+	 * Gets the value of the description property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getDescription() {
+		return description;
+	}
 
-    /**
-     * Sets the value of the description property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDescription(String value) {
-        this.description = value;
-    }
+	/**
+	 * Sets the value of the description property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setDescription(String value) {
+		this.description = value;
+	}
 
-    /**
-     * Gets the value of the editors property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ProjectEditorsType }
-     *     
-     */
-    public ProjectEditorsType getEditors() {
-        return editors;
-    }
+	/**
+	 * Gets the value of the editors property.
+	 * 
+	 * @return possible object is {@link ProjectEditorsType }
+	 * 
+	 */
+	public ProjectEditorsType getEditors() {
+		return editors;
+	}
 
-    /**
-     * Sets the value of the editors property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ProjectEditorsType }
-     *     
-     */
-    public void setEditors(ProjectEditorsType value) {
-        this.editors = value;
-    }
+	/**
+	 * Sets the value of the editors property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link ProjectEditorsType }
+	 * 
+	 */
+	public void setEditors(ProjectEditorsType value) {
+		this.editors = value;
+	}
 
-    /**
-     * Gets the value of the iterations property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ProjectIterationsType }
-     *     
-     */
-    public ProjectIterationsType getIterations() {
-        return iterations;
-    }
+	/**
+	 * Gets the value of the iterations property.
+	 * 
+	 * @return possible object is {@link ProjectIterationsType }
+	 * 
+	 */
+	public ProjectIterationsType getIterations() {
+		return iterations;
+	}
 
-    /**
-     * Sets the value of the iterations property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ProjectIterationsType }
-     *     
-     */
-    public void setIterations(ProjectIterationsType value) {
-        this.iterations = value;
-    }
+	/**
+	 * Sets the value of the iterations property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link ProjectIterationsType }
+	 * 
+	 */
+	public void setIterations(ProjectIterationsType value) {
+		this.iterations = value;
+	}
 
-    /**
-     * Gets the value of the name property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getName() {
-        return name;
-    }
+	/**
+	 * Gets the value of the name property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getName() {
+		return name;
+	}
 
-    /**
-     * Sets the value of the name property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setName(String value) {
-        this.name = value;
-    }
+	/**
+	 * Sets the value of the name property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setName(String value) {
+		this.name = value;
+	}
 
-    /**
-     * Gets the value of the notes property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getNotes() {
-        return notes;
-    }
+	/**
+	 * Gets the value of the notes property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getNotes() {
+		return notes;
+	}
 
-    /**
-     * Sets the value of the notes property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setNotes(String value) {
-        this.notes = value;
-    }
+	/**
+	 * Sets the value of the notes property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setNotes(String value) {
+		this.notes = value;
+	}
 
-    /**
-     * Gets the value of the owner property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link UserType }
-     *     
-     */
-    public UserType getOwner() {
-        return owner;
-    }
+	/**
+	 * Gets the value of the owner property.
+	 * 
+	 * @return possible object is {@link UserType }
+	 * 
+	 */
+	public UserType getOwner() {
+		return owner;
+	}
 
-    /**
-     * Sets the value of the owner property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link UserType }
-     *     
-     */
-    public void setOwner(UserType value) {
-        this.owner = value;
-    }
+	/**
+	 * Sets the value of the owner property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link UserType }
+	 * 
+	 */
+	public void setOwner(UserType value) {
+		this.owner = value;
+	}
 
-    /**
-     * Gets the value of the parent property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ProjectType }
-     *     
-     */
-    public ProjectType getParent() {
-        return parent;
-    }
+	/**
+	 * Gets the value of the parent property.
+	 * 
+	 * @return possible object is {@link ProjectType }
+	 * 
+	 */
+	public ProjectType getParent() {
+		return parent;
+	}
 
-    /**
-     * Sets the value of the parent property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ProjectType }
-     *     
-     */
-    public void setParent(ProjectType value) {
-        this.parent = value;
-    }
+	/**
+	 * Sets the value of the parent property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link ProjectType }
+	 * 
+	 */
+	public void setParent(ProjectType value) {
+		this.parent = value;
+	}
 
-    /**
-     * Gets the value of the releases property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ProjectReleasesType }
-     *     
-     */
-    public ProjectReleasesType getReleases() {
-        return releases;
-    }
+	/**
+	 * Gets the value of the releases property.
+	 * 
+	 * @return possible object is {@link ProjectReleasesType }
+	 * 
+	 */
+	public ProjectReleasesType getReleases() {
+		return releases;
+	}
 
-    /**
-     * Sets the value of the releases property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ProjectReleasesType }
-     *     
-     */
-    public void setReleases(ProjectReleasesType value) {
-        this.releases = value;
-    }
+	/**
+	 * Sets the value of the releases property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link ProjectReleasesType }
+	 * 
+	 */
+	public void setReleases(ProjectReleasesType value) {
+		this.releases = value;
+	}
 
-    /**
-     * Gets the value of the state property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getState() {
-        return state;
-    }
+	/**
+	 * Gets the value of the state property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getState() {
+		return state;
+	}
 
-    /**
-     * Sets the value of the state property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setState(String value) {
-        this.state = value;
-    }
+	/**
+	 * Sets the value of the state property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setState(String value) {
+		this.state = value;
+	}
 
-    /**
-     * Gets the value of the teamMembers property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ProjectTeamMembersType }
-     *     
-     */
-    public ProjectTeamMembersType getTeamMembers() {
-        return teamMembers;
-    }
+	/**
+	 * Gets the value of the teamMembers property.
+	 * 
+	 * @return possible object is {@link ProjectTeamMembersType }
+	 * 
+	 */
+	public ProjectTeamMembersType getTeamMembers() {
+		return teamMembers;
+	}
 
-    /**
-     * Sets the value of the teamMembers property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ProjectTeamMembersType }
-     *     
-     */
-    public void setTeamMembers(ProjectTeamMembersType value) {
-        this.teamMembers = value;
-    }
+	/**
+	 * Sets the value of the teamMembers property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link ProjectTeamMembersType }
+	 * 
+	 */
+	public void setTeamMembers(ProjectTeamMembersType value) {
+		this.teamMembers = value;
+	}
 
 }

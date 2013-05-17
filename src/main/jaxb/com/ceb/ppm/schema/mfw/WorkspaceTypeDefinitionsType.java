@@ -5,7 +5,6 @@
 // Generated on: 2013.05.13 at 12:50:52 PM EDT 
 //
 
-
 package com.ceb.ppm.schema.mfw;
 
 import java.util.ArrayList;
@@ -15,11 +14,13 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for WorkspaceTypeDefinitionsType complex type.
+ * <p>
+ * Java class for WorkspaceTypeDefinitionsType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="WorkspaceTypeDefinitionsType">
@@ -36,41 +37,40 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "WorkspaceTypeDefinitionsType", propOrder = {
-    "typeDefinition"
-})
+@XmlType(name = "WorkspaceTypeDefinitionsType", propOrder = { "typeDefinition" })
 public class WorkspaceTypeDefinitionsType {
 
-    @XmlElement(name = "TypeDefinition")
-    protected List<TypeDefinitionType> typeDefinition;
+	@XmlElement(name = "TypeDefinition")
+	protected List<TypeDefinitionType> typeDefinition;
 
-    /**
-     * Gets the value of the typeDefinition property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the typeDefinition property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getTypeDefinition().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link TypeDefinitionType }
-     * 
-     * 
-     */
-    public List<TypeDefinitionType> getTypeDefinition() {
-        if (typeDefinition == null) {
-            typeDefinition = new ArrayList<TypeDefinitionType>();
-        }
-        return this.typeDefinition;
-    }
+	/**
+	 * Gets the value of the typeDefinition property.
+	 * 
+	 * <p>
+	 * This accessor method returns a reference to the live list, not a
+	 * snapshot. Therefore any modification you make to the returned list will
+	 * be present inside the JAXB object. This is why there is not a
+	 * <CODE>set</CODE> method for the typeDefinition property.
+	 * 
+	 * <p>
+	 * For example, to add a new item, do as follows:
+	 * 
+	 * <pre>
+	 * getTypeDefinition().add(newItem);
+	 * </pre>
+	 * 
+	 * 
+	 * <p>
+	 * Objects of the following type(s) are allowed in the list
+	 * {@link TypeDefinitionType }
+	 * 
+	 * 
+	 */
+	public List<TypeDefinitionType> getTypeDefinition() {
+		if (typeDefinition == null) {
+			typeDefinition = new ArrayList<TypeDefinitionType>();
+		}
+		return this.typeDefinition;
+	}
 
 }

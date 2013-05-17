@@ -5,7 +5,6 @@
 // Generated on: 2013.05.13 at 12:50:52 PM EDT 
 //
 
-
 package com.ceb.ppm.schema.mfw;
 
 import java.util.ArrayList;
@@ -15,11 +14,13 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for TestCaseStepsType complex type.
+ * <p>
+ * Java class for TestCaseStepsType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="TestCaseStepsType">
@@ -36,41 +37,40 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TestCaseStepsType", propOrder = {
-    "testCaseStep"
-})
+@XmlType(name = "TestCaseStepsType", propOrder = { "testCaseStep" })
 public class TestCaseStepsType {
 
-    @XmlElement(name = "TestCaseStep")
-    protected List<TestCaseStepType> testCaseStep;
+	@XmlElement(name = "TestCaseStep")
+	protected List<TestCaseStepType> testCaseStep;
 
-    /**
-     * Gets the value of the testCaseStep property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the testCaseStep property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getTestCaseStep().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link TestCaseStepType }
-     * 
-     * 
-     */
-    public List<TestCaseStepType> getTestCaseStep() {
-        if (testCaseStep == null) {
-            testCaseStep = new ArrayList<TestCaseStepType>();
-        }
-        return this.testCaseStep;
-    }
+	/**
+	 * Gets the value of the testCaseStep property.
+	 * 
+	 * <p>
+	 * This accessor method returns a reference to the live list, not a
+	 * snapshot. Therefore any modification you make to the returned list will
+	 * be present inside the JAXB object. This is why there is not a
+	 * <CODE>set</CODE> method for the testCaseStep property.
+	 * 
+	 * <p>
+	 * For example, to add a new item, do as follows:
+	 * 
+	 * <pre>
+	 * getTestCaseStep().add(newItem);
+	 * </pre>
+	 * 
+	 * 
+	 * <p>
+	 * Objects of the following type(s) are allowed in the list
+	 * {@link TestCaseStepType }
+	 * 
+	 * 
+	 */
+	public List<TestCaseStepType> getTestCaseStep() {
+		if (testCaseStep == null) {
+			testCaseStep = new ArrayList<TestCaseStepType>();
+		}
+		return this.testCaseStep;
+	}
 
 }

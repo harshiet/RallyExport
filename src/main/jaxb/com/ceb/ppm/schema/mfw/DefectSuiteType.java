@@ -5,7 +5,6 @@
 // Generated on: 2013.05.13 at 12:50:52 PM EDT 
 //
 
-
 package com.ceb.ppm.schema.mfw;
 
 import java.math.BigDecimal;
@@ -16,11 +15,13 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
 
-
 /**
- * <p>Java class for DefectSuiteType complex type.
+ * <p>
+ * Java class for DefectSuiteType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="DefectSuiteType">
@@ -55,526 +56,449 @@ import javax.xml.datatype.XMLGregorianCalendar;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "DefectSuiteType", propOrder = {
-    "acceptedDate",
-    "attachments",
-    "blocked",
-    "blockedReason",
-    "blocker",
-    "defectStatus",
-    "defects",
-    "inProgressDate",
-    "iteration",
-    "_package",
-    "planEstimate",
-    "rank",
-    "release",
-    "scheduleState",
-    "taskActualTotal",
-    "taskEstimateTotal",
-    "taskRemainingTotal",
-    "taskStatus",
-    "tasks"
-})
-public class DefectSuiteType
-    extends ArtifactType
-{
+@XmlType(name = "DefectSuiteType", propOrder = { "acceptedDate", "attachments", "blocked", "blockedReason", "blocker",
+		"defectStatus", "defects", "inProgressDate", "iteration", "_package", "planEstimate", "rank", "release",
+		"scheduleState", "taskActualTotal", "taskEstimateTotal", "taskRemainingTotal", "taskStatus", "tasks" })
+public class DefectSuiteType extends ArtifactType {
 
-    @XmlElement(name = "AcceptedDate")
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar acceptedDate;
-    @XmlElement(name = "Attachments")
-    protected DefectSuiteAttachmentsType attachments;
-    @XmlElement(name = "Blocked")
-    protected Boolean blocked;
-    @XmlElement(name = "BlockedReason")
-    protected String blockedReason;
-    @XmlElement(name = "Blocker")
-    protected BlockerType blocker;
-    @XmlElement(name = "DefectStatus")
-    protected String defectStatus;
-    @XmlElement(name = "Defects")
-    protected DefectSuiteDefectsType defects;
-    @XmlElement(name = "InProgressDate")
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar inProgressDate;
-    @XmlElement(name = "Iteration")
-    protected IterationType iteration;
-    @XmlElement(name = "Package")
-    protected String _package;
-    @XmlElement(name = "PlanEstimate")
-    protected Double planEstimate;
-    @XmlElement(name = "Rank")
-    protected BigDecimal rank;
-    @XmlElement(name = "Release")
-    protected ReleaseType release;
-    @XmlElement(name = "ScheduleState")
-    protected String scheduleState;
-    @XmlElement(name = "TaskActualTotal")
-    protected Double taskActualTotal;
-    @XmlElement(name = "TaskEstimateTotal")
-    protected Double taskEstimateTotal;
-    @XmlElement(name = "TaskRemainingTotal")
-    protected Double taskRemainingTotal;
-    @XmlElement(name = "TaskStatus")
-    protected String taskStatus;
-    @XmlElement(name = "Tasks")
-    protected DefectSuiteTasksType tasks;
+	@XmlElement(name = "AcceptedDate")
+	@XmlSchemaType(name = "dateTime")
+	protected XMLGregorianCalendar acceptedDate;
+	@XmlElement(name = "Attachments")
+	protected DefectSuiteAttachmentsType attachments;
+	@XmlElement(name = "Blocked")
+	protected Boolean blocked;
+	@XmlElement(name = "BlockedReason")
+	protected String blockedReason;
+	@XmlElement(name = "Blocker")
+	protected BlockerType blocker;
+	@XmlElement(name = "DefectStatus")
+	protected String defectStatus;
+	@XmlElement(name = "Defects")
+	protected DefectSuiteDefectsType defects;
+	@XmlElement(name = "InProgressDate")
+	@XmlSchemaType(name = "dateTime")
+	protected XMLGregorianCalendar inProgressDate;
+	@XmlElement(name = "Iteration")
+	protected IterationType iteration;
+	@XmlElement(name = "Package")
+	protected String _package;
+	@XmlElement(name = "PlanEstimate")
+	protected Double planEstimate;
+	@XmlElement(name = "Rank")
+	protected BigDecimal rank;
+	@XmlElement(name = "Release")
+	protected ReleaseType release;
+	@XmlElement(name = "ScheduleState")
+	protected String scheduleState;
+	@XmlElement(name = "TaskActualTotal")
+	protected Double taskActualTotal;
+	@XmlElement(name = "TaskEstimateTotal")
+	protected Double taskEstimateTotal;
+	@XmlElement(name = "TaskRemainingTotal")
+	protected Double taskRemainingTotal;
+	@XmlElement(name = "TaskStatus")
+	protected String taskStatus;
+	@XmlElement(name = "Tasks")
+	protected DefectSuiteTasksType tasks;
 
-    /**
-     * Gets the value of the acceptedDate property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public XMLGregorianCalendar getAcceptedDate() {
-        return acceptedDate;
-    }
+	/**
+	 * Gets the value of the acceptedDate property.
+	 * 
+	 * @return possible object is {@link XMLGregorianCalendar }
+	 * 
+	 */
+	public XMLGregorianCalendar getAcceptedDate() {
+		return acceptedDate;
+	}
 
-    /**
-     * Sets the value of the acceptedDate property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setAcceptedDate(XMLGregorianCalendar value) {
-        this.acceptedDate = value;
-    }
+	/**
+	 * Sets the value of the acceptedDate property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link XMLGregorianCalendar }
+	 * 
+	 */
+	public void setAcceptedDate(XMLGregorianCalendar value) {
+		this.acceptedDate = value;
+	}
 
-    /**
-     * Gets the value of the attachments property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link DefectSuiteAttachmentsType }
-     *     
-     */
-    public DefectSuiteAttachmentsType getAttachments() {
-        return attachments;
-    }
+	/**
+	 * Gets the value of the attachments property.
+	 * 
+	 * @return possible object is {@link DefectSuiteAttachmentsType }
+	 * 
+	 */
+	public DefectSuiteAttachmentsType getAttachments() {
+		return attachments;
+	}
 
-    /**
-     * Sets the value of the attachments property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link DefectSuiteAttachmentsType }
-     *     
-     */
-    public void setAttachments(DefectSuiteAttachmentsType value) {
-        this.attachments = value;
-    }
+	/**
+	 * Sets the value of the attachments property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link DefectSuiteAttachmentsType }
+	 * 
+	 */
+	public void setAttachments(DefectSuiteAttachmentsType value) {
+		this.attachments = value;
+	}
 
-    /**
-     * Gets the value of the blocked property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
-     */
-    public Boolean isBlocked() {
-        return blocked;
-    }
+	/**
+	 * Gets the value of the blocked property.
+	 * 
+	 * @return possible object is {@link Boolean }
+	 * 
+	 */
+	public Boolean isBlocked() {
+		return blocked;
+	}
 
-    /**
-     * Sets the value of the blocked property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setBlocked(Boolean value) {
-        this.blocked = value;
-    }
+	/**
+	 * Sets the value of the blocked property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Boolean }
+	 * 
+	 */
+	public void setBlocked(Boolean value) {
+		this.blocked = value;
+	}
 
-    /**
-     * Gets the value of the blockedReason property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getBlockedReason() {
-        return blockedReason;
-    }
+	/**
+	 * Gets the value of the blockedReason property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getBlockedReason() {
+		return blockedReason;
+	}
 
-    /**
-     * Sets the value of the blockedReason property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setBlockedReason(String value) {
-        this.blockedReason = value;
-    }
+	/**
+	 * Sets the value of the blockedReason property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setBlockedReason(String value) {
+		this.blockedReason = value;
+	}
 
-    /**
-     * Gets the value of the blocker property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link BlockerType }
-     *     
-     */
-    public BlockerType getBlocker() {
-        return blocker;
-    }
+	/**
+	 * Gets the value of the blocker property.
+	 * 
+	 * @return possible object is {@link BlockerType }
+	 * 
+	 */
+	public BlockerType getBlocker() {
+		return blocker;
+	}
 
-    /**
-     * Sets the value of the blocker property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BlockerType }
-     *     
-     */
-    public void setBlocker(BlockerType value) {
-        this.blocker = value;
-    }
+	/**
+	 * Sets the value of the blocker property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link BlockerType }
+	 * 
+	 */
+	public void setBlocker(BlockerType value) {
+		this.blocker = value;
+	}
 
-    /**
-     * Gets the value of the defectStatus property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getDefectStatus() {
-        return defectStatus;
-    }
+	/**
+	 * Gets the value of the defectStatus property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getDefectStatus() {
+		return defectStatus;
+	}
 
-    /**
-     * Sets the value of the defectStatus property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDefectStatus(String value) {
-        this.defectStatus = value;
-    }
+	/**
+	 * Sets the value of the defectStatus property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setDefectStatus(String value) {
+		this.defectStatus = value;
+	}
 
-    /**
-     * Gets the value of the defects property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link DefectSuiteDefectsType }
-     *     
-     */
-    public DefectSuiteDefectsType getDefects() {
-        return defects;
-    }
+	/**
+	 * Gets the value of the defects property.
+	 * 
+	 * @return possible object is {@link DefectSuiteDefectsType }
+	 * 
+	 */
+	public DefectSuiteDefectsType getDefects() {
+		return defects;
+	}
 
-    /**
-     * Sets the value of the defects property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link DefectSuiteDefectsType }
-     *     
-     */
-    public void setDefects(DefectSuiteDefectsType value) {
-        this.defects = value;
-    }
+	/**
+	 * Sets the value of the defects property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link DefectSuiteDefectsType }
+	 * 
+	 */
+	public void setDefects(DefectSuiteDefectsType value) {
+		this.defects = value;
+	}
 
-    /**
-     * Gets the value of the inProgressDate property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public XMLGregorianCalendar getInProgressDate() {
-        return inProgressDate;
-    }
+	/**
+	 * Gets the value of the inProgressDate property.
+	 * 
+	 * @return possible object is {@link XMLGregorianCalendar }
+	 * 
+	 */
+	public XMLGregorianCalendar getInProgressDate() {
+		return inProgressDate;
+	}
 
-    /**
-     * Sets the value of the inProgressDate property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setInProgressDate(XMLGregorianCalendar value) {
-        this.inProgressDate = value;
-    }
+	/**
+	 * Sets the value of the inProgressDate property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link XMLGregorianCalendar }
+	 * 
+	 */
+	public void setInProgressDate(XMLGregorianCalendar value) {
+		this.inProgressDate = value;
+	}
 
-    /**
-     * Gets the value of the iteration property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link IterationType }
-     *     
-     */
-    public IterationType getIteration() {
-        return iteration;
-    }
+	/**
+	 * Gets the value of the iteration property.
+	 * 
+	 * @return possible object is {@link IterationType }
+	 * 
+	 */
+	public IterationType getIteration() {
+		return iteration;
+	}
 
-    /**
-     * Sets the value of the iteration property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link IterationType }
-     *     
-     */
-    public void setIteration(IterationType value) {
-        this.iteration = value;
-    }
+	/**
+	 * Sets the value of the iteration property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link IterationType }
+	 * 
+	 */
+	public void setIteration(IterationType value) {
+		this.iteration = value;
+	}
 
-    /**
-     * Gets the value of the package property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getPackage() {
-        return _package;
-    }
+	/**
+	 * Gets the value of the package property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getPackage() {
+		return _package;
+	}
 
-    /**
-     * Sets the value of the package property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPackage(String value) {
-        this._package = value;
-    }
+	/**
+	 * Sets the value of the package property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setPackage(String value) {
+		this._package = value;
+	}
 
-    /**
-     * Gets the value of the planEstimate property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
-     */
-    public Double getPlanEstimate() {
-        return planEstimate;
-    }
+	/**
+	 * Gets the value of the planEstimate property.
+	 * 
+	 * @return possible object is {@link Double }
+	 * 
+	 */
+	public Double getPlanEstimate() {
+		return planEstimate;
+	}
 
-    /**
-     * Sets the value of the planEstimate property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setPlanEstimate(Double value) {
-        this.planEstimate = value;
-    }
+	/**
+	 * Sets the value of the planEstimate property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Double }
+	 * 
+	 */
+	public void setPlanEstimate(Double value) {
+		this.planEstimate = value;
+	}
 
-    /**
-     * Gets the value of the rank property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigDecimal }
-     *     
-     */
-    public BigDecimal getRank() {
-        return rank;
-    }
+	/**
+	 * Gets the value of the rank property.
+	 * 
+	 * @return possible object is {@link BigDecimal }
+	 * 
+	 */
+	public BigDecimal getRank() {
+		return rank;
+	}
 
-    /**
-     * Sets the value of the rank property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigDecimal }
-     *     
-     */
-    public void setRank(BigDecimal value) {
-        this.rank = value;
-    }
+	/**
+	 * Sets the value of the rank property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link BigDecimal }
+	 * 
+	 */
+	public void setRank(BigDecimal value) {
+		this.rank = value;
+	}
 
-    /**
-     * Gets the value of the release property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ReleaseType }
-     *     
-     */
-    public ReleaseType getRelease() {
-        return release;
-    }
+	/**
+	 * Gets the value of the release property.
+	 * 
+	 * @return possible object is {@link ReleaseType }
+	 * 
+	 */
+	public ReleaseType getRelease() {
+		return release;
+	}
 
-    /**
-     * Sets the value of the release property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ReleaseType }
-     *     
-     */
-    public void setRelease(ReleaseType value) {
-        this.release = value;
-    }
+	/**
+	 * Sets the value of the release property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link ReleaseType }
+	 * 
+	 */
+	public void setRelease(ReleaseType value) {
+		this.release = value;
+	}
 
-    /**
-     * Gets the value of the scheduleState property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getScheduleState() {
-        return scheduleState;
-    }
+	/**
+	 * Gets the value of the scheduleState property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getScheduleState() {
+		return scheduleState;
+	}
 
-    /**
-     * Sets the value of the scheduleState property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setScheduleState(String value) {
-        this.scheduleState = value;
-    }
+	/**
+	 * Sets the value of the scheduleState property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setScheduleState(String value) {
+		this.scheduleState = value;
+	}
 
-    /**
-     * Gets the value of the taskActualTotal property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
-     */
-    public Double getTaskActualTotal() {
-        return taskActualTotal;
-    }
+	/**
+	 * Gets the value of the taskActualTotal property.
+	 * 
+	 * @return possible object is {@link Double }
+	 * 
+	 */
+	public Double getTaskActualTotal() {
+		return taskActualTotal;
+	}
 
-    /**
-     * Sets the value of the taskActualTotal property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setTaskActualTotal(Double value) {
-        this.taskActualTotal = value;
-    }
+	/**
+	 * Sets the value of the taskActualTotal property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Double }
+	 * 
+	 */
+	public void setTaskActualTotal(Double value) {
+		this.taskActualTotal = value;
+	}
 
-    /**
-     * Gets the value of the taskEstimateTotal property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
-     */
-    public Double getTaskEstimateTotal() {
-        return taskEstimateTotal;
-    }
+	/**
+	 * Gets the value of the taskEstimateTotal property.
+	 * 
+	 * @return possible object is {@link Double }
+	 * 
+	 */
+	public Double getTaskEstimateTotal() {
+		return taskEstimateTotal;
+	}
 
-    /**
-     * Sets the value of the taskEstimateTotal property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setTaskEstimateTotal(Double value) {
-        this.taskEstimateTotal = value;
-    }
+	/**
+	 * Sets the value of the taskEstimateTotal property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Double }
+	 * 
+	 */
+	public void setTaskEstimateTotal(Double value) {
+		this.taskEstimateTotal = value;
+	}
 
-    /**
-     * Gets the value of the taskRemainingTotal property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
-     */
-    public Double getTaskRemainingTotal() {
-        return taskRemainingTotal;
-    }
+	/**
+	 * Gets the value of the taskRemainingTotal property.
+	 * 
+	 * @return possible object is {@link Double }
+	 * 
+	 */
+	public Double getTaskRemainingTotal() {
+		return taskRemainingTotal;
+	}
 
-    /**
-     * Sets the value of the taskRemainingTotal property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setTaskRemainingTotal(Double value) {
-        this.taskRemainingTotal = value;
-    }
+	/**
+	 * Sets the value of the taskRemainingTotal property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Double }
+	 * 
+	 */
+	public void setTaskRemainingTotal(Double value) {
+		this.taskRemainingTotal = value;
+	}
 
-    /**
-     * Gets the value of the taskStatus property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getTaskStatus() {
-        return taskStatus;
-    }
+	/**
+	 * Gets the value of the taskStatus property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getTaskStatus() {
+		return taskStatus;
+	}
 
-    /**
-     * Sets the value of the taskStatus property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setTaskStatus(String value) {
-        this.taskStatus = value;
-    }
+	/**
+	 * Sets the value of the taskStatus property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setTaskStatus(String value) {
+		this.taskStatus = value;
+	}
 
-    /**
-     * Gets the value of the tasks property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link DefectSuiteTasksType }
-     *     
-     */
-    public DefectSuiteTasksType getTasks() {
-        return tasks;
-    }
+	/**
+	 * Gets the value of the tasks property.
+	 * 
+	 * @return possible object is {@link DefectSuiteTasksType }
+	 * 
+	 */
+	public DefectSuiteTasksType getTasks() {
+		return tasks;
+	}
 
-    /**
-     * Sets the value of the tasks property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link DefectSuiteTasksType }
-     *     
-     */
-    public void setTasks(DefectSuiteTasksType value) {
-        this.tasks = value;
-    }
+	/**
+	 * Sets the value of the tasks property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link DefectSuiteTasksType }
+	 * 
+	 */
+	public void setTasks(DefectSuiteTasksType value) {
+		this.tasks = value;
+	}
 
 }

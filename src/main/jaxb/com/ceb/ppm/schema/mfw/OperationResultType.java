@@ -5,7 +5,6 @@
 // Generated on: 2013.05.13 at 12:50:52 PM EDT 
 //
 
-
 package com.ceb.ppm.schema.mfw;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -14,11 +13,13 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for OperationResultType complex type.
+ * <p>
+ * Java class for OperationResultType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="OperationResultType">
@@ -36,69 +37,55 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "OperationResultType", propOrder = {
-    "errors",
-    "warnings"
-})
-@XmlSeeAlso({
-    QueryResultType.class,
-    CreateResultType.class
-})
-public class OperationResultType
-    extends WSObject
-{
+@XmlType(name = "OperationResultType", propOrder = { "errors", "warnings" })
+@XmlSeeAlso({ QueryResultType.class, CreateResultType.class })
+public class OperationResultType extends WSObject {
 
-    @XmlElement(name = "Errors")
-    protected OperationResultErrorsType errors;
-    @XmlElement(name = "Warnings")
-    protected OperationResultWarningsType warnings;
+	@XmlElement(name = "Errors")
+	protected OperationResultErrorsType errors;
+	@XmlElement(name = "Warnings")
+	protected OperationResultWarningsType warnings;
 
-    /**
-     * Gets the value of the errors property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link OperationResultErrorsType }
-     *     
-     */
-    public OperationResultErrorsType getErrors() {
-        return errors;
-    }
+	/**
+	 * Gets the value of the errors property.
+	 * 
+	 * @return possible object is {@link OperationResultErrorsType }
+	 * 
+	 */
+	public OperationResultErrorsType getErrors() {
+		return errors;
+	}
 
-    /**
-     * Sets the value of the errors property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link OperationResultErrorsType }
-     *     
-     */
-    public void setErrors(OperationResultErrorsType value) {
-        this.errors = value;
-    }
+	/**
+	 * Sets the value of the errors property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link OperationResultErrorsType }
+	 * 
+	 */
+	public void setErrors(OperationResultErrorsType value) {
+		this.errors = value;
+	}
 
-    /**
-     * Gets the value of the warnings property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link OperationResultWarningsType }
-     *     
-     */
-    public OperationResultWarningsType getWarnings() {
-        return warnings;
-    }
+	/**
+	 * Gets the value of the warnings property.
+	 * 
+	 * @return possible object is {@link OperationResultWarningsType }
+	 * 
+	 */
+	public OperationResultWarningsType getWarnings() {
+		return warnings;
+	}
 
-    /**
-     * Sets the value of the warnings property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link OperationResultWarningsType }
-     *     
-     */
-    public void setWarnings(OperationResultWarningsType value) {
-        this.warnings = value;
-    }
+	/**
+	 * Sets the value of the warnings property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link OperationResultWarningsType }
+	 * 
+	 */
+	public void setWarnings(OperationResultWarningsType value) {
+		this.warnings = value;
+	}
 
 }

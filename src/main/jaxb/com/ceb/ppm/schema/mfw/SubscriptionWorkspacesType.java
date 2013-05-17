@@ -5,7 +5,6 @@
 // Generated on: 2013.05.13 at 12:50:52 PM EDT 
 //
 
-
 package com.ceb.ppm.schema.mfw;
 
 import java.util.ArrayList;
@@ -15,11 +14,13 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for SubscriptionWorkspacesType complex type.
+ * <p>
+ * Java class for SubscriptionWorkspacesType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="SubscriptionWorkspacesType">
@@ -36,41 +37,40 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "SubscriptionWorkspacesType", propOrder = {
-    "workspace"
-})
+@XmlType(name = "SubscriptionWorkspacesType", propOrder = { "workspace" })
 public class SubscriptionWorkspacesType {
 
-    @XmlElement(name = "Workspace")
-    protected List<WorkspaceType> workspace;
+	@XmlElement(name = "Workspace")
+	protected List<WorkspaceType> workspace;
 
-    /**
-     * Gets the value of the workspace property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the workspace property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getWorkspace().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link WorkspaceType }
-     * 
-     * 
-     */
-    public List<WorkspaceType> getWorkspace() {
-        if (workspace == null) {
-            workspace = new ArrayList<WorkspaceType>();
-        }
-        return this.workspace;
-    }
+	/**
+	 * Gets the value of the workspace property.
+	 * 
+	 * <p>
+	 * This accessor method returns a reference to the live list, not a
+	 * snapshot. Therefore any modification you make to the returned list will
+	 * be present inside the JAXB object. This is why there is not a
+	 * <CODE>set</CODE> method for the workspace property.
+	 * 
+	 * <p>
+	 * For example, to add a new item, do as follows:
+	 * 
+	 * <pre>
+	 * getWorkspace().add(newItem);
+	 * </pre>
+	 * 
+	 * 
+	 * <p>
+	 * Objects of the following type(s) are allowed in the list
+	 * {@link WorkspaceType }
+	 * 
+	 * 
+	 */
+	public List<WorkspaceType> getWorkspace() {
+		if (workspace == null) {
+			workspace = new ArrayList<WorkspaceType>();
+		}
+		return this.workspace;
+	}
 
 }

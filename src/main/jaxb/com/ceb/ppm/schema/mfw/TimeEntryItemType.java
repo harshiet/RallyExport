@@ -5,7 +5,6 @@
 // Generated on: 2013.05.13 at 12:50:52 PM EDT 
 //
 
-
 package com.ceb.ppm.schema.mfw;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -15,11 +14,13 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
 
-
 /**
- * <p>Java class for TimeEntryItemType complex type.
+ * <p>
+ * Java class for TimeEntryItemType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="TimeEntryItemType">
@@ -45,282 +46,240 @@ import javax.xml.datatype.XMLGregorianCalendar;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TimeEntryItemType", propOrder = {
-    "project",
-    "projectDisplayString",
-    "revisionHistory",
-    "task",
-    "taskDisplayString",
-    "user",
-    "values",
-    "weekStartDate",
-    "workProduct",
-    "workProductDisplayString"
-})
-public class TimeEntryItemType
-    extends WorkspaceDomainObjectType
-{
+@XmlType(name = "TimeEntryItemType", propOrder = { "project", "projectDisplayString", "revisionHistory", "task",
+		"taskDisplayString", "user", "values", "weekStartDate", "workProduct", "workProductDisplayString" })
+public class TimeEntryItemType extends WorkspaceDomainObjectType {
 
-    @XmlElement(name = "Project")
-    protected ProjectType project;
-    @XmlElement(name = "ProjectDisplayString")
-    protected String projectDisplayString;
-    @XmlElement(name = "RevisionHistory")
-    protected RevisionHistoryType revisionHistory;
-    @XmlElement(name = "Task")
-    protected TaskType task;
-    @XmlElement(name = "TaskDisplayString")
-    protected String taskDisplayString;
-    @XmlElement(name = "User")
-    protected UserType user;
-    @XmlElement(name = "Values")
-    protected TimeEntryItemValuesType values;
-    @XmlElement(name = "WeekStartDate")
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar weekStartDate;
-    @XmlElement(name = "WorkProduct")
-    protected ArtifactType workProduct;
-    @XmlElement(name = "WorkProductDisplayString")
-    protected String workProductDisplayString;
+	@XmlElement(name = "Project")
+	protected ProjectType project;
+	@XmlElement(name = "ProjectDisplayString")
+	protected String projectDisplayString;
+	@XmlElement(name = "RevisionHistory")
+	protected RevisionHistoryType revisionHistory;
+	@XmlElement(name = "Task")
+	protected TaskType task;
+	@XmlElement(name = "TaskDisplayString")
+	protected String taskDisplayString;
+	@XmlElement(name = "User")
+	protected UserType user;
+	@XmlElement(name = "Values")
+	protected TimeEntryItemValuesType values;
+	@XmlElement(name = "WeekStartDate")
+	@XmlSchemaType(name = "dateTime")
+	protected XMLGregorianCalendar weekStartDate;
+	@XmlElement(name = "WorkProduct")
+	protected ArtifactType workProduct;
+	@XmlElement(name = "WorkProductDisplayString")
+	protected String workProductDisplayString;
 
-    /**
-     * Gets the value of the project property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ProjectType }
-     *     
-     */
-    public ProjectType getProject() {
-        return project;
-    }
+	/**
+	 * Gets the value of the project property.
+	 * 
+	 * @return possible object is {@link ProjectType }
+	 * 
+	 */
+	public ProjectType getProject() {
+		return project;
+	}
 
-    /**
-     * Sets the value of the project property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ProjectType }
-     *     
-     */
-    public void setProject(ProjectType value) {
-        this.project = value;
-    }
+	/**
+	 * Sets the value of the project property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link ProjectType }
+	 * 
+	 */
+	public void setProject(ProjectType value) {
+		this.project = value;
+	}
 
-    /**
-     * Gets the value of the projectDisplayString property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getProjectDisplayString() {
-        return projectDisplayString;
-    }
+	/**
+	 * Gets the value of the projectDisplayString property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getProjectDisplayString() {
+		return projectDisplayString;
+	}
 
-    /**
-     * Sets the value of the projectDisplayString property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setProjectDisplayString(String value) {
-        this.projectDisplayString = value;
-    }
+	/**
+	 * Sets the value of the projectDisplayString property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setProjectDisplayString(String value) {
+		this.projectDisplayString = value;
+	}
 
-    /**
-     * Gets the value of the revisionHistory property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link RevisionHistoryType }
-     *     
-     */
-    public RevisionHistoryType getRevisionHistory() {
-        return revisionHistory;
-    }
+	/**
+	 * Gets the value of the revisionHistory property.
+	 * 
+	 * @return possible object is {@link RevisionHistoryType }
+	 * 
+	 */
+	public RevisionHistoryType getRevisionHistory() {
+		return revisionHistory;
+	}
 
-    /**
-     * Sets the value of the revisionHistory property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RevisionHistoryType }
-     *     
-     */
-    public void setRevisionHistory(RevisionHistoryType value) {
-        this.revisionHistory = value;
-    }
+	/**
+	 * Sets the value of the revisionHistory property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link RevisionHistoryType }
+	 * 
+	 */
+	public void setRevisionHistory(RevisionHistoryType value) {
+		this.revisionHistory = value;
+	}
 
-    /**
-     * Gets the value of the task property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link TaskType }
-     *     
-     */
-    public TaskType getTask() {
-        return task;
-    }
+	/**
+	 * Gets the value of the task property.
+	 * 
+	 * @return possible object is {@link TaskType }
+	 * 
+	 */
+	public TaskType getTask() {
+		return task;
+	}
 
-    /**
-     * Sets the value of the task property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link TaskType }
-     *     
-     */
-    public void setTask(TaskType value) {
-        this.task = value;
-    }
+	/**
+	 * Sets the value of the task property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link TaskType }
+	 * 
+	 */
+	public void setTask(TaskType value) {
+		this.task = value;
+	}
 
-    /**
-     * Gets the value of the taskDisplayString property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getTaskDisplayString() {
-        return taskDisplayString;
-    }
+	/**
+	 * Gets the value of the taskDisplayString property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getTaskDisplayString() {
+		return taskDisplayString;
+	}
 
-    /**
-     * Sets the value of the taskDisplayString property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setTaskDisplayString(String value) {
-        this.taskDisplayString = value;
-    }
+	/**
+	 * Sets the value of the taskDisplayString property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setTaskDisplayString(String value) {
+		this.taskDisplayString = value;
+	}
 
-    /**
-     * Gets the value of the user property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link UserType }
-     *     
-     */
-    public UserType getUser() {
-        return user;
-    }
+	/**
+	 * Gets the value of the user property.
+	 * 
+	 * @return possible object is {@link UserType }
+	 * 
+	 */
+	public UserType getUser() {
+		return user;
+	}
 
-    /**
-     * Sets the value of the user property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link UserType }
-     *     
-     */
-    public void setUser(UserType value) {
-        this.user = value;
-    }
+	/**
+	 * Sets the value of the user property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link UserType }
+	 * 
+	 */
+	public void setUser(UserType value) {
+		this.user = value;
+	}
 
-    /**
-     * Gets the value of the values property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link TimeEntryItemValuesType }
-     *     
-     */
-    public TimeEntryItemValuesType getValues() {
-        return values;
-    }
+	/**
+	 * Gets the value of the values property.
+	 * 
+	 * @return possible object is {@link TimeEntryItemValuesType }
+	 * 
+	 */
+	public TimeEntryItemValuesType getValues() {
+		return values;
+	}
 
-    /**
-     * Sets the value of the values property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link TimeEntryItemValuesType }
-     *     
-     */
-    public void setValues(TimeEntryItemValuesType value) {
-        this.values = value;
-    }
+	/**
+	 * Sets the value of the values property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link TimeEntryItemValuesType }
+	 * 
+	 */
+	public void setValues(TimeEntryItemValuesType value) {
+		this.values = value;
+	}
 
-    /**
-     * Gets the value of the weekStartDate property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public XMLGregorianCalendar getWeekStartDate() {
-        return weekStartDate;
-    }
+	/**
+	 * Gets the value of the weekStartDate property.
+	 * 
+	 * @return possible object is {@link XMLGregorianCalendar }
+	 * 
+	 */
+	public XMLGregorianCalendar getWeekStartDate() {
+		return weekStartDate;
+	}
 
-    /**
-     * Sets the value of the weekStartDate property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setWeekStartDate(XMLGregorianCalendar value) {
-        this.weekStartDate = value;
-    }
+	/**
+	 * Sets the value of the weekStartDate property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link XMLGregorianCalendar }
+	 * 
+	 */
+	public void setWeekStartDate(XMLGregorianCalendar value) {
+		this.weekStartDate = value;
+	}
 
-    /**
-     * Gets the value of the workProduct property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ArtifactType }
-     *     
-     */
-    public ArtifactType getWorkProduct() {
-        return workProduct;
-    }
+	/**
+	 * Gets the value of the workProduct property.
+	 * 
+	 * @return possible object is {@link ArtifactType }
+	 * 
+	 */
+	public ArtifactType getWorkProduct() {
+		return workProduct;
+	}
 
-    /**
-     * Sets the value of the workProduct property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ArtifactType }
-     *     
-     */
-    public void setWorkProduct(ArtifactType value) {
-        this.workProduct = value;
-    }
+	/**
+	 * Sets the value of the workProduct property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link ArtifactType }
+	 * 
+	 */
+	public void setWorkProduct(ArtifactType value) {
+		this.workProduct = value;
+	}
 
-    /**
-     * Gets the value of the workProductDisplayString property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getWorkProductDisplayString() {
-        return workProductDisplayString;
-    }
+	/**
+	 * Gets the value of the workProductDisplayString property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getWorkProductDisplayString() {
+		return workProductDisplayString;
+	}
 
-    /**
-     * Sets the value of the workProductDisplayString property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setWorkProductDisplayString(String value) {
-        this.workProductDisplayString = value;
-    }
+	/**
+	 * Sets the value of the workProductDisplayString property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setWorkProductDisplayString(String value) {
+		this.workProductDisplayString = value;
+	}
 
 }

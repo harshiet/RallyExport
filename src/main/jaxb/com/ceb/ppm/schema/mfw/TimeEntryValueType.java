@@ -5,7 +5,6 @@
 // Generated on: 2013.05.13 at 12:50:52 PM EDT 
 //
 
-
 package com.ceb.ppm.schema.mfw;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -15,11 +14,13 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
 
-
 /**
- * <p>Java class for TimeEntryValueType complex type.
+ * <p>
+ * Java class for TimeEntryValueType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="TimeEntryValueType">
@@ -40,148 +41,126 @@ import javax.xml.datatype.XMLGregorianCalendar;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TimeEntryValueType", propOrder = {
-    "dateVal",
-    "hours",
-    "lastUpdated",
-    "revisionHistory",
-    "timeEntryItem"
-})
-public class TimeEntryValueType
-    extends WorkspaceDomainObjectType
-{
+@XmlType(name = "TimeEntryValueType", propOrder = { "dateVal", "hours", "lastUpdated", "revisionHistory",
+		"timeEntryItem" })
+public class TimeEntryValueType extends WorkspaceDomainObjectType {
 
-    @XmlElement(name = "DateVal")
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar dateVal;
-    @XmlElement(name = "Hours")
-    protected Double hours;
-    @XmlElement(name = "LastUpdated")
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar lastUpdated;
-    @XmlElement(name = "RevisionHistory")
-    protected RevisionHistoryType revisionHistory;
-    @XmlElement(name = "TimeEntryItem")
-    protected TimeEntryItemType timeEntryItem;
+	@XmlElement(name = "DateVal")
+	@XmlSchemaType(name = "dateTime")
+	protected XMLGregorianCalendar dateVal;
+	@XmlElement(name = "Hours")
+	protected Double hours;
+	@XmlElement(name = "LastUpdated")
+	@XmlSchemaType(name = "dateTime")
+	protected XMLGregorianCalendar lastUpdated;
+	@XmlElement(name = "RevisionHistory")
+	protected RevisionHistoryType revisionHistory;
+	@XmlElement(name = "TimeEntryItem")
+	protected TimeEntryItemType timeEntryItem;
 
-    /**
-     * Gets the value of the dateVal property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public XMLGregorianCalendar getDateVal() {
-        return dateVal;
-    }
+	/**
+	 * Gets the value of the dateVal property.
+	 * 
+	 * @return possible object is {@link XMLGregorianCalendar }
+	 * 
+	 */
+	public XMLGregorianCalendar getDateVal() {
+		return dateVal;
+	}
 
-    /**
-     * Sets the value of the dateVal property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setDateVal(XMLGregorianCalendar value) {
-        this.dateVal = value;
-    }
+	/**
+	 * Sets the value of the dateVal property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link XMLGregorianCalendar }
+	 * 
+	 */
+	public void setDateVal(XMLGregorianCalendar value) {
+		this.dateVal = value;
+	}
 
-    /**
-     * Gets the value of the hours property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
-     */
-    public Double getHours() {
-        return hours;
-    }
+	/**
+	 * Gets the value of the hours property.
+	 * 
+	 * @return possible object is {@link Double }
+	 * 
+	 */
+	public Double getHours() {
+		return hours;
+	}
 
-    /**
-     * Sets the value of the hours property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setHours(Double value) {
-        this.hours = value;
-    }
+	/**
+	 * Sets the value of the hours property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Double }
+	 * 
+	 */
+	public void setHours(Double value) {
+		this.hours = value;
+	}
 
-    /**
-     * Gets the value of the lastUpdated property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public XMLGregorianCalendar getLastUpdated() {
-        return lastUpdated;
-    }
+	/**
+	 * Gets the value of the lastUpdated property.
+	 * 
+	 * @return possible object is {@link XMLGregorianCalendar }
+	 * 
+	 */
+	public XMLGregorianCalendar getLastUpdated() {
+		return lastUpdated;
+	}
 
-    /**
-     * Sets the value of the lastUpdated property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setLastUpdated(XMLGregorianCalendar value) {
-        this.lastUpdated = value;
-    }
+	/**
+	 * Sets the value of the lastUpdated property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link XMLGregorianCalendar }
+	 * 
+	 */
+	public void setLastUpdated(XMLGregorianCalendar value) {
+		this.lastUpdated = value;
+	}
 
-    /**
-     * Gets the value of the revisionHistory property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link RevisionHistoryType }
-     *     
-     */
-    public RevisionHistoryType getRevisionHistory() {
-        return revisionHistory;
-    }
+	/**
+	 * Gets the value of the revisionHistory property.
+	 * 
+	 * @return possible object is {@link RevisionHistoryType }
+	 * 
+	 */
+	public RevisionHistoryType getRevisionHistory() {
+		return revisionHistory;
+	}
 
-    /**
-     * Sets the value of the revisionHistory property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RevisionHistoryType }
-     *     
-     */
-    public void setRevisionHistory(RevisionHistoryType value) {
-        this.revisionHistory = value;
-    }
+	/**
+	 * Sets the value of the revisionHistory property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link RevisionHistoryType }
+	 * 
+	 */
+	public void setRevisionHistory(RevisionHistoryType value) {
+		this.revisionHistory = value;
+	}
 
-    /**
-     * Gets the value of the timeEntryItem property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link TimeEntryItemType }
-     *     
-     */
-    public TimeEntryItemType getTimeEntryItem() {
-        return timeEntryItem;
-    }
+	/**
+	 * Gets the value of the timeEntryItem property.
+	 * 
+	 * @return possible object is {@link TimeEntryItemType }
+	 * 
+	 */
+	public TimeEntryItemType getTimeEntryItem() {
+		return timeEntryItem;
+	}
 
-    /**
-     * Sets the value of the timeEntryItem property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link TimeEntryItemType }
-     *     
-     */
-    public void setTimeEntryItem(TimeEntryItemType value) {
-        this.timeEntryItem = value;
-    }
+	/**
+	 * Sets the value of the timeEntryItem property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link TimeEntryItemType }
+	 * 
+	 */
+	public void setTimeEntryItem(TimeEntryItemType value) {
+		this.timeEntryItem = value;
+	}
 
 }

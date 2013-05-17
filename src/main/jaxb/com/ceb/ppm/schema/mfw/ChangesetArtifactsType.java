@@ -5,7 +5,6 @@
 // Generated on: 2013.05.13 at 12:50:52 PM EDT 
 //
 
-
 package com.ceb.ppm.schema.mfw;
 
 import java.util.ArrayList;
@@ -15,11 +14,13 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for ChangesetArtifactsType complex type.
+ * <p>
+ * Java class for ChangesetArtifactsType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="ChangesetArtifactsType">
@@ -36,41 +37,40 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ChangesetArtifactsType", propOrder = {
-    "artifact"
-})
+@XmlType(name = "ChangesetArtifactsType", propOrder = { "artifact" })
 public class ChangesetArtifactsType {
 
-    @XmlElement(name = "Artifact")
-    protected List<ArtifactType> artifact;
+	@XmlElement(name = "Artifact")
+	protected List<ArtifactType> artifact;
 
-    /**
-     * Gets the value of the artifact property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the artifact property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getArtifact().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link ArtifactType }
-     * 
-     * 
-     */
-    public List<ArtifactType> getArtifact() {
-        if (artifact == null) {
-            artifact = new ArrayList<ArtifactType>();
-        }
-        return this.artifact;
-    }
+	/**
+	 * Gets the value of the artifact property.
+	 * 
+	 * <p>
+	 * This accessor method returns a reference to the live list, not a
+	 * snapshot. Therefore any modification you make to the returned list will
+	 * be present inside the JAXB object. This is why there is not a
+	 * <CODE>set</CODE> method for the artifact property.
+	 * 
+	 * <p>
+	 * For example, to add a new item, do as follows:
+	 * 
+	 * <pre>
+	 * getArtifact().add(newItem);
+	 * </pre>
+	 * 
+	 * 
+	 * <p>
+	 * Objects of the following type(s) are allowed in the list
+	 * {@link ArtifactType }
+	 * 
+	 * 
+	 */
+	public List<ArtifactType> getArtifact() {
+		if (artifact == null) {
+			artifact = new ArrayList<ArtifactType>();
+		}
+		return this.artifact;
+	}
 
 }

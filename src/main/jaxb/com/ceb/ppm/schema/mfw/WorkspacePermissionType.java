@@ -5,7 +5,6 @@
 // Generated on: 2013.05.13 at 12:50:52 PM EDT 
 //
 
-
 package com.ceb.ppm.schema.mfw;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -13,11 +12,13 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for WorkspacePermissionType complex type.
+ * <p>
+ * Java class for WorkspacePermissionType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="WorkspacePermissionType">
@@ -34,38 +35,31 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "WorkspacePermissionType", propOrder = {
-    "workspace"
-})
-public class WorkspacePermissionType
-    extends UserPermissionType
-{
+@XmlType(name = "WorkspacePermissionType", propOrder = { "workspace" })
+public class WorkspacePermissionType extends UserPermissionType {
 
-    @XmlElement(name = "Workspace")
-    protected WorkspaceType workspace;
+	@XmlElement(name = "Workspace")
+	protected WorkspaceType workspace;
 
-    /**
-     * Gets the value of the workspace property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link WorkspaceType }
-     *     
-     */
-    public WorkspaceType getWorkspace() {
-        return workspace;
-    }
+	/**
+	 * Gets the value of the workspace property.
+	 * 
+	 * @return possible object is {@link WorkspaceType }
+	 * 
+	 */
+	public WorkspaceType getWorkspace() {
+		return workspace;
+	}
 
-    /**
-     * Sets the value of the workspace property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link WorkspaceType }
-     *     
-     */
-    public void setWorkspace(WorkspaceType value) {
-        this.workspace = value;
-    }
+	/**
+	 * Sets the value of the workspace property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link WorkspaceType }
+	 * 
+	 */
+	public void setWorkspace(WorkspaceType value) {
+		this.workspace = value;
+	}
 
 }

@@ -5,7 +5,6 @@
 // Generated on: 2013.05.13 at 12:50:52 PM EDT 
 //
 
-
 package com.ceb.ppm.schema.mfw;
 
 import java.util.ArrayList;
@@ -15,11 +14,13 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for ArtifactDiscussionType complex type.
+ * <p>
+ * Java class for ArtifactDiscussionType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="ArtifactDiscussionType">
@@ -36,41 +37,40 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ArtifactDiscussionType", propOrder = {
-    "conversationPost"
-})
+@XmlType(name = "ArtifactDiscussionType", propOrder = { "conversationPost" })
 public class ArtifactDiscussionType {
 
-    @XmlElement(name = "ConversationPost")
-    protected List<ConversationPostType> conversationPost;
+	@XmlElement(name = "ConversationPost")
+	protected List<ConversationPostType> conversationPost;
 
-    /**
-     * Gets the value of the conversationPost property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the conversationPost property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getConversationPost().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link ConversationPostType }
-     * 
-     * 
-     */
-    public List<ConversationPostType> getConversationPost() {
-        if (conversationPost == null) {
-            conversationPost = new ArrayList<ConversationPostType>();
-        }
-        return this.conversationPost;
-    }
+	/**
+	 * Gets the value of the conversationPost property.
+	 * 
+	 * <p>
+	 * This accessor method returns a reference to the live list, not a
+	 * snapshot. Therefore any modification you make to the returned list will
+	 * be present inside the JAXB object. This is why there is not a
+	 * <CODE>set</CODE> method for the conversationPost property.
+	 * 
+	 * <p>
+	 * For example, to add a new item, do as follows:
+	 * 
+	 * <pre>
+	 * getConversationPost().add(newItem);
+	 * </pre>
+	 * 
+	 * 
+	 * <p>
+	 * Objects of the following type(s) are allowed in the list
+	 * {@link ConversationPostType }
+	 * 
+	 * 
+	 */
+	public List<ConversationPostType> getConversationPost() {
+		if (conversationPost == null) {
+			conversationPost = new ArrayList<ConversationPostType>();
+		}
+		return this.conversationPost;
+	}
 
 }

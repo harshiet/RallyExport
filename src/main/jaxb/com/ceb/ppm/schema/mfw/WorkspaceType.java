@@ -5,7 +5,6 @@
 // Generated on: 2013.05.13 at 12:50:52 PM EDT 
 //
 
-
 package com.ceb.ppm.schema.mfw;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -13,11 +12,13 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for WorkspaceType complex type.
+ * <p>
+ * Java class for WorkspaceType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="WorkspaceType">
@@ -43,281 +44,239 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "WorkspaceType", propOrder = {
-    "description",
-    "name",
-    "notes",
-    "owner",
-    "projects",
-    "revisionHistory",
-    "state",
-    "style",
-    "typeDefinitions",
-    "workspaceConfiguration"
-})
-public class WorkspaceType
-    extends DomainObjectType
-{
+@XmlType(name = "WorkspaceType", propOrder = { "description", "name", "notes", "owner", "projects", "revisionHistory",
+		"state", "style", "typeDefinitions", "workspaceConfiguration" })
+public class WorkspaceType extends DomainObjectType {
 
-    @XmlElement(name = "Description")
-    protected String description;
-    @XmlElement(name = "Name")
-    protected String name;
-    @XmlElement(name = "Notes")
-    protected String notes;
-    @XmlElement(name = "Owner")
-    protected UserType owner;
-    @XmlElement(name = "Projects")
-    protected WorkspaceProjectsType projects;
-    @XmlElement(name = "RevisionHistory")
-    protected RevisionHistoryType revisionHistory;
-    @XmlElement(name = "State")
-    protected String state;
-    @XmlElement(name = "Style")
-    protected String style;
-    @XmlElement(name = "TypeDefinitions")
-    protected WorkspaceTypeDefinitionsType typeDefinitions;
-    @XmlElement(name = "WorkspaceConfiguration")
-    protected WorkspaceConfigurationType workspaceConfiguration;
+	@XmlElement(name = "Description")
+	protected String description;
+	@XmlElement(name = "Name")
+	protected String name;
+	@XmlElement(name = "Notes")
+	protected String notes;
+	@XmlElement(name = "Owner")
+	protected UserType owner;
+	@XmlElement(name = "Projects")
+	protected WorkspaceProjectsType projects;
+	@XmlElement(name = "RevisionHistory")
+	protected RevisionHistoryType revisionHistory;
+	@XmlElement(name = "State")
+	protected String state;
+	@XmlElement(name = "Style")
+	protected String style;
+	@XmlElement(name = "TypeDefinitions")
+	protected WorkspaceTypeDefinitionsType typeDefinitions;
+	@XmlElement(name = "WorkspaceConfiguration")
+	protected WorkspaceConfigurationType workspaceConfiguration;
 
-    /**
-     * Gets the value of the description property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getDescription() {
-        return description;
-    }
+	/**
+	 * Gets the value of the description property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getDescription() {
+		return description;
+	}
 
-    /**
-     * Sets the value of the description property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDescription(String value) {
-        this.description = value;
-    }
+	/**
+	 * Sets the value of the description property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setDescription(String value) {
+		this.description = value;
+	}
 
-    /**
-     * Gets the value of the name property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getName() {
-        return name;
-    }
+	/**
+	 * Gets the value of the name property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getName() {
+		return name;
+	}
 
-    /**
-     * Sets the value of the name property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setName(String value) {
-        this.name = value;
-    }
+	/**
+	 * Sets the value of the name property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setName(String value) {
+		this.name = value;
+	}
 
-    /**
-     * Gets the value of the notes property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getNotes() {
-        return notes;
-    }
+	/**
+	 * Gets the value of the notes property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getNotes() {
+		return notes;
+	}
 
-    /**
-     * Sets the value of the notes property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setNotes(String value) {
-        this.notes = value;
-    }
+	/**
+	 * Sets the value of the notes property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setNotes(String value) {
+		this.notes = value;
+	}
 
-    /**
-     * Gets the value of the owner property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link UserType }
-     *     
-     */
-    public UserType getOwner() {
-        return owner;
-    }
+	/**
+	 * Gets the value of the owner property.
+	 * 
+	 * @return possible object is {@link UserType }
+	 * 
+	 */
+	public UserType getOwner() {
+		return owner;
+	}
 
-    /**
-     * Sets the value of the owner property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link UserType }
-     *     
-     */
-    public void setOwner(UserType value) {
-        this.owner = value;
-    }
+	/**
+	 * Sets the value of the owner property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link UserType }
+	 * 
+	 */
+	public void setOwner(UserType value) {
+		this.owner = value;
+	}
 
-    /**
-     * Gets the value of the projects property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link WorkspaceProjectsType }
-     *     
-     */
-    public WorkspaceProjectsType getProjects() {
-        return projects;
-    }
+	/**
+	 * Gets the value of the projects property.
+	 * 
+	 * @return possible object is {@link WorkspaceProjectsType }
+	 * 
+	 */
+	public WorkspaceProjectsType getProjects() {
+		return projects;
+	}
 
-    /**
-     * Sets the value of the projects property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link WorkspaceProjectsType }
-     *     
-     */
-    public void setProjects(WorkspaceProjectsType value) {
-        this.projects = value;
-    }
+	/**
+	 * Sets the value of the projects property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link WorkspaceProjectsType }
+	 * 
+	 */
+	public void setProjects(WorkspaceProjectsType value) {
+		this.projects = value;
+	}
 
-    /**
-     * Gets the value of the revisionHistory property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link RevisionHistoryType }
-     *     
-     */
-    public RevisionHistoryType getRevisionHistory() {
-        return revisionHistory;
-    }
+	/**
+	 * Gets the value of the revisionHistory property.
+	 * 
+	 * @return possible object is {@link RevisionHistoryType }
+	 * 
+	 */
+	public RevisionHistoryType getRevisionHistory() {
+		return revisionHistory;
+	}
 
-    /**
-     * Sets the value of the revisionHistory property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RevisionHistoryType }
-     *     
-     */
-    public void setRevisionHistory(RevisionHistoryType value) {
-        this.revisionHistory = value;
-    }
+	/**
+	 * Sets the value of the revisionHistory property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link RevisionHistoryType }
+	 * 
+	 */
+	public void setRevisionHistory(RevisionHistoryType value) {
+		this.revisionHistory = value;
+	}
 
-    /**
-     * Gets the value of the state property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getState() {
-        return state;
-    }
+	/**
+	 * Gets the value of the state property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getState() {
+		return state;
+	}
 
-    /**
-     * Sets the value of the state property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setState(String value) {
-        this.state = value;
-    }
+	/**
+	 * Sets the value of the state property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setState(String value) {
+		this.state = value;
+	}
 
-    /**
-     * Gets the value of the style property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getStyle() {
-        return style;
-    }
+	/**
+	 * Gets the value of the style property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getStyle() {
+		return style;
+	}
 
-    /**
-     * Sets the value of the style property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setStyle(String value) {
-        this.style = value;
-    }
+	/**
+	 * Sets the value of the style property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setStyle(String value) {
+		this.style = value;
+	}
 
-    /**
-     * Gets the value of the typeDefinitions property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link WorkspaceTypeDefinitionsType }
-     *     
-     */
-    public WorkspaceTypeDefinitionsType getTypeDefinitions() {
-        return typeDefinitions;
-    }
+	/**
+	 * Gets the value of the typeDefinitions property.
+	 * 
+	 * @return possible object is {@link WorkspaceTypeDefinitionsType }
+	 * 
+	 */
+	public WorkspaceTypeDefinitionsType getTypeDefinitions() {
+		return typeDefinitions;
+	}
 
-    /**
-     * Sets the value of the typeDefinitions property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link WorkspaceTypeDefinitionsType }
-     *     
-     */
-    public void setTypeDefinitions(WorkspaceTypeDefinitionsType value) {
-        this.typeDefinitions = value;
-    }
+	/**
+	 * Sets the value of the typeDefinitions property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link WorkspaceTypeDefinitionsType }
+	 * 
+	 */
+	public void setTypeDefinitions(WorkspaceTypeDefinitionsType value) {
+		this.typeDefinitions = value;
+	}
 
-    /**
-     * Gets the value of the workspaceConfiguration property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link WorkspaceConfigurationType }
-     *     
-     */
-    public WorkspaceConfigurationType getWorkspaceConfiguration() {
-        return workspaceConfiguration;
-    }
+	/**
+	 * Gets the value of the workspaceConfiguration property.
+	 * 
+	 * @return possible object is {@link WorkspaceConfigurationType }
+	 * 
+	 */
+	public WorkspaceConfigurationType getWorkspaceConfiguration() {
+		return workspaceConfiguration;
+	}
 
-    /**
-     * Sets the value of the workspaceConfiguration property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link WorkspaceConfigurationType }
-     *     
-     */
-    public void setWorkspaceConfiguration(WorkspaceConfigurationType value) {
-        this.workspaceConfiguration = value;
-    }
+	/**
+	 * Sets the value of the workspaceConfiguration property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link WorkspaceConfigurationType }
+	 * 
+	 */
+	public void setWorkspaceConfiguration(WorkspaceConfigurationType value) {
+		this.workspaceConfiguration = value;
+	}
 
 }

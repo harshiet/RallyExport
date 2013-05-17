@@ -5,7 +5,6 @@
 // Generated on: 2013.05.13 at 12:50:52 PM EDT 
 //
 
-
 package com.ceb.ppm.schema.mfw;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -14,11 +13,13 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for CumulativeFlowDataType complex type.
+ * <p>
+ * Java class for CumulativeFlowDataType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="CumulativeFlowDataType">
@@ -39,150 +40,125 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "CumulativeFlowDataType", propOrder = {
-    "cardCount",
-    "cardEstimateTotal",
-    "cardState",
-    "cardToDoTotal",
-    "taskEstimateTotal"
-})
-@XmlSeeAlso({
-    IterationCumulativeFlowDataType.class,
-    ReleaseCumulativeFlowDataType.class
-})
-public class CumulativeFlowDataType
-    extends WorkspaceDomainObjectType
-{
+@XmlType(name = "CumulativeFlowDataType", propOrder = { "cardCount", "cardEstimateTotal", "cardState", "cardToDoTotal",
+		"taskEstimateTotal" })
+@XmlSeeAlso({ IterationCumulativeFlowDataType.class, ReleaseCumulativeFlowDataType.class })
+public class CumulativeFlowDataType extends WorkspaceDomainObjectType {
 
-    @XmlElement(name = "CardCount")
-    protected Long cardCount;
-    @XmlElement(name = "CardEstimateTotal")
-    protected Double cardEstimateTotal;
-    @XmlElement(name = "CardState")
-    protected String cardState;
-    @XmlElement(name = "CardToDoTotal")
-    protected Double cardToDoTotal;
-    @XmlElement(name = "TaskEstimateTotal")
-    protected Double taskEstimateTotal;
+	@XmlElement(name = "CardCount")
+	protected Long cardCount;
+	@XmlElement(name = "CardEstimateTotal")
+	protected Double cardEstimateTotal;
+	@XmlElement(name = "CardState")
+	protected String cardState;
+	@XmlElement(name = "CardToDoTotal")
+	protected Double cardToDoTotal;
+	@XmlElement(name = "TaskEstimateTotal")
+	protected Double taskEstimateTotal;
 
-    /**
-     * Gets the value of the cardCount property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
-     */
-    public Long getCardCount() {
-        return cardCount;
-    }
+	/**
+	 * Gets the value of the cardCount property.
+	 * 
+	 * @return possible object is {@link Long }
+	 * 
+	 */
+	public Long getCardCount() {
+		return cardCount;
+	}
 
-    /**
-     * Sets the value of the cardCount property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setCardCount(Long value) {
-        this.cardCount = value;
-    }
+	/**
+	 * Sets the value of the cardCount property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Long }
+	 * 
+	 */
+	public void setCardCount(Long value) {
+		this.cardCount = value;
+	}
 
-    /**
-     * Gets the value of the cardEstimateTotal property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
-     */
-    public Double getCardEstimateTotal() {
-        return cardEstimateTotal;
-    }
+	/**
+	 * Gets the value of the cardEstimateTotal property.
+	 * 
+	 * @return possible object is {@link Double }
+	 * 
+	 */
+	public Double getCardEstimateTotal() {
+		return cardEstimateTotal;
+	}
 
-    /**
-     * Sets the value of the cardEstimateTotal property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setCardEstimateTotal(Double value) {
-        this.cardEstimateTotal = value;
-    }
+	/**
+	 * Sets the value of the cardEstimateTotal property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Double }
+	 * 
+	 */
+	public void setCardEstimateTotal(Double value) {
+		this.cardEstimateTotal = value;
+	}
 
-    /**
-     * Gets the value of the cardState property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getCardState() {
-        return cardState;
-    }
+	/**
+	 * Gets the value of the cardState property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getCardState() {
+		return cardState;
+	}
 
-    /**
-     * Sets the value of the cardState property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCardState(String value) {
-        this.cardState = value;
-    }
+	/**
+	 * Sets the value of the cardState property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setCardState(String value) {
+		this.cardState = value;
+	}
 
-    /**
-     * Gets the value of the cardToDoTotal property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
-     */
-    public Double getCardToDoTotal() {
-        return cardToDoTotal;
-    }
+	/**
+	 * Gets the value of the cardToDoTotal property.
+	 * 
+	 * @return possible object is {@link Double }
+	 * 
+	 */
+	public Double getCardToDoTotal() {
+		return cardToDoTotal;
+	}
 
-    /**
-     * Sets the value of the cardToDoTotal property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setCardToDoTotal(Double value) {
-        this.cardToDoTotal = value;
-    }
+	/**
+	 * Sets the value of the cardToDoTotal property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Double }
+	 * 
+	 */
+	public void setCardToDoTotal(Double value) {
+		this.cardToDoTotal = value;
+	}
 
-    /**
-     * Gets the value of the taskEstimateTotal property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
-     */
-    public Double getTaskEstimateTotal() {
-        return taskEstimateTotal;
-    }
+	/**
+	 * Gets the value of the taskEstimateTotal property.
+	 * 
+	 * @return possible object is {@link Double }
+	 * 
+	 */
+	public Double getTaskEstimateTotal() {
+		return taskEstimateTotal;
+	}
 
-    /**
-     * Sets the value of the taskEstimateTotal property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setTaskEstimateTotal(Double value) {
-        this.taskEstimateTotal = value;
-    }
+	/**
+	 * Sets the value of the taskEstimateTotal property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Double }
+	 * 
+	 */
+	public void setTaskEstimateTotal(Double value) {
+		this.taskEstimateTotal = value;
+	}
 
 }

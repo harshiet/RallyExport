@@ -5,7 +5,6 @@
 // Generated on: 2013.05.13 at 12:50:52 PM EDT 
 //
 
-
 package com.ceb.ppm.schema.mfw;
 
 import java.math.BigDecimal;
@@ -16,11 +15,13 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
 
-
 /**
- * <p>Java class for HierarchicalRequirementType complex type.
+ * <p>
+ * Java class for HierarchicalRequirementType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="HierarchicalRequirementType">
@@ -78,1150 +79,989 @@ import javax.xml.datatype.XMLGregorianCalendar;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "HierarchicalRequirementType", propOrder = {
-    "acceptedDate",
-    "blocked",
-    "blockedReason",
-    "blocker",
-    "children",
-    "defectStatus",
-    "defects",
-    "directChildrenCount",
-    "hasParent",
-    "inProgressDate",
-    "iteration",
-    "parent",
-    "planEstimate",
-    "predecessors",
-    "rank",
-    "recycled",
-    "release",
-    "scheduleState",
-    "successors",
-    "taskActualTotal",
-    "taskEstimateTotal",
-    "taskRemainingTotal",
-    "taskStatus",
-    "tasks",
-    "testCaseStatus",
-    "testCases",
-    "businessOwner",
-    "devCompletionDate",
-    "enhancementRequestDate",
-    "enhancementRequestor",
-    "firefox36Compliance",
-    "ie6Compliance",
-    "ie7Compliance",
-    "ie8Compliance",
-    "ie9Compliance",
-    "impediment",
-    "impedimentOwner",
-    "isParent",
-    "priority",
-    "priorityneedtodeletefield",
-    "qaCompletionDate",
-    "safari50Compliance"
-})
-public class HierarchicalRequirementType
-    extends RequirementType
-{
-
-    @XmlElement(name = "AcceptedDate")
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar acceptedDate;
-    @XmlElement(name = "Blocked")
-    protected Boolean blocked;
-    @XmlElement(name = "BlockedReason")
-    protected String blockedReason;
-    @XmlElement(name = "Blocker")
-    protected BlockerType blocker;
-    @XmlElement(name = "Children")
-    protected HierarchicalRequirementChildrenType children;
-    @XmlElement(name = "DefectStatus")
-    protected String defectStatus;
-    @XmlElement(name = "Defects")
-    protected HierarchicalRequirementDefectsType defects;
-    @XmlElement(name = "DirectChildrenCount")
-    protected Long directChildrenCount;
-    @XmlElement(name = "HasParent")
-    protected Boolean hasParent;
-    @XmlElement(name = "InProgressDate")
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar inProgressDate;
-    @XmlElement(name = "Iteration")
-    protected IterationType iteration;
-    @XmlElement(name = "Parent")
-    protected HierarchicalRequirementType parent;
-    @XmlElement(name = "PlanEstimate")
-    protected Double planEstimate;
-    @XmlElement(name = "Predecessors")
-    protected HierarchicalRequirementPredecessorsType predecessors;
-    @XmlElement(name = "Rank")
-    protected BigDecimal rank;
-    @XmlElement(name = "Recycled")
-    protected Boolean recycled;
-    @XmlElement(name = "Release")
-    protected ReleaseType release;
-    @XmlElement(name = "ScheduleState")
-    protected String scheduleState;
-    @XmlElement(name = "Successors")
-    protected HierarchicalRequirementSuccessorsType successors;
-    @XmlElement(name = "TaskActualTotal")
-    protected Double taskActualTotal;
-    @XmlElement(name = "TaskEstimateTotal")
-    protected Double taskEstimateTotal;
-    @XmlElement(name = "TaskRemainingTotal")
-    protected Double taskRemainingTotal;
-    @XmlElement(name = "TaskStatus")
-    protected String taskStatus;
-    @XmlElement(name = "Tasks")
-    protected HierarchicalRequirementTasksType tasks;
-    @XmlElement(name = "TestCaseStatus")
-    protected String testCaseStatus;
-    @XmlElement(name = "TestCases")
-    protected HierarchicalRequirementTestCasesType testCases;
-    @XmlElement(name = "BusinessOwner")
-    protected String businessOwner;
-    @XmlElement(name = "DevCompletionDate")
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar devCompletionDate;
-    @XmlElement(name = "EnhancementRequestDate")
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar enhancementRequestDate;
-    @XmlElement(name = "EnhancementRequestor")
-    protected String enhancementRequestor;
-    @XmlElement(name = "Firefox36Compliance")
-    protected Long firefox36Compliance;
-    @XmlElement(name = "IE6Compliance")
-    protected Long ie6Compliance;
-    @XmlElement(name = "IE7Compliance")
-    protected Long ie7Compliance;
-    @XmlElement(name = "IE8Compliance")
-    protected Long ie8Compliance;
-    @XmlElement(name = "IE9Compliance")
-    protected Long ie9Compliance;
-    @XmlElement(name = "Impediment")
-    protected String impediment;
-    @XmlElement(name = "ImpedimentOwner")
-    protected String impedimentOwner;
-    @XmlElement(name = "IsParent")
-    protected Boolean isParent;
-    @XmlElement(name = "Priority")
-    protected String priority;
-    @XmlElement(name = "Priorityneedtodeletefield")
-    protected String priorityneedtodeletefield;
-    @XmlElement(name = "QACompletionDate")
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar qaCompletionDate;
-    @XmlElement(name = "Safari50Compliance")
-    protected Long safari50Compliance;
-
-    /**
-     * Gets the value of the acceptedDate property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public XMLGregorianCalendar getAcceptedDate() {
-        return acceptedDate;
-    }
-
-    /**
-     * Sets the value of the acceptedDate property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setAcceptedDate(XMLGregorianCalendar value) {
-        this.acceptedDate = value;
-    }
-
-    /**
-     * Gets the value of the blocked property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
-     */
-    public Boolean isBlocked() {
-        return blocked;
-    }
-
-    /**
-     * Sets the value of the blocked property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setBlocked(Boolean value) {
-        this.blocked = value;
-    }
-
-    /**
-     * Gets the value of the blockedReason property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getBlockedReason() {
-        return blockedReason;
-    }
-
-    /**
-     * Sets the value of the blockedReason property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setBlockedReason(String value) {
-        this.blockedReason = value;
-    }
-
-    /**
-     * Gets the value of the blocker property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link BlockerType }
-     *     
-     */
-    public BlockerType getBlocker() {
-        return blocker;
-    }
-
-    /**
-     * Sets the value of the blocker property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BlockerType }
-     *     
-     */
-    public void setBlocker(BlockerType value) {
-        this.blocker = value;
-    }
-
-    /**
-     * Gets the value of the children property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link HierarchicalRequirementChildrenType }
-     *     
-     */
-    public HierarchicalRequirementChildrenType getChildren() {
-        return children;
-    }
-
-    /**
-     * Sets the value of the children property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link HierarchicalRequirementChildrenType }
-     *     
-     */
-    public void setChildren(HierarchicalRequirementChildrenType value) {
-        this.children = value;
-    }
-
-    /**
-     * Gets the value of the defectStatus property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getDefectStatus() {
-        return defectStatus;
-    }
-
-    /**
-     * Sets the value of the defectStatus property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDefectStatus(String value) {
-        this.defectStatus = value;
-    }
-
-    /**
-     * Gets the value of the defects property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link HierarchicalRequirementDefectsType }
-     *     
-     */
-    public HierarchicalRequirementDefectsType getDefects() {
-        return defects;
-    }
-
-    /**
-     * Sets the value of the defects property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link HierarchicalRequirementDefectsType }
-     *     
-     */
-    public void setDefects(HierarchicalRequirementDefectsType value) {
-        this.defects = value;
-    }
-
-    /**
-     * Gets the value of the directChildrenCount property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
-     */
-    public Long getDirectChildrenCount() {
-        return directChildrenCount;
-    }
-
-    /**
-     * Sets the value of the directChildrenCount property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setDirectChildrenCount(Long value) {
-        this.directChildrenCount = value;
-    }
-
-    /**
-     * Gets the value of the hasParent property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
-     */
-    public Boolean isHasParent() {
-        return hasParent;
-    }
-
-    /**
-     * Sets the value of the hasParent property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setHasParent(Boolean value) {
-        this.hasParent = value;
-    }
-
-    /**
-     * Gets the value of the inProgressDate property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public XMLGregorianCalendar getInProgressDate() {
-        return inProgressDate;
-    }
-
-    /**
-     * Sets the value of the inProgressDate property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setInProgressDate(XMLGregorianCalendar value) {
-        this.inProgressDate = value;
-    }
-
-    /**
-     * Gets the value of the iteration property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link IterationType }
-     *     
-     */
-    public IterationType getIteration() {
-        return iteration;
-    }
-
-    /**
-     * Sets the value of the iteration property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link IterationType }
-     *     
-     */
-    public void setIteration(IterationType value) {
-        this.iteration = value;
-    }
-
-    /**
-     * Gets the value of the parent property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link HierarchicalRequirementType }
-     *     
-     */
-    public HierarchicalRequirementType getParent() {
-        return parent;
-    }
-
-    /**
-     * Sets the value of the parent property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link HierarchicalRequirementType }
-     *     
-     */
-    public void setParent(HierarchicalRequirementType value) {
-        this.parent = value;
-    }
-
-    /**
-     * Gets the value of the planEstimate property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
-     */
-    public Double getPlanEstimate() {
-        return planEstimate;
-    }
-
-    /**
-     * Sets the value of the planEstimate property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setPlanEstimate(Double value) {
-        this.planEstimate = value;
-    }
-
-    /**
-     * Gets the value of the predecessors property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link HierarchicalRequirementPredecessorsType }
-     *     
-     */
-    public HierarchicalRequirementPredecessorsType getPredecessors() {
-        return predecessors;
-    }
-
-    /**
-     * Sets the value of the predecessors property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link HierarchicalRequirementPredecessorsType }
-     *     
-     */
-    public void setPredecessors(HierarchicalRequirementPredecessorsType value) {
-        this.predecessors = value;
-    }
-
-    /**
-     * Gets the value of the rank property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigDecimal }
-     *     
-     */
-    public BigDecimal getRank() {
-        return rank;
-    }
-
-    /**
-     * Sets the value of the rank property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigDecimal }
-     *     
-     */
-    public void setRank(BigDecimal value) {
-        this.rank = value;
-    }
-
-    /**
-     * Gets the value of the recycled property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
-     */
-    public Boolean isRecycled() {
-        return recycled;
-    }
-
-    /**
-     * Sets the value of the recycled property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setRecycled(Boolean value) {
-        this.recycled = value;
-    }
-
-    /**
-     * Gets the value of the release property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ReleaseType }
-     *     
-     */
-    public ReleaseType getRelease() {
-        return release;
-    }
-
-    /**
-     * Sets the value of the release property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ReleaseType }
-     *     
-     */
-    public void setRelease(ReleaseType value) {
-        this.release = value;
-    }
-
-    /**
-     * Gets the value of the scheduleState property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getScheduleState() {
-        return scheduleState;
-    }
-
-    /**
-     * Sets the value of the scheduleState property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setScheduleState(String value) {
-        this.scheduleState = value;
-    }
-
-    /**
-     * Gets the value of the successors property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link HierarchicalRequirementSuccessorsType }
-     *     
-     */
-    public HierarchicalRequirementSuccessorsType getSuccessors() {
-        return successors;
-    }
-
-    /**
-     * Sets the value of the successors property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link HierarchicalRequirementSuccessorsType }
-     *     
-     */
-    public void setSuccessors(HierarchicalRequirementSuccessorsType value) {
-        this.successors = value;
-    }
-
-    /**
-     * Gets the value of the taskActualTotal property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
-     */
-    public Double getTaskActualTotal() {
-        return taskActualTotal;
-    }
-
-    /**
-     * Sets the value of the taskActualTotal property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setTaskActualTotal(Double value) {
-        this.taskActualTotal = value;
-    }
-
-    /**
-     * Gets the value of the taskEstimateTotal property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
-     */
-    public Double getTaskEstimateTotal() {
-        return taskEstimateTotal;
-    }
-
-    /**
-     * Sets the value of the taskEstimateTotal property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setTaskEstimateTotal(Double value) {
-        this.taskEstimateTotal = value;
-    }
-
-    /**
-     * Gets the value of the taskRemainingTotal property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
-     */
-    public Double getTaskRemainingTotal() {
-        return taskRemainingTotal;
-    }
-
-    /**
-     * Sets the value of the taskRemainingTotal property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setTaskRemainingTotal(Double value) {
-        this.taskRemainingTotal = value;
-    }
-
-    /**
-     * Gets the value of the taskStatus property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getTaskStatus() {
-        return taskStatus;
-    }
-
-    /**
-     * Sets the value of the taskStatus property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setTaskStatus(String value) {
-        this.taskStatus = value;
-    }
-
-    /**
-     * Gets the value of the tasks property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link HierarchicalRequirementTasksType }
-     *     
-     */
-    public HierarchicalRequirementTasksType getTasks() {
-        return tasks;
-    }
-
-    /**
-     * Sets the value of the tasks property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link HierarchicalRequirementTasksType }
-     *     
-     */
-    public void setTasks(HierarchicalRequirementTasksType value) {
-        this.tasks = value;
-    }
-
-    /**
-     * Gets the value of the testCaseStatus property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getTestCaseStatus() {
-        return testCaseStatus;
-    }
-
-    /**
-     * Sets the value of the testCaseStatus property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setTestCaseStatus(String value) {
-        this.testCaseStatus = value;
-    }
-
-    /**
-     * Gets the value of the testCases property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link HierarchicalRequirementTestCasesType }
-     *     
-     */
-    public HierarchicalRequirementTestCasesType getTestCases() {
-        return testCases;
-    }
-
-    /**
-     * Sets the value of the testCases property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link HierarchicalRequirementTestCasesType }
-     *     
-     */
-    public void setTestCases(HierarchicalRequirementTestCasesType value) {
-        this.testCases = value;
-    }
-
-    /**
-     * Gets the value of the businessOwner property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getBusinessOwner() {
-        return businessOwner;
-    }
-
-    /**
-     * Sets the value of the businessOwner property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setBusinessOwner(String value) {
-        this.businessOwner = value;
-    }
-
-    /**
-     * Gets the value of the devCompletionDate property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public XMLGregorianCalendar getDevCompletionDate() {
-        return devCompletionDate;
-    }
-
-    /**
-     * Sets the value of the devCompletionDate property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setDevCompletionDate(XMLGregorianCalendar value) {
-        this.devCompletionDate = value;
-    }
-
-    /**
-     * Gets the value of the enhancementRequestDate property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public XMLGregorianCalendar getEnhancementRequestDate() {
-        return enhancementRequestDate;
-    }
-
-    /**
-     * Sets the value of the enhancementRequestDate property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setEnhancementRequestDate(XMLGregorianCalendar value) {
-        this.enhancementRequestDate = value;
-    }
-
-    /**
-     * Gets the value of the enhancementRequestor property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getEnhancementRequestor() {
-        return enhancementRequestor;
-    }
-
-    /**
-     * Sets the value of the enhancementRequestor property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setEnhancementRequestor(String value) {
-        this.enhancementRequestor = value;
-    }
-
-    /**
-     * Gets the value of the firefox36Compliance property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
-     */
-    public Long getFirefox36Compliance() {
-        return firefox36Compliance;
-    }
-
-    /**
-     * Sets the value of the firefox36Compliance property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setFirefox36Compliance(Long value) {
-        this.firefox36Compliance = value;
-    }
-
-    /**
-     * Gets the value of the ie6Compliance property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
-     */
-    public Long getIE6Compliance() {
-        return ie6Compliance;
-    }
-
-    /**
-     * Sets the value of the ie6Compliance property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setIE6Compliance(Long value) {
-        this.ie6Compliance = value;
-    }
-
-    /**
-     * Gets the value of the ie7Compliance property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
-     */
-    public Long getIE7Compliance() {
-        return ie7Compliance;
-    }
-
-    /**
-     * Sets the value of the ie7Compliance property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setIE7Compliance(Long value) {
-        this.ie7Compliance = value;
-    }
-
-    /**
-     * Gets the value of the ie8Compliance property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
-     */
-    public Long getIE8Compliance() {
-        return ie8Compliance;
-    }
-
-    /**
-     * Sets the value of the ie8Compliance property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setIE8Compliance(Long value) {
-        this.ie8Compliance = value;
-    }
-
-    /**
-     * Gets the value of the ie9Compliance property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
-     */
-    public Long getIE9Compliance() {
-        return ie9Compliance;
-    }
-
-    /**
-     * Sets the value of the ie9Compliance property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setIE9Compliance(Long value) {
-        this.ie9Compliance = value;
-    }
-
-    /**
-     * Gets the value of the impediment property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getImpediment() {
-        return impediment;
-    }
-
-    /**
-     * Sets the value of the impediment property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setImpediment(String value) {
-        this.impediment = value;
-    }
-
-    /**
-     * Gets the value of the impedimentOwner property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getImpedimentOwner() {
-        return impedimentOwner;
-    }
-
-    /**
-     * Sets the value of the impedimentOwner property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setImpedimentOwner(String value) {
-        this.impedimentOwner = value;
-    }
-
-    /**
-     * Gets the value of the isParent property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
-     */
-    public Boolean isIsParent() {
-        return isParent;
-    }
-
-    /**
-     * Sets the value of the isParent property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsParent(Boolean value) {
-        this.isParent = value;
-    }
-
-    /**
-     * Gets the value of the priority property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getPriority() {
-        return priority;
-    }
-
-    /**
-     * Sets the value of the priority property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPriority(String value) {
-        this.priority = value;
-    }
-
-    /**
-     * Gets the value of the priorityneedtodeletefield property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getPriorityneedtodeletefield() {
-        return priorityneedtodeletefield;
-    }
-
-    /**
-     * Sets the value of the priorityneedtodeletefield property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPriorityneedtodeletefield(String value) {
-        this.priorityneedtodeletefield = value;
-    }
-
-    /**
-     * Gets the value of the qaCompletionDate property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public XMLGregorianCalendar getQACompletionDate() {
-        return qaCompletionDate;
-    }
-
-    /**
-     * Sets the value of the qaCompletionDate property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setQACompletionDate(XMLGregorianCalendar value) {
-        this.qaCompletionDate = value;
-    }
-
-    /**
-     * Gets the value of the safari50Compliance property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
-     */
-    public Long getSafari50Compliance() {
-        return safari50Compliance;
-    }
-
-    /**
-     * Sets the value of the safari50Compliance property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setSafari50Compliance(Long value) {
-        this.safari50Compliance = value;
-    }
+@XmlType(name = "HierarchicalRequirementType", propOrder = { "acceptedDate", "blocked", "blockedReason", "blocker",
+		"children", "defectStatus", "defects", "directChildrenCount", "hasParent", "inProgressDate", "iteration",
+		"parent", "planEstimate", "predecessors", "rank", "recycled", "release", "scheduleState", "successors",
+		"taskActualTotal", "taskEstimateTotal", "taskRemainingTotal", "taskStatus", "tasks", "testCaseStatus",
+		"testCases", "businessOwner", "devCompletionDate", "enhancementRequestDate", "enhancementRequestor",
+		"firefox36Compliance", "ie6Compliance", "ie7Compliance", "ie8Compliance", "ie9Compliance", "impediment",
+		"impedimentOwner", "isParent", "priority", "priorityneedtodeletefield", "qaCompletionDate",
+		"safari50Compliance" })
+public class HierarchicalRequirementType extends RequirementType {
+
+	@XmlElement(name = "AcceptedDate")
+	@XmlSchemaType(name = "dateTime")
+	protected XMLGregorianCalendar acceptedDate;
+	@XmlElement(name = "Blocked")
+	protected Boolean blocked;
+	@XmlElement(name = "BlockedReason")
+	protected String blockedReason;
+	@XmlElement(name = "Blocker")
+	protected BlockerType blocker;
+	@XmlElement(name = "Children")
+	protected HierarchicalRequirementChildrenType children;
+	@XmlElement(name = "DefectStatus")
+	protected String defectStatus;
+	@XmlElement(name = "Defects")
+	protected HierarchicalRequirementDefectsType defects;
+	@XmlElement(name = "DirectChildrenCount")
+	protected Long directChildrenCount;
+	@XmlElement(name = "HasParent")
+	protected Boolean hasParent;
+	@XmlElement(name = "InProgressDate")
+	@XmlSchemaType(name = "dateTime")
+	protected XMLGregorianCalendar inProgressDate;
+	@XmlElement(name = "Iteration")
+	protected IterationType iteration;
+	@XmlElement(name = "Parent")
+	protected HierarchicalRequirementType parent;
+	@XmlElement(name = "PlanEstimate")
+	protected Double planEstimate;
+	@XmlElement(name = "Predecessors")
+	protected HierarchicalRequirementPredecessorsType predecessors;
+	@XmlElement(name = "Rank")
+	protected BigDecimal rank;
+	@XmlElement(name = "Recycled")
+	protected Boolean recycled;
+	@XmlElement(name = "Release")
+	protected ReleaseType release;
+	@XmlElement(name = "ScheduleState")
+	protected String scheduleState;
+	@XmlElement(name = "Successors")
+	protected HierarchicalRequirementSuccessorsType successors;
+	@XmlElement(name = "TaskActualTotal")
+	protected Double taskActualTotal;
+	@XmlElement(name = "TaskEstimateTotal")
+	protected Double taskEstimateTotal;
+	@XmlElement(name = "TaskRemainingTotal")
+	protected Double taskRemainingTotal;
+	@XmlElement(name = "TaskStatus")
+	protected String taskStatus;
+	@XmlElement(name = "Tasks")
+	protected HierarchicalRequirementTasksType tasks;
+	@XmlElement(name = "TestCaseStatus")
+	protected String testCaseStatus;
+	@XmlElement(name = "TestCases")
+	protected HierarchicalRequirementTestCasesType testCases;
+	@XmlElement(name = "BusinessOwner")
+	protected String businessOwner;
+	@XmlElement(name = "DevCompletionDate")
+	@XmlSchemaType(name = "dateTime")
+	protected XMLGregorianCalendar devCompletionDate;
+	@XmlElement(name = "EnhancementRequestDate")
+	@XmlSchemaType(name = "dateTime")
+	protected XMLGregorianCalendar enhancementRequestDate;
+	@XmlElement(name = "EnhancementRequestor")
+	protected String enhancementRequestor;
+	@XmlElement(name = "Firefox36Compliance")
+	protected Long firefox36Compliance;
+	@XmlElement(name = "IE6Compliance")
+	protected Long ie6Compliance;
+	@XmlElement(name = "IE7Compliance")
+	protected Long ie7Compliance;
+	@XmlElement(name = "IE8Compliance")
+	protected Long ie8Compliance;
+	@XmlElement(name = "IE9Compliance")
+	protected Long ie9Compliance;
+	@XmlElement(name = "Impediment")
+	protected String impediment;
+	@XmlElement(name = "ImpedimentOwner")
+	protected String impedimentOwner;
+	@XmlElement(name = "IsParent")
+	protected Boolean isParent;
+	@XmlElement(name = "Priority")
+	protected String priority;
+	@XmlElement(name = "Priorityneedtodeletefield")
+	protected String priorityneedtodeletefield;
+	@XmlElement(name = "QACompletionDate")
+	@XmlSchemaType(name = "dateTime")
+	protected XMLGregorianCalendar qaCompletionDate;
+	@XmlElement(name = "Safari50Compliance")
+	protected Long safari50Compliance;
+
+	/**
+	 * Gets the value of the acceptedDate property.
+	 * 
+	 * @return possible object is {@link XMLGregorianCalendar }
+	 * 
+	 */
+	public XMLGregorianCalendar getAcceptedDate() {
+		return acceptedDate;
+	}
+
+	/**
+	 * Sets the value of the acceptedDate property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link XMLGregorianCalendar }
+	 * 
+	 */
+	public void setAcceptedDate(XMLGregorianCalendar value) {
+		this.acceptedDate = value;
+	}
+
+	/**
+	 * Gets the value of the blocked property.
+	 * 
+	 * @return possible object is {@link Boolean }
+	 * 
+	 */
+	public Boolean isBlocked() {
+		return blocked;
+	}
+
+	/**
+	 * Sets the value of the blocked property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Boolean }
+	 * 
+	 */
+	public void setBlocked(Boolean value) {
+		this.blocked = value;
+	}
+
+	/**
+	 * Gets the value of the blockedReason property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getBlockedReason() {
+		return blockedReason;
+	}
+
+	/**
+	 * Sets the value of the blockedReason property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setBlockedReason(String value) {
+		this.blockedReason = value;
+	}
+
+	/**
+	 * Gets the value of the blocker property.
+	 * 
+	 * @return possible object is {@link BlockerType }
+	 * 
+	 */
+	public BlockerType getBlocker() {
+		return blocker;
+	}
+
+	/**
+	 * Sets the value of the blocker property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link BlockerType }
+	 * 
+	 */
+	public void setBlocker(BlockerType value) {
+		this.blocker = value;
+	}
+
+	/**
+	 * Gets the value of the children property.
+	 * 
+	 * @return possible object is {@link HierarchicalRequirementChildrenType }
+	 * 
+	 */
+	public HierarchicalRequirementChildrenType getChildren() {
+		return children;
+	}
+
+	/**
+	 * Sets the value of the children property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link HierarchicalRequirementChildrenType }
+	 * 
+	 */
+	public void setChildren(HierarchicalRequirementChildrenType value) {
+		this.children = value;
+	}
+
+	/**
+	 * Gets the value of the defectStatus property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getDefectStatus() {
+		return defectStatus;
+	}
+
+	/**
+	 * Sets the value of the defectStatus property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setDefectStatus(String value) {
+		this.defectStatus = value;
+	}
+
+	/**
+	 * Gets the value of the defects property.
+	 * 
+	 * @return possible object is {@link HierarchicalRequirementDefectsType }
+	 * 
+	 */
+	public HierarchicalRequirementDefectsType getDefects() {
+		return defects;
+	}
+
+	/**
+	 * Sets the value of the defects property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link HierarchicalRequirementDefectsType }
+	 * 
+	 */
+	public void setDefects(HierarchicalRequirementDefectsType value) {
+		this.defects = value;
+	}
+
+	/**
+	 * Gets the value of the directChildrenCount property.
+	 * 
+	 * @return possible object is {@link Long }
+	 * 
+	 */
+	public Long getDirectChildrenCount() {
+		return directChildrenCount;
+	}
+
+	/**
+	 * Sets the value of the directChildrenCount property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Long }
+	 * 
+	 */
+	public void setDirectChildrenCount(Long value) {
+		this.directChildrenCount = value;
+	}
+
+	/**
+	 * Gets the value of the hasParent property.
+	 * 
+	 * @return possible object is {@link Boolean }
+	 * 
+	 */
+	public Boolean isHasParent() {
+		return hasParent;
+	}
+
+	/**
+	 * Sets the value of the hasParent property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Boolean }
+	 * 
+	 */
+	public void setHasParent(Boolean value) {
+		this.hasParent = value;
+	}
+
+	/**
+	 * Gets the value of the inProgressDate property.
+	 * 
+	 * @return possible object is {@link XMLGregorianCalendar }
+	 * 
+	 */
+	public XMLGregorianCalendar getInProgressDate() {
+		return inProgressDate;
+	}
+
+	/**
+	 * Sets the value of the inProgressDate property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link XMLGregorianCalendar }
+	 * 
+	 */
+	public void setInProgressDate(XMLGregorianCalendar value) {
+		this.inProgressDate = value;
+	}
+
+	/**
+	 * Gets the value of the iteration property.
+	 * 
+	 * @return possible object is {@link IterationType }
+	 * 
+	 */
+	public IterationType getIteration() {
+		return iteration;
+	}
+
+	/**
+	 * Sets the value of the iteration property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link IterationType }
+	 * 
+	 */
+	public void setIteration(IterationType value) {
+		this.iteration = value;
+	}
+
+	/**
+	 * Gets the value of the parent property.
+	 * 
+	 * @return possible object is {@link HierarchicalRequirementType }
+	 * 
+	 */
+	public HierarchicalRequirementType getParent() {
+		return parent;
+	}
+
+	/**
+	 * Sets the value of the parent property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link HierarchicalRequirementType }
+	 * 
+	 */
+	public void setParent(HierarchicalRequirementType value) {
+		this.parent = value;
+	}
+
+	/**
+	 * Gets the value of the planEstimate property.
+	 * 
+	 * @return possible object is {@link Double }
+	 * 
+	 */
+	public Double getPlanEstimate() {
+		return planEstimate;
+	}
+
+	/**
+	 * Sets the value of the planEstimate property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Double }
+	 * 
+	 */
+	public void setPlanEstimate(Double value) {
+		this.planEstimate = value;
+	}
+
+	/**
+	 * Gets the value of the predecessors property.
+	 * 
+	 * @return possible object is
+	 *         {@link HierarchicalRequirementPredecessorsType }
+	 * 
+	 */
+	public HierarchicalRequirementPredecessorsType getPredecessors() {
+		return predecessors;
+	}
+
+	/**
+	 * Sets the value of the predecessors property.
+	 * 
+	 * @param value
+	 *            allowed object is
+	 *            {@link HierarchicalRequirementPredecessorsType }
+	 * 
+	 */
+	public void setPredecessors(HierarchicalRequirementPredecessorsType value) {
+		this.predecessors = value;
+	}
+
+	/**
+	 * Gets the value of the rank property.
+	 * 
+	 * @return possible object is {@link BigDecimal }
+	 * 
+	 */
+	public BigDecimal getRank() {
+		return rank;
+	}
+
+	/**
+	 * Sets the value of the rank property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link BigDecimal }
+	 * 
+	 */
+	public void setRank(BigDecimal value) {
+		this.rank = value;
+	}
+
+	/**
+	 * Gets the value of the recycled property.
+	 * 
+	 * @return possible object is {@link Boolean }
+	 * 
+	 */
+	public Boolean isRecycled() {
+		return recycled;
+	}
+
+	/**
+	 * Sets the value of the recycled property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Boolean }
+	 * 
+	 */
+	public void setRecycled(Boolean value) {
+		this.recycled = value;
+	}
+
+	/**
+	 * Gets the value of the release property.
+	 * 
+	 * @return possible object is {@link ReleaseType }
+	 * 
+	 */
+	public ReleaseType getRelease() {
+		return release;
+	}
+
+	/**
+	 * Sets the value of the release property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link ReleaseType }
+	 * 
+	 */
+	public void setRelease(ReleaseType value) {
+		this.release = value;
+	}
+
+	/**
+	 * Gets the value of the scheduleState property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getScheduleState() {
+		return scheduleState;
+	}
+
+	/**
+	 * Sets the value of the scheduleState property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setScheduleState(String value) {
+		this.scheduleState = value;
+	}
+
+	/**
+	 * Gets the value of the successors property.
+	 * 
+	 * @return possible object is {@link HierarchicalRequirementSuccessorsType }
+	 * 
+	 */
+	public HierarchicalRequirementSuccessorsType getSuccessors() {
+		return successors;
+	}
+
+	/**
+	 * Sets the value of the successors property.
+	 * 
+	 * @param value
+	 *            allowed object is
+	 *            {@link HierarchicalRequirementSuccessorsType }
+	 * 
+	 */
+	public void setSuccessors(HierarchicalRequirementSuccessorsType value) {
+		this.successors = value;
+	}
+
+	/**
+	 * Gets the value of the taskActualTotal property.
+	 * 
+	 * @return possible object is {@link Double }
+	 * 
+	 */
+	public Double getTaskActualTotal() {
+		return taskActualTotal;
+	}
+
+	/**
+	 * Sets the value of the taskActualTotal property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Double }
+	 * 
+	 */
+	public void setTaskActualTotal(Double value) {
+		this.taskActualTotal = value;
+	}
+
+	/**
+	 * Gets the value of the taskEstimateTotal property.
+	 * 
+	 * @return possible object is {@link Double }
+	 * 
+	 */
+	public Double getTaskEstimateTotal() {
+		return taskEstimateTotal;
+	}
+
+	/**
+	 * Sets the value of the taskEstimateTotal property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Double }
+	 * 
+	 */
+	public void setTaskEstimateTotal(Double value) {
+		this.taskEstimateTotal = value;
+	}
+
+	/**
+	 * Gets the value of the taskRemainingTotal property.
+	 * 
+	 * @return possible object is {@link Double }
+	 * 
+	 */
+	public Double getTaskRemainingTotal() {
+		return taskRemainingTotal;
+	}
+
+	/**
+	 * Sets the value of the taskRemainingTotal property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Double }
+	 * 
+	 */
+	public void setTaskRemainingTotal(Double value) {
+		this.taskRemainingTotal = value;
+	}
+
+	/**
+	 * Gets the value of the taskStatus property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getTaskStatus() {
+		return taskStatus;
+	}
+
+	/**
+	 * Sets the value of the taskStatus property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setTaskStatus(String value) {
+		this.taskStatus = value;
+	}
+
+	/**
+	 * Gets the value of the tasks property.
+	 * 
+	 * @return possible object is {@link HierarchicalRequirementTasksType }
+	 * 
+	 */
+	public HierarchicalRequirementTasksType getTasks() {
+		return tasks;
+	}
+
+	/**
+	 * Sets the value of the tasks property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link HierarchicalRequirementTasksType }
+	 * 
+	 */
+	public void setTasks(HierarchicalRequirementTasksType value) {
+		this.tasks = value;
+	}
+
+	/**
+	 * Gets the value of the testCaseStatus property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getTestCaseStatus() {
+		return testCaseStatus;
+	}
+
+	/**
+	 * Sets the value of the testCaseStatus property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setTestCaseStatus(String value) {
+		this.testCaseStatus = value;
+	}
+
+	/**
+	 * Gets the value of the testCases property.
+	 * 
+	 * @return possible object is {@link HierarchicalRequirementTestCasesType }
+	 * 
+	 */
+	public HierarchicalRequirementTestCasesType getTestCases() {
+		return testCases;
+	}
+
+	/**
+	 * Sets the value of the testCases property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link HierarchicalRequirementTestCasesType }
+	 * 
+	 */
+	public void setTestCases(HierarchicalRequirementTestCasesType value) {
+		this.testCases = value;
+	}
+
+	/**
+	 * Gets the value of the businessOwner property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getBusinessOwner() {
+		return businessOwner;
+	}
+
+	/**
+	 * Sets the value of the businessOwner property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setBusinessOwner(String value) {
+		this.businessOwner = value;
+	}
+
+	/**
+	 * Gets the value of the devCompletionDate property.
+	 * 
+	 * @return possible object is {@link XMLGregorianCalendar }
+	 * 
+	 */
+	public XMLGregorianCalendar getDevCompletionDate() {
+		return devCompletionDate;
+	}
+
+	/**
+	 * Sets the value of the devCompletionDate property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link XMLGregorianCalendar }
+	 * 
+	 */
+	public void setDevCompletionDate(XMLGregorianCalendar value) {
+		this.devCompletionDate = value;
+	}
+
+	/**
+	 * Gets the value of the enhancementRequestDate property.
+	 * 
+	 * @return possible object is {@link XMLGregorianCalendar }
+	 * 
+	 */
+	public XMLGregorianCalendar getEnhancementRequestDate() {
+		return enhancementRequestDate;
+	}
+
+	/**
+	 * Sets the value of the enhancementRequestDate property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link XMLGregorianCalendar }
+	 * 
+	 */
+	public void setEnhancementRequestDate(XMLGregorianCalendar value) {
+		this.enhancementRequestDate = value;
+	}
+
+	/**
+	 * Gets the value of the enhancementRequestor property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getEnhancementRequestor() {
+		return enhancementRequestor;
+	}
+
+	/**
+	 * Sets the value of the enhancementRequestor property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setEnhancementRequestor(String value) {
+		this.enhancementRequestor = value;
+	}
+
+	/**
+	 * Gets the value of the firefox36Compliance property.
+	 * 
+	 * @return possible object is {@link Long }
+	 * 
+	 */
+	public Long getFirefox36Compliance() {
+		return firefox36Compliance;
+	}
+
+	/**
+	 * Sets the value of the firefox36Compliance property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Long }
+	 * 
+	 */
+	public void setFirefox36Compliance(Long value) {
+		this.firefox36Compliance = value;
+	}
+
+	/**
+	 * Gets the value of the ie6Compliance property.
+	 * 
+	 * @return possible object is {@link Long }
+	 * 
+	 */
+	public Long getIE6Compliance() {
+		return ie6Compliance;
+	}
+
+	/**
+	 * Sets the value of the ie6Compliance property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Long }
+	 * 
+	 */
+	public void setIE6Compliance(Long value) {
+		this.ie6Compliance = value;
+	}
+
+	/**
+	 * Gets the value of the ie7Compliance property.
+	 * 
+	 * @return possible object is {@link Long }
+	 * 
+	 */
+	public Long getIE7Compliance() {
+		return ie7Compliance;
+	}
+
+	/**
+	 * Sets the value of the ie7Compliance property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Long }
+	 * 
+	 */
+	public void setIE7Compliance(Long value) {
+		this.ie7Compliance = value;
+	}
+
+	/**
+	 * Gets the value of the ie8Compliance property.
+	 * 
+	 * @return possible object is {@link Long }
+	 * 
+	 */
+	public Long getIE8Compliance() {
+		return ie8Compliance;
+	}
+
+	/**
+	 * Sets the value of the ie8Compliance property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Long }
+	 * 
+	 */
+	public void setIE8Compliance(Long value) {
+		this.ie8Compliance = value;
+	}
+
+	/**
+	 * Gets the value of the ie9Compliance property.
+	 * 
+	 * @return possible object is {@link Long }
+	 * 
+	 */
+	public Long getIE9Compliance() {
+		return ie9Compliance;
+	}
+
+	/**
+	 * Sets the value of the ie9Compliance property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Long }
+	 * 
+	 */
+	public void setIE9Compliance(Long value) {
+		this.ie9Compliance = value;
+	}
+
+	/**
+	 * Gets the value of the impediment property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getImpediment() {
+		return impediment;
+	}
+
+	/**
+	 * Sets the value of the impediment property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setImpediment(String value) {
+		this.impediment = value;
+	}
+
+	/**
+	 * Gets the value of the impedimentOwner property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getImpedimentOwner() {
+		return impedimentOwner;
+	}
+
+	/**
+	 * Sets the value of the impedimentOwner property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setImpedimentOwner(String value) {
+		this.impedimentOwner = value;
+	}
+
+	/**
+	 * Gets the value of the isParent property.
+	 * 
+	 * @return possible object is {@link Boolean }
+	 * 
+	 */
+	public Boolean isIsParent() {
+		return isParent;
+	}
+
+	/**
+	 * Sets the value of the isParent property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Boolean }
+	 * 
+	 */
+	public void setIsParent(Boolean value) {
+		this.isParent = value;
+	}
+
+	/**
+	 * Gets the value of the priority property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getPriority() {
+		return priority;
+	}
+
+	/**
+	 * Sets the value of the priority property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setPriority(String value) {
+		this.priority = value;
+	}
+
+	/**
+	 * Gets the value of the priorityneedtodeletefield property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getPriorityneedtodeletefield() {
+		return priorityneedtodeletefield;
+	}
+
+	/**
+	 * Sets the value of the priorityneedtodeletefield property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setPriorityneedtodeletefield(String value) {
+		this.priorityneedtodeletefield = value;
+	}
+
+	/**
+	 * Gets the value of the qaCompletionDate property.
+	 * 
+	 * @return possible object is {@link XMLGregorianCalendar }
+	 * 
+	 */
+	public XMLGregorianCalendar getQACompletionDate() {
+		return qaCompletionDate;
+	}
+
+	/**
+	 * Sets the value of the qaCompletionDate property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link XMLGregorianCalendar }
+	 * 
+	 */
+	public void setQACompletionDate(XMLGregorianCalendar value) {
+		this.qaCompletionDate = value;
+	}
+
+	/**
+	 * Gets the value of the safari50Compliance property.
+	 * 
+	 * @return possible object is {@link Long }
+	 * 
+	 */
+	public Long getSafari50Compliance() {
+		return safari50Compliance;
+	}
+
+	/**
+	 * Sets the value of the safari50Compliance property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Long }
+	 * 
+	 */
+	public void setSafari50Compliance(Long value) {
+		this.safari50Compliance = value;
+	}
 
 }

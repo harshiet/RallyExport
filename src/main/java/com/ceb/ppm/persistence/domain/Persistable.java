@@ -1,5 +1,7 @@
 package com.ceb.ppm.persistence.domain;
 
+import java.util.Date;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
@@ -10,10 +12,18 @@ public abstract class Persistable {
 	@GeneratedValue
 	private int id;
 
+	Date creationDate;
+
 	public int getId() {
 		return id;
 	}
-	
-	
+
+	public Date getCreationDate() {
+		return creationDate;
+	}
+
+	public void setCreationDate(Date creationDate) {
+		this.creationDate = creationDate;
+	}
 
 }

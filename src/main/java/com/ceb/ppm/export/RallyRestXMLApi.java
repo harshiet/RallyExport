@@ -22,21 +22,20 @@ public class RallyRestXMLApi {
 	}
 
 	public String doGet(String url) throws UnsupportedEncodingException {
-		return doGet(url, null);
+		return doGet(url, null, 1, 20);
 	}
 
-	public String doGet(String url, String query) throws UnsupportedEncodingException {
+	public String doGet(String url, String query, long startIndex, int pageSize) throws UnsupportedEncodingException {
+		String pagination = "?start=" + startIndex + "&pagesize=" + pageSize;
 		if (query == null) {
-			url = server + url;
+			url = server + url + pagination;
 		} else {
-			url = server + url + "?query=" + URLEncoder.encode(query, "UTF-8");
+			url = server + url + pagination + "&query=" + URLEncoder.encode(query, "UTF-8");
 		}
 		System.out.println("doGet: " + url);
 		WebResource webResource = client.resource(url);
-		ClientResponse response = webResource
-				.header("Authorization", "Basic " + auth)
-				.type("text/xml").accept("text/xml")
-				.get(ClientResponse.class);
+		ClientResponse response = webResource.header("Authorization", "Basic " + auth).type("text/xml")
+				.accept("text/xml").get(ClientResponse.class);
 		return response.getEntity(String.class);
 
 	}
@@ -45,10 +44,8 @@ public class RallyRestXMLApi {
 		url = url + "?fetch=true";
 		System.out.println("doGetRef: " + url);
 		WebResource webResource = client.resource(url);
-		ClientResponse response = webResource
-				.header("Authorization", "Basic " + auth)
-				.type("text/xml").accept("text/xml")
-				.get(ClientResponse.class);
+		ClientResponse response = webResource.header("Authorization", "Basic " + auth).type("text/xml")
+				.accept("text/xml").get(ClientResponse.class);
 		return response.getEntity(String.class);
 
 	}
@@ -56,10 +53,8 @@ public class RallyRestXMLApi {
 	public String doPost(String url, String data) {
 		System.out.println("doPost: " + server + url);
 		WebResource webResource = client.resource(server + url);
-		ClientResponse response = webResource
-				.header("Authorization", "Basic " + auth)
-				.type("text/xml").accept("text/xml")
-				.post(ClientResponse.class, data);
+		ClientResponse response = webResource.header("Authorization", "Basic " + auth).type("text/xml")
+				.accept("text/xml").post(ClientResponse.class, data);
 
 		return response.getEntity(String.class);
 

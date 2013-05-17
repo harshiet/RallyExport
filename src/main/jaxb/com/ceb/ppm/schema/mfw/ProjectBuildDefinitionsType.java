@@ -5,7 +5,6 @@
 // Generated on: 2013.05.13 at 12:50:52 PM EDT 
 //
 
-
 package com.ceb.ppm.schema.mfw;
 
 import java.util.ArrayList;
@@ -15,11 +14,13 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for ProjectBuildDefinitionsType complex type.
+ * <p>
+ * Java class for ProjectBuildDefinitionsType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="ProjectBuildDefinitionsType">
@@ -36,41 +37,40 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ProjectBuildDefinitionsType", propOrder = {
-    "buildDefinition"
-})
+@XmlType(name = "ProjectBuildDefinitionsType", propOrder = { "buildDefinition" })
 public class ProjectBuildDefinitionsType {
 
-    @XmlElement(name = "BuildDefinition")
-    protected List<BuildDefinitionType> buildDefinition;
+	@XmlElement(name = "BuildDefinition")
+	protected List<BuildDefinitionType> buildDefinition;
 
-    /**
-     * Gets the value of the buildDefinition property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the buildDefinition property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getBuildDefinition().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link BuildDefinitionType }
-     * 
-     * 
-     */
-    public List<BuildDefinitionType> getBuildDefinition() {
-        if (buildDefinition == null) {
-            buildDefinition = new ArrayList<BuildDefinitionType>();
-        }
-        return this.buildDefinition;
-    }
+	/**
+	 * Gets the value of the buildDefinition property.
+	 * 
+	 * <p>
+	 * This accessor method returns a reference to the live list, not a
+	 * snapshot. Therefore any modification you make to the returned list will
+	 * be present inside the JAXB object. This is why there is not a
+	 * <CODE>set</CODE> method for the buildDefinition property.
+	 * 
+	 * <p>
+	 * For example, to add a new item, do as follows:
+	 * 
+	 * <pre>
+	 * getBuildDefinition().add(newItem);
+	 * </pre>
+	 * 
+	 * 
+	 * <p>
+	 * Objects of the following type(s) are allowed in the list
+	 * {@link BuildDefinitionType }
+	 * 
+	 * 
+	 */
+	public List<BuildDefinitionType> getBuildDefinition() {
+		if (buildDefinition == null) {
+			buildDefinition = new ArrayList<BuildDefinitionType>();
+		}
+		return this.buildDefinition;
+	}
 
 }

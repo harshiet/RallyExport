@@ -106,6 +106,5 @@ public class Iteration extends Persistable {
 	public void setObjectId(long objectId) {
 		this.objectId = objectId;
 	}
-	
 
 }

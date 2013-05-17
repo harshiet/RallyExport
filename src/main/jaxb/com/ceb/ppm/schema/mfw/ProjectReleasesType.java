@@ -5,7 +5,6 @@
 // Generated on: 2013.05.13 at 12:50:52 PM EDT 
 //
 
-
 package com.ceb.ppm.schema.mfw;
 
 import java.util.ArrayList;
@@ -15,11 +14,13 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for ProjectReleasesType complex type.
+ * <p>
+ * Java class for ProjectReleasesType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="ProjectReleasesType">
@@ -36,41 +37,40 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ProjectReleasesType", propOrder = {
-    "release"
-})
+@XmlType(name = "ProjectReleasesType", propOrder = { "release" })
 public class ProjectReleasesType {
 
-    @XmlElement(name = "Release")
-    protected List<ReleaseType> release;
+	@XmlElement(name = "Release")
+	protected List<ReleaseType> release;
 
-    /**
-     * Gets the value of the release property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the release property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getRelease().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link ReleaseType }
-     * 
-     * 
-     */
-    public List<ReleaseType> getRelease() {
-        if (release == null) {
-            release = new ArrayList<ReleaseType>();
-        }
-        return this.release;
-    }
+	/**
+	 * Gets the value of the release property.
+	 * 
+	 * <p>
+	 * This accessor method returns a reference to the live list, not a
+	 * snapshot. Therefore any modification you make to the returned list will
+	 * be present inside the JAXB object. This is why there is not a
+	 * <CODE>set</CODE> method for the release property.
+	 * 
+	 * <p>
+	 * For example, to add a new item, do as follows:
+	 * 
+	 * <pre>
+	 * getRelease().add(newItem);
+	 * </pre>
+	 * 
+	 * 
+	 * <p>
+	 * Objects of the following type(s) are allowed in the list
+	 * {@link ReleaseType }
+	 * 
+	 * 
+	 */
+	public List<ReleaseType> getRelease() {
+		if (release == null) {
+			release = new ArrayList<ReleaseType>();
+		}
+		return this.release;
+	}
 
 }

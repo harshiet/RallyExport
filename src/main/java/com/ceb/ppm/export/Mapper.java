@@ -30,6 +30,7 @@ public class Mapper {
 		project.setNotes(projectType.getNotes());
 		project.setOwner(projectType.getOwner().getDisplayName());
 		project.setState(projectType.getState());
+		project.setCreationDate(projectType.getCreationDate().toGregorianCalendar().getTime());
 		return project;
 
 	}
@@ -45,6 +46,7 @@ public class Mapper {
 		release.setTheme(releaseType.getTheme());
 		release.setVersion(releaseType.getVersion());
 		release.setObjectId(releaseType.getObjectID());
+		release.setCreationDate(releaseType.getCreationDate().toGregorianCalendar().getTime());
 		RevisionHistory revisionHistory = new RevisionHistory();
 		release.setRevisionHistory(revisionHistory);
 
@@ -67,7 +69,7 @@ public class Mapper {
 		iteration.setState(iterationType.getState());
 		iteration.setTheme(iterationType.getTheme());
 		iteration.setObjectId(iterationType.getObjectID());
-
+		iteration.setCreationDate(iterationType.getCreationDate().toGregorianCalendar().getTime());
 		return iteration;
 	}
 
@@ -91,7 +93,8 @@ public class Mapper {
 		userStory.setFormattedId(hierarchicalRequirementType.getFormattedID());
 		userStory.setName(hierarchicalRequirementType.getName());
 		userStory.setNotes(hierarchicalRequirementType.getNotes());
-		userStory.setOwner(hierarchicalRequirementType.getOwner().getDisplayName());
+		userStory.setOwner(hierarchicalRequirementType.getOwner() == null ? "" : hierarchicalRequirementType.getOwner()
+				.getDisplayName());
 		userStory.setPlanEstimate(hierarchicalRequirementType.getPlanEstimate());
 		userStory.setScheduleState(hierarchicalRequirementType.getScheduleState());
 		for (TagType tt : hierarchicalRequirementType.getTags().getTag()) {
@@ -102,6 +105,7 @@ public class Mapper {
 		userStory.setTaskRemainingTotal(hierarchicalRequirementType.getTaskRemainingTotal());
 		userStory.setHasParent(hierarchicalRequirementType.isHasParent());
 		userStory.setAmParent(hierarchicalRequirementType.isIsParent());
+		userStory.setCreationDate(hierarchicalRequirementType.getCreationDate().toGregorianCalendar().getTime());
 		return userStory;
 	}
 
@@ -116,6 +120,7 @@ public class Mapper {
 		task.setNotes(taskType.getNotes());
 		task.setState(taskType.getState());
 		task.setToDo(taskType.getToDo());
+		task.setCreationDate(taskType.getCreationDate().toGregorianCalendar().getTime());
 		return task;
 	}
 
@@ -130,6 +135,7 @@ public class Mapper {
 		task.setNotes(taskType.getNotes());
 		task.setState(taskType.getState());
 		task.setToDo(taskType.getToDo());
+		task.setCreationDate(taskType.getCreationDate().toGregorianCalendar().getTime());
 		return task;
 	}
 
@@ -158,6 +164,8 @@ public class Mapper {
 		defect.setTaskActualTotal(defectType.getTaskActualTotal());
 		defect.setTaskEstimateTotal(defectType.getTaskEstimateTotal());
 		defect.setTaskRemainingTotal(defectType.getTaskRemainingTotal());
+		defect.setCreationDate(defectType.getCreationDate().toGregorianCalendar().getTime());
+
 		return defect;
 	}
 
@@ -177,6 +185,8 @@ public class Mapper {
 		testCase.setType(testCaseType.getType());
 		testCase.setValidationExpectedResult(testCaseType.getValidationExpectedResult());
 		testCase.setValidationInput(testCaseType.getValidationInput());
+		testCase.setCreationDate(testCaseType.getCreationDate().toGregorianCalendar().getTime());
+
 		return testCase;
 	}
 

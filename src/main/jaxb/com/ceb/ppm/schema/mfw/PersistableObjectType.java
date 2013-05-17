@@ -5,7 +5,6 @@
 // Generated on: 2013.05.13 at 12:50:52 PM EDT 
 //
 
-
 package com.ceb.ppm.schema.mfw;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -16,11 +15,13 @@ import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
 
-
 /**
- * <p>Java class for PersistableObjectType complex type.
+ * <p>
+ * Java class for PersistableObjectType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="PersistableObjectType">
@@ -38,73 +39,57 @@ import javax.xml.datatype.XMLGregorianCalendar;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "PersistableObjectType", propOrder = {
-    "creationDate",
-    "objectID"
-})
-@XmlSeeAlso({
-    SubscriptionType.class,
-    AllowedAttributeValueType.class,
-    AllowedQueryOperatorType.class,
-    DomainObjectType.class,
-    PreferenceType.class
-})
-public class PersistableObjectType
-    extends WSObject
-{
+@XmlType(name = "PersistableObjectType", propOrder = { "creationDate", "objectID" })
+@XmlSeeAlso({ SubscriptionType.class, AllowedAttributeValueType.class, AllowedQueryOperatorType.class,
+		DomainObjectType.class, PreferenceType.class })
+public class PersistableObjectType extends WSObject {
 
-    @XmlElement(name = "CreationDate")
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar creationDate;
-    @XmlElement(name = "ObjectID")
-    protected Long objectID;
+	@XmlElement(name = "CreationDate")
+	@XmlSchemaType(name = "dateTime")
+	protected XMLGregorianCalendar creationDate;
+	@XmlElement(name = "ObjectID")
+	protected Long objectID;
 
-    /**
-     * Gets the value of the creationDate property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public XMLGregorianCalendar getCreationDate() {
-        return creationDate;
-    }
+	/**
+	 * Gets the value of the creationDate property.
+	 * 
+	 * @return possible object is {@link XMLGregorianCalendar }
+	 * 
+	 */
+	public XMLGregorianCalendar getCreationDate() {
+		return creationDate;
+	}
 
-    /**
-     * Sets the value of the creationDate property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
-     */
-    public void setCreationDate(XMLGregorianCalendar value) {
-        this.creationDate = value;
-    }
+	/**
+	 * Sets the value of the creationDate property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link XMLGregorianCalendar }
+	 * 
+	 */
+	public void setCreationDate(XMLGregorianCalendar value) {
+		this.creationDate = value;
+	}
 
-    /**
-     * Gets the value of the objectID property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
-     */
-    public Long getObjectID() {
-        return objectID;
-    }
+	/**
+	 * Gets the value of the objectID property.
+	 * 
+	 * @return possible object is {@link Long }
+	 * 
+	 */
+	public Long getObjectID() {
+		return objectID;
+	}
 
-    /**
-     * Sets the value of the objectID property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setObjectID(Long value) {
-        this.objectID = value;
-    }
+	/**
+	 * Sets the value of the objectID property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Long }
+	 * 
+	 */
+	public void setObjectID(Long value) {
+		this.objectID = value;
+	}
 
 }

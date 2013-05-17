@@ -5,7 +5,6 @@
 // Generated on: 2013.05.13 at 12:50:52 PM EDT 
 //
 
-
 package com.ceb.ppm.schema.mfw;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -13,11 +12,13 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for RevisionHistoryType complex type.
+ * <p>
+ * Java class for RevisionHistoryType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="RevisionHistoryType">
@@ -34,38 +35,31 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "RevisionHistoryType", propOrder = {
-    "revisions"
-})
-public class RevisionHistoryType
-    extends WorkspaceDomainObjectType
-{
+@XmlType(name = "RevisionHistoryType", propOrder = { "revisions" })
+public class RevisionHistoryType extends WorkspaceDomainObjectType {
 
-    @XmlElement(name = "Revisions")
-    protected RevisionHistoryRevisionsType revisions;
+	@XmlElement(name = "Revisions")
+	protected RevisionHistoryRevisionsType revisions;
 
-    /**
-     * Gets the value of the revisions property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link RevisionHistoryRevisionsType }
-     *     
-     */
-    public RevisionHistoryRevisionsType getRevisions() {
-        return revisions;
-    }
+	/**
+	 * Gets the value of the revisions property.
+	 * 
+	 * @return possible object is {@link RevisionHistoryRevisionsType }
+	 * 
+	 */
+	public RevisionHistoryRevisionsType getRevisions() {
+		return revisions;
+	}
 
-    /**
-     * Sets the value of the revisions property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RevisionHistoryRevisionsType }
-     *     
-     */
-    public void setRevisions(RevisionHistoryRevisionsType value) {
-        this.revisions = value;
-    }
+	/**
+	 * Sets the value of the revisions property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link RevisionHistoryRevisionsType }
+	 * 
+	 */
+	public void setRevisions(RevisionHistoryRevisionsType value) {
+		this.revisions = value;
+	}
 
 }

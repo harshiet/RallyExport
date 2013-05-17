@@ -5,7 +5,6 @@
 // Generated on: 2013.05.13 at 12:50:52 PM EDT 
 //
 
-
 package com.ceb.ppm.schema.mfw;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -13,11 +12,13 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for AttachmentContentType complex type.
+ * <p>
+ * Java class for AttachmentContentType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="AttachmentContentType">
@@ -34,36 +35,29 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "AttachmentContentType", propOrder = {
-    "content"
-})
-public class AttachmentContentType
-    extends WorkspaceDomainObjectType
-{
+@XmlType(name = "AttachmentContentType", propOrder = { "content" })
+public class AttachmentContentType extends WorkspaceDomainObjectType {
 
-    @XmlElement(name = "Content")
-    protected byte[] content;
+	@XmlElement(name = "Content")
+	protected byte[] content;
 
-    /**
-     * Gets the value of the content property.
-     * 
-     * @return
-     *     possible object is
-     *     byte[]
-     */
-    public byte[] getContent() {
-        return content;
-    }
+	/**
+	 * Gets the value of the content property.
+	 * 
+	 * @return possible object is byte[]
+	 */
+	public byte[] getContent() {
+		return content;
+	}
 
-    /**
-     * Sets the value of the content property.
-     * 
-     * @param value
-     *     allowed object is
-     *     byte[]
-     */
-    public void setContent(byte[] value) {
-        this.content = ((byte[]) value);
-    }
+	/**
+	 * Sets the value of the content property.
+	 * 
+	 * @param value
+	 *            allowed object is byte[]
+	 */
+	public void setContent(byte[] value) {
+		this.content = ((byte[]) value);
+	}
 
 }

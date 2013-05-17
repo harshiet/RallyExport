@@ -7,7 +7,11 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
+@Table(uniqueConstraints = { @UniqueConstraint(columnNames = { "user_story_id", "formattedId" }),
+		@UniqueConstraint(columnNames = { "defect_id", "formattedId" }) })
 @Entity
 public class Task extends Artifact {
 

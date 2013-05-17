@@ -5,7 +5,6 @@
 // Generated on: 2013.05.13 at 12:50:52 PM EDT 
 //
 
-
 package com.ceb.ppm.schema.mfw;
 
 import java.util.ArrayList;
@@ -15,11 +14,13 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for OperationResultErrorsType complex type.
+ * <p>
+ * Java class for OperationResultErrorsType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="OperationResultErrorsType">
@@ -36,41 +37,39 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "OperationResultErrorsType", propOrder = {
-    "operationResultError"
-})
+@XmlType(name = "OperationResultErrorsType", propOrder = { "operationResultError" })
 public class OperationResultErrorsType {
 
-    @XmlElement(name = "OperationResultError")
-    protected List<String> operationResultError;
+	@XmlElement(name = "OperationResultError")
+	protected List<String> operationResultError;
 
-    /**
-     * Gets the value of the operationResultError property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the operationResultError property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getOperationResultError().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getOperationResultError() {
-        if (operationResultError == null) {
-            operationResultError = new ArrayList<String>();
-        }
-        return this.operationResultError;
-    }
+	/**
+	 * Gets the value of the operationResultError property.
+	 * 
+	 * <p>
+	 * This accessor method returns a reference to the live list, not a
+	 * snapshot. Therefore any modification you make to the returned list will
+	 * be present inside the JAXB object. This is why there is not a
+	 * <CODE>set</CODE> method for the operationResultError property.
+	 * 
+	 * <p>
+	 * For example, to add a new item, do as follows:
+	 * 
+	 * <pre>
+	 * getOperationResultError().add(newItem);
+	 * </pre>
+	 * 
+	 * 
+	 * <p>
+	 * Objects of the following type(s) are allowed in the list {@link String }
+	 * 
+	 * 
+	 */
+	public List<String> getOperationResultError() {
+		if (operationResultError == null) {
+			operationResultError = new ArrayList<String>();
+		}
+		return this.operationResultError;
+	}
 
 }

@@ -5,7 +5,6 @@
 // Generated on: 2013.05.13 at 12:50:52 PM EDT 
 //
 
-
 package com.ceb.ppm.schema.mfw;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -13,11 +12,13 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for BlockerType complex type.
+ * <p>
+ * Java class for BlockerType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="BlockerType">
@@ -35,65 +36,54 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "BlockerType", propOrder = {
-    "blockedBy",
-    "workProduct"
-})
-public class BlockerType
-    extends DomainObjectType
-{
+@XmlType(name = "BlockerType", propOrder = { "blockedBy", "workProduct" })
+public class BlockerType extends DomainObjectType {
 
-    @XmlElement(name = "BlockedBy")
-    protected UserType blockedBy;
-    @XmlElement(name = "WorkProduct")
-    protected ArtifactType workProduct;
+	@XmlElement(name = "BlockedBy")
+	protected UserType blockedBy;
+	@XmlElement(name = "WorkProduct")
+	protected ArtifactType workProduct;
 
-    /**
-     * Gets the value of the blockedBy property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link UserType }
-     *     
-     */
-    public UserType getBlockedBy() {
-        return blockedBy;
-    }
+	/**
+	 * Gets the value of the blockedBy property.
+	 * 
+	 * @return possible object is {@link UserType }
+	 * 
+	 */
+	public UserType getBlockedBy() {
+		return blockedBy;
+	}
 
-    /**
-     * Sets the value of the blockedBy property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link UserType }
-     *     
-     */
-    public void setBlockedBy(UserType value) {
-        this.blockedBy = value;
-    }
+	/**
+	 * Sets the value of the blockedBy property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link UserType }
+	 * 
+	 */
+	public void setBlockedBy(UserType value) {
+		this.blockedBy = value;
+	}
 
-    /**
-     * Gets the value of the workProduct property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ArtifactType }
-     *     
-     */
-    public ArtifactType getWorkProduct() {
-        return workProduct;
-    }
+	/**
+	 * Gets the value of the workProduct property.
+	 * 
+	 * @return possible object is {@link ArtifactType }
+	 * 
+	 */
+	public ArtifactType getWorkProduct() {
+		return workProduct;
+	}
 
-    /**
-     * Sets the value of the workProduct property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ArtifactType }
-     *     
-     */
-    public void setWorkProduct(ArtifactType value) {
-        this.workProduct = value;
-    }
+	/**
+	 * Sets the value of the workProduct property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link ArtifactType }
+	 * 
+	 */
+	public void setWorkProduct(ArtifactType value) {
+		this.workProduct = value;
+	}
 
 }

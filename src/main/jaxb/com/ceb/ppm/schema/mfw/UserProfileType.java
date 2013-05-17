@@ -5,7 +5,6 @@
 // Generated on: 2013.05.13 at 12:50:52 PM EDT 
 //
 
-
 package com.ceb.ppm.schema.mfw;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -13,11 +12,13 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for UserProfileType complex type.
+ * <p>
+ * Java class for UserProfileType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="UserProfileType">
@@ -42,254 +43,216 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "UserProfileType", propOrder = {
-    "dateFormat",
-    "dateTimeFormat",
-    "defaultProject",
-    "defaultWorkspace",
-    "emailNotificationEnabled",
-    "sessionTimeoutSeconds",
-    "sessionTimeoutWarning",
-    "timeZone",
-    "welcomePageHidden"
-})
-public class UserProfileType
-    extends DomainObjectType
-{
+@XmlType(name = "UserProfileType", propOrder = { "dateFormat", "dateTimeFormat", "defaultProject", "defaultWorkspace",
+		"emailNotificationEnabled", "sessionTimeoutSeconds", "sessionTimeoutWarning", "timeZone", "welcomePageHidden" })
+public class UserProfileType extends DomainObjectType {
 
-    @XmlElement(name = "DateFormat")
-    protected String dateFormat;
-    @XmlElement(name = "DateTimeFormat")
-    protected String dateTimeFormat;
-    @XmlElement(name = "DefaultProject")
-    protected ProjectType defaultProject;
-    @XmlElement(name = "DefaultWorkspace")
-    protected WorkspaceType defaultWorkspace;
-    @XmlElement(name = "EmailNotificationEnabled")
-    protected Boolean emailNotificationEnabled;
-    @XmlElement(name = "SessionTimeoutSeconds")
-    protected Long sessionTimeoutSeconds;
-    @XmlElement(name = "SessionTimeoutWarning")
-    protected Boolean sessionTimeoutWarning;
-    @XmlElement(name = "TimeZone")
-    protected String timeZone;
-    @XmlElement(name = "WelcomePageHidden")
-    protected Boolean welcomePageHidden;
+	@XmlElement(name = "DateFormat")
+	protected String dateFormat;
+	@XmlElement(name = "DateTimeFormat")
+	protected String dateTimeFormat;
+	@XmlElement(name = "DefaultProject")
+	protected ProjectType defaultProject;
+	@XmlElement(name = "DefaultWorkspace")
+	protected WorkspaceType defaultWorkspace;
+	@XmlElement(name = "EmailNotificationEnabled")
+	protected Boolean emailNotificationEnabled;
+	@XmlElement(name = "SessionTimeoutSeconds")
+	protected Long sessionTimeoutSeconds;
+	@XmlElement(name = "SessionTimeoutWarning")
+	protected Boolean sessionTimeoutWarning;
+	@XmlElement(name = "TimeZone")
+	protected String timeZone;
+	@XmlElement(name = "WelcomePageHidden")
+	protected Boolean welcomePageHidden;
 
-    /**
-     * Gets the value of the dateFormat property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getDateFormat() {
-        return dateFormat;
-    }
+	/**
+	 * Gets the value of the dateFormat property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getDateFormat() {
+		return dateFormat;
+	}
 
-    /**
-     * Sets the value of the dateFormat property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDateFormat(String value) {
-        this.dateFormat = value;
-    }
+	/**
+	 * Sets the value of the dateFormat property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setDateFormat(String value) {
+		this.dateFormat = value;
+	}
 
-    /**
-     * Gets the value of the dateTimeFormat property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getDateTimeFormat() {
-        return dateTimeFormat;
-    }
+	/**
+	 * Gets the value of the dateTimeFormat property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getDateTimeFormat() {
+		return dateTimeFormat;
+	}
 
-    /**
-     * Sets the value of the dateTimeFormat property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDateTimeFormat(String value) {
-        this.dateTimeFormat = value;
-    }
+	/**
+	 * Sets the value of the dateTimeFormat property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setDateTimeFormat(String value) {
+		this.dateTimeFormat = value;
+	}
 
-    /**
-     * Gets the value of the defaultProject property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ProjectType }
-     *     
-     */
-    public ProjectType getDefaultProject() {
-        return defaultProject;
-    }
+	/**
+	 * Gets the value of the defaultProject property.
+	 * 
+	 * @return possible object is {@link ProjectType }
+	 * 
+	 */
+	public ProjectType getDefaultProject() {
+		return defaultProject;
+	}
 
-    /**
-     * Sets the value of the defaultProject property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ProjectType }
-     *     
-     */
-    public void setDefaultProject(ProjectType value) {
-        this.defaultProject = value;
-    }
+	/**
+	 * Sets the value of the defaultProject property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link ProjectType }
+	 * 
+	 */
+	public void setDefaultProject(ProjectType value) {
+		this.defaultProject = value;
+	}
 
-    /**
-     * Gets the value of the defaultWorkspace property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link WorkspaceType }
-     *     
-     */
-    public WorkspaceType getDefaultWorkspace() {
-        return defaultWorkspace;
-    }
+	/**
+	 * Gets the value of the defaultWorkspace property.
+	 * 
+	 * @return possible object is {@link WorkspaceType }
+	 * 
+	 */
+	public WorkspaceType getDefaultWorkspace() {
+		return defaultWorkspace;
+	}
 
-    /**
-     * Sets the value of the defaultWorkspace property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link WorkspaceType }
-     *     
-     */
-    public void setDefaultWorkspace(WorkspaceType value) {
-        this.defaultWorkspace = value;
-    }
+	/**
+	 * Sets the value of the defaultWorkspace property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link WorkspaceType }
+	 * 
+	 */
+	public void setDefaultWorkspace(WorkspaceType value) {
+		this.defaultWorkspace = value;
+	}
 
-    /**
-     * Gets the value of the emailNotificationEnabled property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
-     */
-    public Boolean isEmailNotificationEnabled() {
-        return emailNotificationEnabled;
-    }
+	/**
+	 * Gets the value of the emailNotificationEnabled property.
+	 * 
+	 * @return possible object is {@link Boolean }
+	 * 
+	 */
+	public Boolean isEmailNotificationEnabled() {
+		return emailNotificationEnabled;
+	}
 
-    /**
-     * Sets the value of the emailNotificationEnabled property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setEmailNotificationEnabled(Boolean value) {
-        this.emailNotificationEnabled = value;
-    }
+	/**
+	 * Sets the value of the emailNotificationEnabled property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Boolean }
+	 * 
+	 */
+	public void setEmailNotificationEnabled(Boolean value) {
+		this.emailNotificationEnabled = value;
+	}
 
-    /**
-     * Gets the value of the sessionTimeoutSeconds property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
-     */
-    public Long getSessionTimeoutSeconds() {
-        return sessionTimeoutSeconds;
-    }
+	/**
+	 * Gets the value of the sessionTimeoutSeconds property.
+	 * 
+	 * @return possible object is {@link Long }
+	 * 
+	 */
+	public Long getSessionTimeoutSeconds() {
+		return sessionTimeoutSeconds;
+	}
 
-    /**
-     * Sets the value of the sessionTimeoutSeconds property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
-     */
-    public void setSessionTimeoutSeconds(Long value) {
-        this.sessionTimeoutSeconds = value;
-    }
+	/**
+	 * Sets the value of the sessionTimeoutSeconds property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Long }
+	 * 
+	 */
+	public void setSessionTimeoutSeconds(Long value) {
+		this.sessionTimeoutSeconds = value;
+	}
 
-    /**
-     * Gets the value of the sessionTimeoutWarning property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
-     */
-    public Boolean isSessionTimeoutWarning() {
-        return sessionTimeoutWarning;
-    }
+	/**
+	 * Gets the value of the sessionTimeoutWarning property.
+	 * 
+	 * @return possible object is {@link Boolean }
+	 * 
+	 */
+	public Boolean isSessionTimeoutWarning() {
+		return sessionTimeoutWarning;
+	}
 
-    /**
-     * Sets the value of the sessionTimeoutWarning property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setSessionTimeoutWarning(Boolean value) {
-        this.sessionTimeoutWarning = value;
-    }
+	/**
+	 * Sets the value of the sessionTimeoutWarning property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Boolean }
+	 * 
+	 */
+	public void setSessionTimeoutWarning(Boolean value) {
+		this.sessionTimeoutWarning = value;
+	}
 
-    /**
-     * Gets the value of the timeZone property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getTimeZone() {
-        return timeZone;
-    }
+	/**
+	 * Gets the value of the timeZone property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getTimeZone() {
+		return timeZone;
+	}
 
-    /**
-     * Sets the value of the timeZone property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setTimeZone(String value) {
-        this.timeZone = value;
-    }
+	/**
+	 * Sets the value of the timeZone property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setTimeZone(String value) {
+		this.timeZone = value;
+	}
 
-    /**
-     * Gets the value of the welcomePageHidden property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
-     */
-    public Boolean isWelcomePageHidden() {
-        return welcomePageHidden;
-    }
+	/**
+	 * Gets the value of the welcomePageHidden property.
+	 * 
+	 * @return possible object is {@link Boolean }
+	 * 
+	 */
+	public Boolean isWelcomePageHidden() {
+		return welcomePageHidden;
+	}
 
-    /**
-     * Sets the value of the welcomePageHidden property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setWelcomePageHidden(Boolean value) {
-        this.welcomePageHidden = value;
-    }
+	/**
+	 * Sets the value of the welcomePageHidden property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Boolean }
+	 * 
+	 */
+	public void setWelcomePageHidden(Boolean value) {
+		this.welcomePageHidden = value;
+	}
 
 }

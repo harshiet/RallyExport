@@ -5,7 +5,6 @@
 // Generated on: 2013.05.13 at 12:50:52 PM EDT 
 //
 
-
 package com.ceb.ppm.schema.mfw;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -13,11 +12,13 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for UserIterationCapacityType complex type.
+ * <p>
+ * Java class for UserIterationCapacityType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="UserIterationCapacityType">
@@ -39,173 +40,147 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "UserIterationCapacityType", propOrder = {
-    "capacity",
-    "iteration",
-    "load",
-    "project",
-    "taskEstimates",
-    "user"
-})
-public class UserIterationCapacityType
-    extends WorkspaceDomainObjectType
-{
+@XmlType(name = "UserIterationCapacityType", propOrder = { "capacity", "iteration", "load", "project", "taskEstimates",
+		"user" })
+public class UserIterationCapacityType extends WorkspaceDomainObjectType {
 
-    @XmlElement(name = "Capacity")
-    protected Double capacity;
-    @XmlElement(name = "Iteration")
-    protected IterationType iteration;
-    @XmlElement(name = "Load")
-    protected Double load;
-    @XmlElement(name = "Project")
-    protected ProjectType project;
-    @XmlElement(name = "TaskEstimates")
-    protected Double taskEstimates;
-    @XmlElement(name = "User")
-    protected UserType user;
+	@XmlElement(name = "Capacity")
+	protected Double capacity;
+	@XmlElement(name = "Iteration")
+	protected IterationType iteration;
+	@XmlElement(name = "Load")
+	protected Double load;
+	@XmlElement(name = "Project")
+	protected ProjectType project;
+	@XmlElement(name = "TaskEstimates")
+	protected Double taskEstimates;
+	@XmlElement(name = "User")
+	protected UserType user;
 
-    /**
-     * Gets the value of the capacity property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
-     */
-    public Double getCapacity() {
-        return capacity;
-    }
+	/**
+	 * Gets the value of the capacity property.
+	 * 
+	 * @return possible object is {@link Double }
+	 * 
+	 */
+	public Double getCapacity() {
+		return capacity;
+	}
 
-    /**
-     * Sets the value of the capacity property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setCapacity(Double value) {
-        this.capacity = value;
-    }
+	/**
+	 * Sets the value of the capacity property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Double }
+	 * 
+	 */
+	public void setCapacity(Double value) {
+		this.capacity = value;
+	}
 
-    /**
-     * Gets the value of the iteration property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link IterationType }
-     *     
-     */
-    public IterationType getIteration() {
-        return iteration;
-    }
+	/**
+	 * Gets the value of the iteration property.
+	 * 
+	 * @return possible object is {@link IterationType }
+	 * 
+	 */
+	public IterationType getIteration() {
+		return iteration;
+	}
 
-    /**
-     * Sets the value of the iteration property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link IterationType }
-     *     
-     */
-    public void setIteration(IterationType value) {
-        this.iteration = value;
-    }
+	/**
+	 * Sets the value of the iteration property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link IterationType }
+	 * 
+	 */
+	public void setIteration(IterationType value) {
+		this.iteration = value;
+	}
 
-    /**
-     * Gets the value of the load property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
-     */
-    public Double getLoad() {
-        return load;
-    }
+	/**
+	 * Gets the value of the load property.
+	 * 
+	 * @return possible object is {@link Double }
+	 * 
+	 */
+	public Double getLoad() {
+		return load;
+	}
 
-    /**
-     * Sets the value of the load property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setLoad(Double value) {
-        this.load = value;
-    }
+	/**
+	 * Sets the value of the load property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Double }
+	 * 
+	 */
+	public void setLoad(Double value) {
+		this.load = value;
+	}
 
-    /**
-     * Gets the value of the project property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ProjectType }
-     *     
-     */
-    public ProjectType getProject() {
-        return project;
-    }
+	/**
+	 * Gets the value of the project property.
+	 * 
+	 * @return possible object is {@link ProjectType }
+	 * 
+	 */
+	public ProjectType getProject() {
+		return project;
+	}
 
-    /**
-     * Sets the value of the project property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ProjectType }
-     *     
-     */
-    public void setProject(ProjectType value) {
-        this.project = value;
-    }
+	/**
+	 * Sets the value of the project property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link ProjectType }
+	 * 
+	 */
+	public void setProject(ProjectType value) {
+		this.project = value;
+	}
 
-    /**
-     * Gets the value of the taskEstimates property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
-     */
-    public Double getTaskEstimates() {
-        return taskEstimates;
-    }
+	/**
+	 * Gets the value of the taskEstimates property.
+	 * 
+	 * @return possible object is {@link Double }
+	 * 
+	 */
+	public Double getTaskEstimates() {
+		return taskEstimates;
+	}
 
-    /**
-     * Sets the value of the taskEstimates property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setTaskEstimates(Double value) {
-        this.taskEstimates = value;
-    }
+	/**
+	 * Sets the value of the taskEstimates property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Double }
+	 * 
+	 */
+	public void setTaskEstimates(Double value) {
+		this.taskEstimates = value;
+	}
 
-    /**
-     * Gets the value of the user property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link UserType }
-     *     
-     */
-    public UserType getUser() {
-        return user;
-    }
+	/**
+	 * Gets the value of the user property.
+	 * 
+	 * @return possible object is {@link UserType }
+	 * 
+	 */
+	public UserType getUser() {
+		return user;
+	}
 
-    /**
-     * Sets the value of the user property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link UserType }
-     *     
-     */
-    public void setUser(UserType value) {
-        this.user = value;
-    }
+	/**
+	 * Sets the value of the user property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link UserType }
+	 * 
+	 */
+	public void setUser(UserType value) {
+		this.user = value;
+	}
 
 }

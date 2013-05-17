@@ -5,7 +5,6 @@
 // Generated on: 2013.05.13 at 12:50:52 PM EDT 
 //
 
-
 package com.ceb.ppm.schema.mfw;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -13,11 +12,13 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for TagType complex type.
+ * <p>
+ * Java class for TagType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="TagType">
@@ -35,65 +36,54 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TagType", propOrder = {
-    "archived",
-    "name"
-})
-public class TagType
-    extends WorkspaceDomainObjectType
-{
+@XmlType(name = "TagType", propOrder = { "archived", "name" })
+public class TagType extends WorkspaceDomainObjectType {
 
-    @XmlElement(name = "Archived")
-    protected Boolean archived;
-    @XmlElement(name = "Name")
-    protected String name;
+	@XmlElement(name = "Archived")
+	protected Boolean archived;
+	@XmlElement(name = "Name")
+	protected String name;
 
-    /**
-     * Gets the value of the archived property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
-     */
-    public Boolean isArchived() {
-        return archived;
-    }
+	/**
+	 * Gets the value of the archived property.
+	 * 
+	 * @return possible object is {@link Boolean }
+	 * 
+	 */
+	public Boolean isArchived() {
+		return archived;
+	}
 
-    /**
-     * Sets the value of the archived property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setArchived(Boolean value) {
-        this.archived = value;
-    }
+	/**
+	 * Sets the value of the archived property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link Boolean }
+	 * 
+	 */
+	public void setArchived(Boolean value) {
+		this.archived = value;
+	}
 
-    /**
-     * Gets the value of the name property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getName() {
-        return name;
-    }
+	/**
+	 * Gets the value of the name property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getName() {
+		return name;
+	}
 
-    /**
-     * Sets the value of the name property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setName(String value) {
-        this.name = value;
-    }
+	/**
+	 * Sets the value of the name property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setName(String value) {
+		this.name = value;
+	}
 
 }

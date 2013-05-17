@@ -5,7 +5,6 @@
 // Generated on: 2013.05.13 at 12:50:52 PM EDT 
 //
 
-
 package com.ceb.ppm.schema.mfw;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -14,11 +13,13 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for RequirementType complex type.
+ * <p>
+ * Java class for RequirementType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="RequirementType">
@@ -36,68 +37,55 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "RequirementType", propOrder = {
-    "attachments",
-    "_package"
-})
-@XmlSeeAlso({
-    HierarchicalRequirementType.class
-})
-public class RequirementType
-    extends ArtifactType
-{
+@XmlType(name = "RequirementType", propOrder = { "attachments", "_package" })
+@XmlSeeAlso({ HierarchicalRequirementType.class })
+public class RequirementType extends ArtifactType {
 
-    @XmlElement(name = "Attachments")
-    protected RequirementAttachmentsType attachments;
-    @XmlElement(name = "Package")
-    protected String _package;
+	@XmlElement(name = "Attachments")
+	protected RequirementAttachmentsType attachments;
+	@XmlElement(name = "Package")
+	protected String _package;
 
-    /**
-     * Gets the value of the attachments property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link RequirementAttachmentsType }
-     *     
-     */
-    public RequirementAttachmentsType getAttachments() {
-        return attachments;
-    }
+	/**
+	 * Gets the value of the attachments property.
+	 * 
+	 * @return possible object is {@link RequirementAttachmentsType }
+	 * 
+	 */
+	public RequirementAttachmentsType getAttachments() {
+		return attachments;
+	}
 
-    /**
-     * Sets the value of the attachments property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RequirementAttachmentsType }
-     *     
-     */
-    public void setAttachments(RequirementAttachmentsType value) {
-        this.attachments = value;
-    }
+	/**
+	 * Sets the value of the attachments property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link RequirementAttachmentsType }
+	 * 
+	 */
+	public void setAttachments(RequirementAttachmentsType value) {
+		this.attachments = value;
+	}
 
-    /**
-     * Gets the value of the package property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getPackage() {
-        return _package;
-    }
+	/**
+	 * Gets the value of the package property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getPackage() {
+		return _package;
+	}
 
-    /**
-     * Sets the value of the package property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPackage(String value) {
-        this._package = value;
-    }
+	/**
+	 * Sets the value of the package property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setPackage(String value) {
+		this._package = value;
+	}
 
 }

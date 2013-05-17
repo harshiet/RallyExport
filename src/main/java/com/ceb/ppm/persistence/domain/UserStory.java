@@ -7,7 +7,10 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
+@Table(uniqueConstraints = @UniqueConstraint(columnNames = { "project_id", "formattedId" }))
 @Entity
 public class UserStory extends Artifact {
 
@@ -16,7 +19,6 @@ public class UserStory extends Artifact {
 	Double taskRemainingTotal;
 	Boolean hasParent;
 	Boolean amParent;
-	
 
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "parent_id", referencedColumnName = "id")
@@ -97,6 +99,5 @@ public class UserStory extends Artifact {
 	public void setAmParent(Boolean amParent) {
 		this.amParent = amParent;
 	}
-	
 
 }
