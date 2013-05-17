@@ -213,8 +213,9 @@ public class ExportFromRally {
 		long timeRemaining = -1;
 		timeRemaining = ((((System.currentTimeMillis() - timeStart)) / artifactIndex) * (totalArtifacts - artifactIndex))
 				/ (1000 * 60);
-		System.out.println("Progress: [" + artifactIndex + "/" + totalArtifacts + "] [" + percentage + "%] ["
-				+ timeRemaining + " mins.]");
+		System.out.println("Progress: [" + percentage + "%] [Elapsed:" + (System.currentTimeMillis() - timeStart)
+				/ (1000 * 60) + ", Remaining: " + timeRemaining + "]" + "[" + artifactIndex + "/" + totalArtifacts
+				+ "] ");
 	}
 
 	private void persistDefect(Project project, Map<String, Release> projectReleases, DefectType defectType,
