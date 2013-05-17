@@ -95,28 +95,20 @@ public class ExportFromRally {
 					iterationCapacityType = findOne(iterationCapacityType, UserIterationCapacityType.class);
 					Mapper.addIterationCapacity(iteration, iterationCapacityType);
 				}
-				em.persist(iteration);
-				em.getTransaction().commit();
-
 				List<DomainObjectType> userStories = findAll("hierarchicalrequirement", "(((Project.ObjectID = "
 						+ projectType.getObjectID() + ") AND (Iteration.ObjectID = " + iterationType.getObjectID()
 						+ ")) AND (Parent = NULL))");
-				em.getTransaction().begin();
 				for (DomainObjectType oUS : userStories) {
 					HierarchicalRequirementType hierarchicalRequirementType = findOne(oUS,
 							HierarchicalRequirementType.class);
 					persistUserStory(project, projectReleases, hierarchicalRequirementType, iteration);
 				}
-				em.getTransaction().commit();
 				List<DomainObjectType> defects = findAll("defect", "(((Project.ObjectID = " + projectType.getObjectID()
 						+ ") AND (Iteration.ObjectID = " + iterationType.getObjectID() + ")) AND (Requirement = NULL))");
-				em.getTransaction().begin();
 				for (DomainObjectType oD : defects) {
 					DefectType defectType = findOne(oD, DefectType.class);
 					persistDefect(project, projectReleases, defectType, iteration, null);
 				}
-				em.getTransaction().commit();
-				em.getTransaction().begin();
 				em.persist(iteration);
 				em.getTransaction().commit();
 			}
@@ -128,36 +120,27 @@ public class ExportFromRally {
 						HierarchicalRequirementType.class);
 				persistUserStory(project, projectReleases, hierarchicalRequirementType, null);
 			}
-			em.getTransaction().commit();
-
-			em.getTransaction().begin();
 			userStories = findAll("hierarchicalrequirement", "(((Project.ObjectID = " + projectType.getObjectID()
-					+ ") AND (Parent != NULL)) AND (Parent.ProjectID != " + projectType.getObjectID() + "))");
+					+ ") AND (Parent != NULL)) AND (Parent.Project.ObjectID != " + projectType.getObjectID() + "))");
 			for (DomainObjectType oUS : userStories) {
 				HierarchicalRequirementType hierarchicalRequirementType = findOne(oUS,
 						HierarchicalRequirementType.class);
 				persistUserStory(project, projectReleases, hierarchicalRequirementType, null);
 			}
-			em.getTransaction().commit();
 
-			em.getTransaction().begin();
 			List<DomainObjectType> defects = findAll("defect", "(((Project.ObjectID = " + projectType.getObjectID()
 					+ ") AND (Iteration = NULL)) AND (Requirement = NULL))");
 			for (DomainObjectType oD : defects) {
 				DefectType defectType = findOne(oD, DefectType.class);
 				persistDefect(project, projectReleases, defectType, null, null);
 			}
-			em.getTransaction().commit();
-			em.getTransaction().begin();
+
 			defects = findAll("defect", "((Project.ObjectID = " + projectType.getObjectID()
 					+ ") AND (Requirement.Project.ObjectID != " + projectType.getObjectID() + "))");
 			for (DomainObjectType oD : defects) {
 				DefectType defectType = findOne(oD, DefectType.class);
 				persistDefect(project, projectReleases, defectType, null, null);
 			}
-			em.getTransaction().commit();
-
-			em.getTransaction().begin();
 			em.persist(project);
 			em.getTransaction().commit();
 			return;
