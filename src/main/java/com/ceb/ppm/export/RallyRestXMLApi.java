@@ -42,7 +42,7 @@ public class RallyRestXMLApi {
 
 	public String doGetRef(String url) {
 		url = url + "?fetch=true";
-		System.out.println("doGetRef: " + url);
+		//System.out.println("doGetRef: " + url);
 		WebResource webResource = client.resource(url);
 		ClientResponse response = webResource.header("Authorization", "Basic " + auth).type("text/xml")
 				.accept("text/xml").get(ClientResponse.class);
