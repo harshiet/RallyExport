@@ -18,7 +18,11 @@ import com.ceb.ppm.persistence.domain.Defect;
 import com.ceb.ppm.persistence.domain.Iteration;
 import com.ceb.ppm.persistence.domain.Project;
 import com.ceb.ppm.persistence.domain.Release;
+import com.ceb.ppm.persistence.domain.Task;
+import com.ceb.ppm.persistence.domain.TestCase;
 import com.ceb.ppm.persistence.domain.UserStory;
+import com.ceb.ppm.schema.mfw.AttachmentContentType;
+import com.ceb.ppm.schema.mfw.AttachmentType;
 import com.ceb.ppm.schema.mfw.DefectType;
 import com.ceb.ppm.schema.mfw.DomainObjectType;
 import com.ceb.ppm.schema.mfw.HierarchicalRequirementType;
@@ -151,8 +155,7 @@ public class ExportFromRally {
 			HierarchicalRequirementType hierarchicalRequirementType, Iteration iteration) throws JAXBException {
 		UserStory userStory = Mapper.mapUserStory(hierarchicalRequirementType);
 		for (TaskType taskType : hierarchicalRequirementType.getTasks().getTask()) {
-			taskType = findOne(taskType, TaskType.class);
-			Mapper.addTask(userStory, taskType);
+			taskType = persistTask(userStory, null, taskType);
 		}
 		for (DefectType defectType : hierarchicalRequirementType.getDefects().getDefect()) {
 			defectType = findOne(defectType, DefectType.class);
@@ -165,10 +168,11 @@ public class ExportFromRally {
 			}
 		}
 		for (TestCaseType testCaseType : hierarchicalRequirementType.getTestCases().getTestCase()) {
-			testCaseType = findOne(testCaseType, TestCaseType.class);
-			Mapper.addTestCase(userStory, null, testCaseType);
+			testCaseType = persistTestCase(userStory, null, testCaseType);
 		}
-
+		for (AttachmentType attachmentType : hierarchicalRequirementType.getAttachments().getAttachment()) {
+			attachmentType = persistAttachment(userStory, null, null, null, attachmentType);
+		}
 		em.persist(userStory);
 		progressIndicator();
 
@@ -190,28 +194,48 @@ public class ExportFromRally {
 		return userStory;
 	}
 
-	private void progressIndicator() {
-		artifactIndex++;
-		int percentage = (artifactIndex * 100) / totalArtifacts;
-		long timeRemaining = -1;
-		timeRemaining = ((((System.currentTimeMillis() - timeStart)) / artifactIndex) * (totalArtifacts - artifactIndex))
-				/ (1000 * 60);
-		System.out.println("Progress: [" + percentage + "%] [Elapsed:" + (System.currentTimeMillis() - timeStart)
-				/ (1000 * 60) + ", Remaining: " + timeRemaining + "]" + "[" + artifactIndex + "/" + totalArtifacts
-				+ "] ");
+	private TestCaseType persistTestCase(UserStory userStory, Defect defect, TestCaseType testCaseType)
+			throws JAXBException {
+		testCaseType = findOne(testCaseType, TestCaseType.class);
+		TestCase testCase = Mapper.addTestCase(userStory, defect, testCaseType);
+		for (AttachmentType attachmentType : testCaseType.getAttachments().getAttachment()) {
+			attachmentType = persistAttachment(null, null, null, testCase, attachmentType);
+		}
+
+		return testCaseType;
+	}
+
+	private AttachmentType persistAttachment(UserStory userStory, Defect defect, Task task, TestCase testCase,
+			AttachmentType attachmentType) throws JAXBException {
+		attachmentType = findOne(attachmentType, AttachmentType.class);
+		byte[] content = findOne(attachmentType.getContent(), AttachmentContentType.class).getContent();
+		Mapper.addAttachment(userStory, defect, task, testCase, attachmentType, content);
+		return attachmentType;
+	}
+
+	private TaskType persistTask(UserStory userStory, Defect defect, TaskType taskType) throws JAXBException {
+		taskType = findOne(taskType, TaskType.class);
+		Task task = Mapper.addTask(userStory, defect, taskType);
+		for (AttachmentType attachmentType : taskType.getAttachments().getAttachment()) {
+			attachmentType = persistAttachment(null, null, task, null, attachmentType);
+		}
+
+		return taskType;
 	}
 
 	private void persistDefect(Project project, Map<String, Release> projectReleases, DefectType defectType,
 			Iteration iteration, UserStory userStory) throws JAXBException {
 		Defect defect = Mapper.addDefect(userStory, defectType);
 		for (TaskType taskType : defectType.getTasks().getTask()) {
-			taskType = findOne(taskType, TaskType.class);
-			Mapper.addTask(defect, taskType);
+			taskType = persistTask(null, defect, taskType);
 		}
 		for (TestCaseType testCaseType : defectType.getTestCases().getTestCase()) {
-			testCaseType = findOne(testCaseType, TestCaseType.class);
-			Mapper.addTestCase(null, defect, testCaseType);
+			testCaseType = persistTestCase(null, defect, testCaseType);
 		}
+		for (AttachmentType attachmentType : defectType.getAttachments().getAttachment()) {
+			attachmentType = persistAttachment(null, defect, null, null, attachmentType);
+		}
+
 		em.persist(defect);
 		progressIndicator();
 
@@ -274,4 +298,16 @@ public class ExportFromRally {
 
 		return object;
 	}
+
+	private void progressIndicator() {
+		artifactIndex++;
+		int percentage = (artifactIndex * 100) / totalArtifacts;
+		long timeRemaining = -1;
+		timeRemaining = ((((System.currentTimeMillis() - timeStart)) / artifactIndex) * (totalArtifacts - artifactIndex))
+				/ (1000 * 60);
+		System.out.println("Progress: [" + percentage + "%] [Elapsed:" + (System.currentTimeMillis() - timeStart)
+				/ (1000 * 60) + ", Remaining: " + timeRemaining + "]" + "[" + artifactIndex + "/" + totalArtifacts
+				+ "] ");
+	}
+
 }

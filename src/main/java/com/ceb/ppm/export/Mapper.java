@@ -1,5 +1,6 @@
 package com.ceb.ppm.export;
 
+import com.ceb.ppm.persistence.domain.Attachment;
 import com.ceb.ppm.persistence.domain.Defect;
 import com.ceb.ppm.persistence.domain.Iteration;
 import com.ceb.ppm.persistence.domain.IterationCapacity;
@@ -10,6 +11,7 @@ import com.ceb.ppm.persistence.domain.RevisionHistory;
 import com.ceb.ppm.persistence.domain.Task;
 import com.ceb.ppm.persistence.domain.TestCase;
 import com.ceb.ppm.persistence.domain.UserStory;
+import com.ceb.ppm.schema.mfw.AttachmentType;
 import com.ceb.ppm.schema.mfw.DefectType;
 import com.ceb.ppm.schema.mfw.HierarchicalRequirementType;
 import com.ceb.ppm.schema.mfw.IterationType;
@@ -109,24 +111,15 @@ public class Mapper {
 		return userStory;
 	}
 
-	public static Task addTask(Defect defect, TaskType taskType) {
-		Task task = new Task();
-		defect.getTasks().add(task);
-		task.setActuals(taskType.getActuals());
-		task.setDescription(taskType.getDescription());
-		task.setEstimate(taskType.getEstimate());
-		task.setFormattedId(taskType.getFormattedID());
-		task.setName(taskType.getName());
-		task.setNotes(taskType.getNotes());
-		task.setState(taskType.getState());
-		task.setToDo(taskType.getToDo());
-		task.setCreationDate(taskType.getCreationDate().toGregorianCalendar().getTime());
-		return task;
-	}
 
-	public static Task addTask(UserStory userStory, TaskType taskType) {
+	public static Task addTask(UserStory userStory, Defect defect, TaskType taskType) {
 		Task task = new Task();
-		userStory.getTasks().add(task);
+		if (userStory != null) {
+			userStory.getTasks().add(task);
+		}
+		if (defect != null) {
+			defect.getTasks().add(task);
+		}
 		task.setActuals(taskType.getActuals());
 		task.setDescription(taskType.getDescription());
 		task.setEstimate(taskType.getEstimate());
@@ -188,6 +181,29 @@ public class Mapper {
 		testCase.setCreationDate(testCaseType.getCreationDate().toGregorianCalendar().getTime());
 
 		return testCase;
+	}
+
+	public static void addAttachment(UserStory userStory, Defect defect, Task task, TestCase testcase,
+			AttachmentType attachmentType, byte[] content) {
+		Attachment attachment = new Attachment();
+		if (userStory != null) {
+			userStory.getAttachments().add(attachment);
+		}
+		if (defect != null) {
+			defect.getAttachments().add(attachment);
+		}
+		if (task != null) {
+			task.getAttachments().add(attachment);
+		}
+		if (testcase != null) {
+			testcase.getAttachments().add(attachment);
+		}
+		attachment.setContent(content);
+		attachment.setContentType(attachmentType.getContentType());
+		attachment.setCreationDate(attachmentType.getCreationDate().toGregorianCalendar().getTime());
+		attachment.setDescription(attachment.getDescription());
+		attachment.setName(attachment.getName());
+
 	}
 
 }
