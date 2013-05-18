@@ -152,8 +152,8 @@ public class ExportFromRally {
 				em.getTransaction().commit();
 			}
 
-			em.getTransaction().begin();
 			migrateNonIterationItems(projectType, project, projectReleases);
+			em.getTransaction().begin();
 			project.setMigrationComplete(true);
 			em.persist(project);
 			em.getTransaction().commit();
