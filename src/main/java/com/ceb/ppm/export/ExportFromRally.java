@@ -93,10 +93,9 @@ public class ExportFromRally {
 				Release release;
 				Query q = em.createQuery("select rel from Release rel where rel.objectId = :objectId");
 				q.setParameter("objectId", releaseType.getObjectID());
-				Release r = (Release) q.getSingleResult();
-				if (r != null) {
-					release = r;
-				} else {
+				try {
+					release = (Release) q.getSingleResult();
+				} catch (NoResultException nre) {
 					em.getTransaction().begin();
 					releaseType = findOne(releaseType, ReleaseType.class);
 					RevisionHistoryType revisionHistoryType = findOne(releaseType.getRevisionHistory(),
@@ -105,6 +104,7 @@ public class ExportFromRally {
 					em.persist(release);
 					em.getTransaction().commit();
 				}
+
 				projectReleases.put(releaseType.getRef(), release);
 
 			}
