@@ -70,6 +70,8 @@ public class ExportFromRally {
 					+ ")");
 			totalArtifacts = userStoriesAll.size() + defectsAll.size();
 			artifactIndex = 0;
+			userStoriesAll = null;
+			defectsAll = null;
 			em.getTransaction().begin();
 			Project project = Mapper.mapProject(projectType);
 			Map<String, Release> projectReleases = new HashMap<String, Release>();

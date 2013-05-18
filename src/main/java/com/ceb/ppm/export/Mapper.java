@@ -1,5 +1,9 @@
 package com.ceb.ppm.export;
 
+import java.util.Date;
+
+import javax.xml.datatype.XMLGregorianCalendar;
+
 import com.ceb.ppm.persistence.domain.Attachment;
 import com.ceb.ppm.persistence.domain.Defect;
 import com.ceb.ppm.persistence.domain.Iteration;
@@ -32,7 +36,7 @@ public class Mapper {
 		project.setNotes(projectType.getNotes());
 		project.setOwner(projectType.getOwner().getDisplayName());
 		project.setState(projectType.getState());
-		project.setCreationDate(projectType.getCreationDate().toGregorianCalendar().getTime());
+		project.setCreationDate(xmlToDate(projectType.getCreationDate()));
 		return project;
 
 	}
@@ -48,7 +52,7 @@ public class Mapper {
 		release.setTheme(releaseType.getTheme());
 		release.setVersion(releaseType.getVersion());
 		release.setObjectId(releaseType.getObjectID());
-		release.setCreationDate(releaseType.getCreationDate().toGregorianCalendar().getTime());
+		release.setCreationDate(xmlToDate(releaseType.getCreationDate()));
 		RevisionHistory revisionHistory = new RevisionHistory();
 		release.setRevisionHistory(revisionHistory);
 
@@ -71,7 +75,7 @@ public class Mapper {
 		iteration.setState(iterationType.getState());
 		iteration.setTheme(iterationType.getTheme());
 		iteration.setObjectId(iterationType.getObjectID());
-		iteration.setCreationDate(iterationType.getCreationDate().toGregorianCalendar().getTime());
+		iteration.setCreationDate(xmlToDate(iterationType.getCreationDate()));
 		return iteration;
 	}
 
@@ -107,10 +111,9 @@ public class Mapper {
 		userStory.setTaskRemainingTotal(hierarchicalRequirementType.getTaskRemainingTotal());
 		userStory.setHasParent(hierarchicalRequirementType.isHasParent());
 		userStory.setAmParent(hierarchicalRequirementType.isIsParent());
-		userStory.setCreationDate(hierarchicalRequirementType.getCreationDate().toGregorianCalendar().getTime());
+		userStory.setCreationDate(xmlToDate(hierarchicalRequirementType.getCreationDate()));
 		return userStory;
 	}
-
 
 	public static Task addTask(UserStory userStory, Defect defect, TaskType taskType) {
 		Task task = new Task();
@@ -128,8 +131,17 @@ public class Mapper {
 		task.setNotes(taskType.getNotes());
 		task.setState(taskType.getState());
 		task.setToDo(taskType.getToDo());
-		task.setCreationDate(taskType.getCreationDate().toGregorianCalendar().getTime());
+		task.setCreationDate(xmlToDate(taskType.getCreationDate()));
 		return task;
+	}
+
+	private static Date xmlToDate(XMLGregorianCalendar xmlDate) {
+
+		if (xmlDate != null) {
+			return xmlDate.toGregorianCalendar().getTime();
+		}
+		return null;
+
 	}
 
 	public static Defect addDefect(UserStory userStory, DefectType defectType) {
@@ -157,7 +169,7 @@ public class Mapper {
 		defect.setTaskActualTotal(defectType.getTaskActualTotal());
 		defect.setTaskEstimateTotal(defectType.getTaskEstimateTotal());
 		defect.setTaskRemainingTotal(defectType.getTaskRemainingTotal());
-		defect.setCreationDate(defectType.getCreationDate().toGregorianCalendar().getTime());
+		defect.setCreationDate(xmlToDate(defectType.getCreationDate()));
 
 		return defect;
 	}
@@ -178,7 +190,7 @@ public class Mapper {
 		testCase.setType(testCaseType.getType());
 		testCase.setValidationExpectedResult(testCaseType.getValidationExpectedResult());
 		testCase.setValidationInput(testCaseType.getValidationInput());
-		testCase.setCreationDate(testCaseType.getCreationDate().toGregorianCalendar().getTime());
+		testCase.setCreationDate(xmlToDate(testCaseType.getCreationDate()));
 
 		return testCase;
 	}
@@ -200,7 +212,7 @@ public class Mapper {
 		}
 		attachment.setContent(content);
 		attachment.setContentType(attachmentType.getContentType());
-		attachment.setCreationDate(attachmentType.getCreationDate().toGregorianCalendar().getTime());
+		attachment.setCreationDate(xmlToDate(attachmentType.getCreationDate()));
 		attachment.setDescription(attachment.getDescription());
 		attachment.setName(attachment.getName());
 
