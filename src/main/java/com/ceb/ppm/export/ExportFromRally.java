@@ -66,7 +66,7 @@ public class ExportFromRally {
 		for (DomainObjectType o : objects) {
 			ProjectType projectType = findOne(o, ProjectType.class);
 			Query qP = em
-					.createQuery("select p from Project p where i.objectId = :objectId and migrationComplete = true");
+					.createQuery("select p from Project p where p.objectId = :objectId and migrationComplete = true");
 			qP.setParameter("objectId", projectType.getObjectID());
 			Project p = (Project) qP.getSingleResult();
 			if (p != null) {
