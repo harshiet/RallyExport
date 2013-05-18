@@ -23,7 +23,9 @@ public class Project extends Persistable {
 
 	String owner;
 	String state;
-
+	boolean migrationComplete = false;
+	String workspace;
+	
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "project_id", referencedColumnName = "id")
 	List<UserStory> userStories = new ArrayList<UserStory>();
@@ -103,5 +105,22 @@ public class Project extends Persistable {
 	public List<RallyUser> getUsers() {
 		return users;
 	}
+
+	public boolean isMigrationComplete() {
+		return migrationComplete;
+	}
+
+	public void setMigrationComplete(boolean migrationComplete) {
+		this.migrationComplete = migrationComplete;
+	}
+
+	public String getWorkspace() {
+		return workspace;
+	}
+
+	public void setWorkspace(String workspace) {
+		this.workspace = workspace;
+	}
+	
 
 }

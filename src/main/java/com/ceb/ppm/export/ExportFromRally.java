@@ -9,6 +9,7 @@ import java.util.Map;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
@@ -64,6 +65,17 @@ public class ExportFromRally {
 		List<DomainObjectType> objects = findAll("project");
 		for (DomainObjectType o : objects) {
 			ProjectType projectType = findOne(o, ProjectType.class);
+			Query q = em
+					.createQuery("select p from Project p where p.name = :name and p.workspace = :workspace and migrationComplete = false");
+			q.setParameter("name", projectType.getName());
+			q.setParameter("workspace", projectType.getWorkspace().getRef());
+			List<Project> r = q.getResultList();
+			for (Project p : r) {
+				em.getTransaction().begin();
+				em.remove(p);
+				em.getTransaction().commit();
+			}
+
 			List<DomainObjectType> userStoriesAll = findAll("hierarchicalrequirement", "(Project.ObjectID = "
 					+ projectType.getObjectID() + ")");
 			List<DomainObjectType> defectsAll = findAll("defect", "(Project.ObjectID = " + projectType.getObjectID()
@@ -72,6 +84,7 @@ public class ExportFromRally {
 			artifactIndex = 0;
 			userStoriesAll = null;
 			defectsAll = null;
+			System.gc();
 			em.getTransaction().begin();
 			Project project = Mapper.mapProject(projectType);
 			Map<String, Release> projectReleases = new HashMap<String, Release>();
@@ -90,6 +103,8 @@ public class ExportFromRally {
 			timeStart = System.currentTimeMillis();
 
 			for (IterationType iterationType : projectType.getIterations().getIteration()) {
+				System.gc();
+
 				em.getTransaction().begin();
 				iterationType = findOne(iterationType, IterationType.class);
 				Iteration iteration = Mapper.addIteration(project, iterationType);
@@ -115,6 +130,7 @@ public class ExportFromRally {
 				em.persist(iteration);
 				em.getTransaction().commit();
 			}
+
 			em.getTransaction().begin();
 			List<DomainObjectType> userStories = findAll("hierarchicalrequirement", "(((Project.ObjectID = "
 					+ projectType.getObjectID() + ") AND (Iteration = NULL)) AND (Parent = NULL))");
@@ -144,6 +160,7 @@ public class ExportFromRally {
 				DefectType defectType = findOne(oD, DefectType.class);
 				persistDefect(project, projectReleases, defectType, null, null);
 			}
+			project.setMigrationComplete(true);
 			em.persist(project);
 			em.getTransaction().commit();
 			return;
@@ -170,7 +187,7 @@ public class ExportFromRally {
 			testCaseType = persistTestCase(userStory, null, testCaseType);
 		}
 		for (AttachmentType attachmentType : hierarchicalRequirementType.getAttachments().getAttachment()) {
-			attachmentType = persistAttachment(userStory, null, null, null, attachmentType);
+			persistAttachment(userStory, null, null, null, attachmentType);
 		}
 		em.persist(userStory);
 		progressIndicator();
@@ -198,13 +215,19 @@ public class ExportFromRally {
 		testCaseType = findOne(testCaseType, TestCaseType.class);
 		TestCase testCase = Mapper.addTestCase(userStory, defect, testCaseType);
 		for (AttachmentType attachmentType : testCaseType.getAttachments().getAttachment()) {
-			attachmentType = persistAttachment(null, null, null, testCase, attachmentType);
+			persistAttachment(null, null, null, testCase, attachmentType);
 		}
 
 		return testCaseType;
 	}
 
-	private AttachmentType persistAttachment(UserStory userStory, Defect defect, Task task, TestCase testCase,
+	private void persistAttachment(UserStory userStory, Defect defect, Task task, TestCase testCase,
+			AttachmentType attachmentType) throws JAXBException {
+		persistAttachmentInner(userStory, defect, task, testCase, attachmentType);
+		System.gc();
+	}
+
+	private AttachmentType persistAttachmentInner(UserStory userStory, Defect defect, Task task, TestCase testCase,
 			AttachmentType attachmentType) throws JAXBException {
 		attachmentType = findOne(attachmentType, AttachmentType.class);
 		byte[] content = findOne(attachmentType.getContent(), AttachmentContentType.class).getContent();
@@ -216,7 +239,7 @@ public class ExportFromRally {
 		taskType = findOne(taskType, TaskType.class);
 		Task task = Mapper.addTask(userStory, defect, taskType);
 		for (AttachmentType attachmentType : taskType.getAttachments().getAttachment()) {
-			attachmentType = persistAttachment(null, null, task, null, attachmentType);
+			persistAttachment(null, null, task, null, attachmentType);
 		}
 
 		return taskType;
@@ -232,7 +255,7 @@ public class ExportFromRally {
 			testCaseType = persistTestCase(null, defect, testCaseType);
 		}
 		for (AttachmentType attachmentType : defectType.getAttachments().getAttachment()) {
-			attachmentType = persistAttachment(null, defect, null, null, attachmentType);
+			persistAttachment(null, defect, null, null, attachmentType);
 		}
 
 		em.persist(defect);

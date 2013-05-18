@@ -37,6 +37,7 @@ public class Mapper {
 		project.setOwner(projectType.getOwner().getDisplayName());
 		project.setState(projectType.getState());
 		project.setCreationDate(xmlToDate(projectType.getCreationDate()));
+		project.setWorkspace(projectType.getWorkspace().getRef());
 		return project;
 
 	}
