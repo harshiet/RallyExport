@@ -105,7 +105,7 @@ public class ExportFromRally {
 			timeStart = System.currentTimeMillis();
 
 			for (IterationType iterationType : projectType.getIterations().getIteration()) {
-
+				iterationType = findOne(iterationType, IterationType.class);
 				Query q = em.createQuery("select i from Iteration i where i.objectId = :objectId");
 				q.setParameter("objectId", iterationType.getObjectID());
 				try {
@@ -123,7 +123,6 @@ public class ExportFromRally {
 				System.gc();
 
 				em.getTransaction().begin();
-				iterationType = findOne(iterationType, IterationType.class);
 				Iteration iteration = Mapper.addIteration(project, iterationType);
 				em.persist(iteration);
 				em.getTransaction().commit();
