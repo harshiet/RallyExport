@@ -217,8 +217,8 @@ public class Mapper {
 		attachment.setContent(content);
 		attachment.setContentType(attachmentType.getContentType());
 		attachment.setCreationDate(xmlToDate(attachmentType.getCreationDate()));
-		attachment.setDescription(attachment.getDescription());
-		attachment.setName(attachment.getName());
+		attachment.setDescription(attachmentType.getDescription());
+		attachment.setName(attachmentType.getName());
 
 	}
 
