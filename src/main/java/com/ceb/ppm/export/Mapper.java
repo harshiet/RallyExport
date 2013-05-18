@@ -38,6 +38,7 @@ public class Mapper {
 		project.setState(projectType.getState());
 		project.setCreationDate(xmlToDate(projectType.getCreationDate()));
 		project.setWorkspace(projectType.getWorkspace().getRef());
+		project.setObjectId(projectType.getObjectID());
 		return project;
 
 	}

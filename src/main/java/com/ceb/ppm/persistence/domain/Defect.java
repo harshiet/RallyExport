@@ -26,6 +26,15 @@ public class Defect extends Artifact {
 	Double taskEstimateTotal;
 	Double taskActualTotal;
 	Double taskRemainingTotal;
+	boolean migrationComplete = false;
+
+	public boolean isMigrationComplete() {
+		return migrationComplete;
+	}
+
+	public void setMigrationComplete(boolean migrationComplete) {
+		this.migrationComplete = migrationComplete;
+	}
 
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "defect_id", referencedColumnName = "id")

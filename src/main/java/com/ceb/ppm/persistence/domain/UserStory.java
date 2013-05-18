@@ -19,6 +19,16 @@ public class UserStory extends Artifact {
 	Double taskRemainingTotal;
 	Boolean hasParent;
 	Boolean amParent;
+	boolean migrationComplete = false;
+	
+	
+	public boolean isMigrationComplete() {
+		return migrationComplete;
+	}
+
+	public void setMigrationComplete(boolean migrationComplete) {
+		this.migrationComplete = migrationComplete;
+	}
 
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "parent_id", referencedColumnName = "id")

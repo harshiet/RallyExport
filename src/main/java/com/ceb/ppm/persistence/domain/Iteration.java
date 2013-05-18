@@ -9,7 +9,10 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
+@Table(uniqueConstraints = @UniqueConstraint(columnNames = { "objectId" }))
 @Entity
 public class Iteration extends Persistable {
 	@Column(columnDefinition = "TEXT")
@@ -26,6 +29,7 @@ public class Iteration extends Persistable {
 	String theme;
 
 	long objectId;
+	boolean migrationComplete = false;
 
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "iteration_id", referencedColumnName = "id")
@@ -105,6 +109,14 @@ public class Iteration extends Persistable {
 
 	public void setObjectId(long objectId) {
 		this.objectId = objectId;
+	}
+
+	public boolean isMigrationComplete() {
+		return migrationComplete;
+	}
+
+	public void setMigrationComplete(boolean migrationComplete) {
+		this.migrationComplete = migrationComplete;
 	}
 
 }

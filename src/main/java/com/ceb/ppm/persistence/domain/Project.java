@@ -25,6 +25,7 @@ public class Project extends Persistable {
 	String state;
 	boolean migrationComplete = false;
 	String workspace;
+	long objectId;
 	
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "project_id", referencedColumnName = "id")
@@ -120,6 +121,14 @@ public class Project extends Persistable {
 
 	public void setWorkspace(String workspace) {
 		this.workspace = workspace;
+	}
+
+	public long getObjectId() {
+		return objectId;
+	}
+
+	public void setObjectId(long objectId) {
+		this.objectId = objectId;
 	}
 	
 

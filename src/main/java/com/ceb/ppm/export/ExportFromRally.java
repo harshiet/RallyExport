@@ -65,15 +65,12 @@ public class ExportFromRally {
 		List<DomainObjectType> objects = findAll("project");
 		for (DomainObjectType o : objects) {
 			ProjectType projectType = findOne(o, ProjectType.class);
-			Query q = em
-					.createQuery("select p from Project p where p.name = :name and p.workspace = :workspace and migrationComplete = false");
-			q.setParameter("name", projectType.getName());
-			q.setParameter("workspace", projectType.getWorkspace().getRef());
-			List<Project> r = q.getResultList();
-			for (Project p : r) {
-				em.getTransaction().begin();
-				em.remove(p);
-				em.getTransaction().commit();
+			Query qP = em
+					.createQuery("select p from Project p where i.objectId = :objectId and migrationComplete = true");
+			qP.setParameter("objectId", projectType.getObjectID());
+			Project p = (Project) qP.getSingleResult();
+			if (p != null) {
+				continue;
 			}
 
 			List<DomainObjectType> userStoriesAll = findAll("hierarchicalrequirement", "(Project.ObjectID = "
@@ -91,18 +88,41 @@ public class ExportFromRally {
 			em.persist(project);
 			em.getTransaction().commit();
 			for (ReleaseType releaseType : projectType.getReleases().getRelease()) {
-				em.getTransaction().begin();
-				releaseType = findOne(releaseType, ReleaseType.class);
-				RevisionHistoryType revisionHistoryType = findOne(releaseType.getRevisionHistory(),
-						RevisionHistoryType.class);
-				Release release = Mapper.addRelease(project, releaseType, revisionHistoryType);
-				em.persist(release);
+				Release release;
+				Query q = em.createQuery("select rel from Release rel where rel.objectId = :objectId");
+				q.setParameter("objectId", releaseType.getObjectID());
+				Release r = (Release) q.getSingleResult();
+				if (r != null) {
+					release = r;
+				} else {
+					em.getTransaction().begin();
+					releaseType = findOne(releaseType, ReleaseType.class);
+					RevisionHistoryType revisionHistoryType = findOne(releaseType.getRevisionHistory(),
+							RevisionHistoryType.class);
+					release = Mapper.addRelease(project, releaseType, revisionHistoryType);
+					em.persist(release);
+					em.getTransaction().commit();
+				}
 				projectReleases.put(releaseType.getRef(), release);
-				em.getTransaction().commit();
+
 			}
 			timeStart = System.currentTimeMillis();
 
 			for (IterationType iterationType : projectType.getIterations().getIteration()) {
+
+				Query q = em.createQuery("select i from Iteration i where i.objectId = :objectId");
+				q.setParameter("objectId", iterationType.getObjectID());
+				Iteration i = (Iteration) q.getSingleResult();
+				if (i != null) {
+					if (i.isMigrationComplete()) {
+						continue;
+					} else {
+						em.getTransaction().begin();
+						em.remove(i);
+						em.getTransaction().commit();
+					}
+				}
+
 				System.gc();
 
 				em.getTransaction().begin();
@@ -127,44 +147,80 @@ public class ExportFromRally {
 					DefectType defectType = findOne(oD, DefectType.class);
 					persistDefect(project, projectReleases, defectType, iteration, null);
 				}
+				iteration.setMigrationComplete(true);
 				em.persist(iteration);
 				em.getTransaction().commit();
 			}
 
 			em.getTransaction().begin();
-			List<DomainObjectType> userStories = findAll("hierarchicalrequirement", "(((Project.ObjectID = "
-					+ projectType.getObjectID() + ") AND (Iteration = NULL)) AND (Parent = NULL))");
-			for (DomainObjectType oUS : userStories) {
-				HierarchicalRequirementType hierarchicalRequirementType = findOne(oUS,
-						HierarchicalRequirementType.class);
-				persistUserStory(project, projectReleases, hierarchicalRequirementType, null);
-			}
-			userStories = findAll("hierarchicalrequirement", "(((Project.ObjectID = " + projectType.getObjectID()
-					+ ") AND (Parent != NULL)) AND (Parent.Project.ObjectID != " + projectType.getObjectID() + "))");
-			for (DomainObjectType oUS : userStories) {
-				HierarchicalRequirementType hierarchicalRequirementType = findOne(oUS,
-						HierarchicalRequirementType.class);
-				persistUserStory(project, projectReleases, hierarchicalRequirementType, null);
-			}
-
-			List<DomainObjectType> defects = findAll("defect", "(((Project.ObjectID = " + projectType.getObjectID()
-					+ ") AND (Iteration = NULL)) AND (Requirement = NULL))");
-			for (DomainObjectType oD : defects) {
-				DefectType defectType = findOne(oD, DefectType.class);
-				persistDefect(project, projectReleases, defectType, null, null);
-			}
-
-			defects = findAll("defect", "((Project.ObjectID = " + projectType.getObjectID()
-					+ ") AND (Requirement.Project.ObjectID != " + projectType.getObjectID() + "))");
-			for (DomainObjectType oD : defects) {
-				DefectType defectType = findOne(oD, DefectType.class);
-				persistDefect(project, projectReleases, defectType, null, null);
-			}
+			migrateNonIterationItems(projectType, project, projectReleases);
 			project.setMigrationComplete(true);
 			em.persist(project);
 			em.getTransaction().commit();
 			return;
 		}
+	}
+
+	private void migrateNonIterationItems(ProjectType projectType, Project project, Map<String, Release> projectReleases)
+			throws JAXBException, UnsupportedEncodingException {
+		List<DomainObjectType> userStories = findAll("hierarchicalrequirement",
+				"(((Project.ObjectID = " + projectType.getObjectID() + ") AND (Iteration = NULL)) AND (Parent = NULL))");
+		userStories.addAll(findAll("hierarchicalrequirement", "(((Project.ObjectID = " + projectType.getObjectID()
+				+ ") AND (Parent != NULL)) AND (Parent.Project.ObjectID != " + projectType.getObjectID() + "))"));
+		for (DomainObjectType oUS : userStories) {
+			HierarchicalRequirementType hierarchicalRequirementType = findOne(oUS, HierarchicalRequirementType.class);
+			checkAndPersistUserStory(project, projectReleases, hierarchicalRequirementType);
+		}
+		List<DomainObjectType> defects = findAll("defect", "(((Project.ObjectID = " + projectType.getObjectID()
+				+ ") AND (Iteration = NULL)) AND (Requirement = NULL))");
+		defects.addAll(findAll("defect", "((Project.ObjectID = " + projectType.getObjectID()
+				+ ") AND (Requirement.Project.ObjectID != " + projectType.getObjectID() + "))"));
+		for (DomainObjectType oD : defects) {
+			DefectType defectType = findOne(oD, DefectType.class);
+			checkAndPersistDefect(project, projectReleases, defectType);
+		}
+
+	}
+
+	private void checkAndPersistDefect(Project project, Map<String, Release> projectReleases, DefectType defectType)
+			throws JAXBException {
+		Query q = em.createQuery("select d from Defect d where d.objectId = :objectId");
+		q.setParameter("objectId", defectType.getObjectID());
+		Defect d = (Defect) q.getSingleResult();
+		if (d != null && d.isMigrationComplete()) {
+			return;
+		} else {
+			em.getTransaction().begin();
+			em.remove(d);
+			em.getTransaction().commit();
+		}
+
+		d = persistDefect(project, projectReleases, defectType, null, null);
+		em.getTransaction().begin();
+		d.setMigrationComplete(true);
+		em.persist(d);
+		em.getTransaction().commit();
+
+	}
+
+	private void checkAndPersistUserStory(Project project, Map<String, Release> projectReleases,
+			HierarchicalRequirementType hierarchicalRequirementType) throws JAXBException {
+		Query q = em.createQuery("select us from UserStory us where us.objectId = :objectId");
+		q.setParameter("objectId", hierarchicalRequirementType.getObjectID());
+		UserStory us = (UserStory) q.getSingleResult();
+		if (us != null && us.isMigrationComplete()) {
+			return;
+		} else {
+			em.getTransaction().begin();
+			em.remove(us);
+			em.getTransaction().commit();
+		}
+
+		us = persistUserStory(project, projectReleases, hierarchicalRequirementType, null);
+		em.getTransaction().begin();
+		us.setMigrationComplete(true);
+		em.persist(us);
+		em.getTransaction().commit();
 	}
 
 	private UserStory persistUserStory(Project project, Map<String, Release> projectReleases,
@@ -245,7 +301,7 @@ public class ExportFromRally {
 		return taskType;
 	}
 
-	private void persistDefect(Project project, Map<String, Release> projectReleases, DefectType defectType,
+	private Defect persistDefect(Project project, Map<String, Release> projectReleases, DefectType defectType,
 			Iteration iteration, UserStory userStory) throws JAXBException {
 		Defect defect = Mapper.addDefect(userStory, defectType);
 		for (TaskType taskType : defectType.getTasks().getTask()) {
@@ -269,6 +325,8 @@ public class ExportFromRally {
 		if (iteration != null) {
 			iteration.getDefects().add(defect);
 		}
+		em.persist(defect);
+		return defect;
 	}
 
 	private Release findProjectReleaseForDefecty(Map<String, Release> projectReleases, DefectType defectType) {
