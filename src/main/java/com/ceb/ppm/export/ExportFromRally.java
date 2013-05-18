@@ -84,6 +84,7 @@ public class ExportFromRally {
 
 			initCount(projectType);
 			for (ReleaseType releaseType : projectType.getReleases().getRelease()) {
+				releaseType = findOne(releaseType, ReleaseType.class);
 				Release release;
 				Query q = em.createQuery("select rel from Release rel where rel.objectId = :objectId");
 				q.setParameter("objectId", releaseType.getObjectID());
@@ -91,7 +92,6 @@ public class ExportFromRally {
 					release = (Release) q.getSingleResult();
 				} catch (NoResultException nre) {
 					em.getTransaction().begin();
-					releaseType = findOne(releaseType, ReleaseType.class);
 					RevisionHistoryType revisionHistoryType = findOne(releaseType.getRevisionHistory(),
 							RevisionHistoryType.class);
 					release = Mapper.addRelease(project, releaseType, revisionHistoryType);
