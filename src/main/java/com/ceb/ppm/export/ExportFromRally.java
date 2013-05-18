@@ -64,9 +64,6 @@ public class ExportFromRally {
 		List<DomainObjectType> objects = findAll("project");
 		for (DomainObjectType o : objects) {
 			ProjectType projectType = findOne(o, ProjectType.class);
-			if (!projectType.getRefObjectName().equals("Workspace")) {
-				continue;
-			}
 			List<DomainObjectType> userStoriesAll = findAll("hierarchicalrequirement", "(Project.ObjectID = "
 					+ projectType.getObjectID() + ")");
 			List<DomainObjectType> defectsAll = findAll("defect", "(Project.ObjectID = " + projectType.getObjectID()
