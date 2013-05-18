@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 import javax.xml.bind.JAXBContext;
@@ -68,9 +69,10 @@ public class ExportFromRally {
 			Query qP = em
 					.createQuery("select p from Project p where p.objectId = :objectId and migrationComplete = true");
 			qP.setParameter("objectId", projectType.getObjectID());
-			Project p = (Project) qP.getSingleResult();
-			if (p != null) {
+			try {
+				qP.getSingleResult();
 				continue;
+			} catch (NoResultException nre) {
 			}
 
 			List<DomainObjectType> userStoriesAll = findAll("hierarchicalrequirement", "(Project.ObjectID = "
@@ -112,8 +114,8 @@ public class ExportFromRally {
 
 				Query q = em.createQuery("select i from Iteration i where i.objectId = :objectId");
 				q.setParameter("objectId", iterationType.getObjectID());
-				Iteration i = (Iteration) q.getSingleResult();
-				if (i != null) {
+				try {
+					Iteration i = (Iteration) q.getSingleResult();
 					if (i.isMigrationComplete()) {
 						continue;
 					} else {
@@ -121,6 +123,8 @@ public class ExportFromRally {
 						em.remove(i);
 						em.getTransaction().commit();
 					}
+
+				} catch (NoResultException nre) {
 				}
 
 				System.gc();
@@ -184,15 +188,20 @@ public class ExportFromRally {
 
 	private void checkAndPersistDefect(Project project, Map<String, Release> projectReleases, DefectType defectType)
 			throws JAXBException {
+		Defect d;
 		Query q = em.createQuery("select d from Defect d where d.objectId = :objectId");
 		q.setParameter("objectId", defectType.getObjectID());
-		Defect d = (Defect) q.getSingleResult();
-		if (d != null && d.isMigrationComplete()) {
-			return;
-		} else {
-			em.getTransaction().begin();
-			em.remove(d);
-			em.getTransaction().commit();
+		try {
+			d = (Defect) q.getSingleResult();
+			if (d.isMigrationComplete()) {
+				return;
+			} else {
+				em.getTransaction().begin();
+				em.remove(d);
+				em.getTransaction().commit();
+			}
+		} catch (NoResultException nre) {
+
 		}
 
 		d = persistDefect(project, projectReleases, defectType, null, null);
@@ -205,15 +214,20 @@ public class ExportFromRally {
 
 	private void checkAndPersistUserStory(Project project, Map<String, Release> projectReleases,
 			HierarchicalRequirementType hierarchicalRequirementType) throws JAXBException {
+		UserStory us;
 		Query q = em.createQuery("select us from UserStory us where us.objectId = :objectId");
 		q.setParameter("objectId", hierarchicalRequirementType.getObjectID());
-		UserStory us = (UserStory) q.getSingleResult();
-		if (us != null && us.isMigrationComplete()) {
-			return;
-		} else {
-			em.getTransaction().begin();
-			em.remove(us);
-			em.getTransaction().commit();
+		try {
+			us = (UserStory) q.getSingleResult();
+			if (us.isMigrationComplete()) {
+				return;
+			} else {
+				em.getTransaction().begin();
+				em.remove(us);
+				em.getTransaction().commit();
+			}
+		} catch (NoResultException nre) {
+
 		}
 
 		us = persistUserStory(project, projectReleases, hierarchicalRequirementType, null);
