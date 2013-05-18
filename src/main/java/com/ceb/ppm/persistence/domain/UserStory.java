@@ -10,7 +10,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
-@Table(uniqueConstraints = @UniqueConstraint(columnNames = { "project_id", "formattedId" }))
+@Table(uniqueConstraints = @UniqueConstraint(columnNames = { "objectid" }))
 @Entity
 public class UserStory extends Artifact {
 
@@ -20,8 +20,16 @@ public class UserStory extends Artifact {
 	Boolean hasParent;
 	Boolean amParent;
 	boolean migrationComplete = false;
-	
-	
+	long objectId;
+
+	public long getObjectId() {
+		return objectId;
+	}
+
+	public void setObjectId(long objectId) {
+		this.objectId = objectId;
+	}
+
 	public boolean isMigrationComplete() {
 		return migrationComplete;
 	}

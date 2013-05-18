@@ -114,6 +114,7 @@ public class Mapper {
 		userStory.setHasParent(hierarchicalRequirementType.isHasParent());
 		userStory.setAmParent(hierarchicalRequirementType.isIsParent());
 		userStory.setCreationDate(xmlToDate(hierarchicalRequirementType.getCreationDate()));
+		userStory.setObjectId(hierarchicalRequirementType.getObjectID());
 		return userStory;
 	}
 
@@ -172,6 +173,7 @@ public class Mapper {
 		defect.setTaskEstimateTotal(defectType.getTaskEstimateTotal());
 		defect.setTaskRemainingTotal(defectType.getTaskRemainingTotal());
 		defect.setCreationDate(xmlToDate(defectType.getCreationDate()));
+		defect.setObjectId(defectType.getObjectID());
 
 		return defect;
 	}

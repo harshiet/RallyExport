@@ -11,7 +11,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
-@Table(uniqueConstraints = @UniqueConstraint(columnNames = { "project_id", "formattedId" }))
+@Table(uniqueConstraints = @UniqueConstraint(columnNames = { "objectid"}))
 @Entity
 public class Defect extends Artifact {
 
@@ -27,6 +27,15 @@ public class Defect extends Artifact {
 	Double taskActualTotal;
 	Double taskRemainingTotal;
 	boolean migrationComplete = false;
+	long objectId;
+
+	public long getObjectId() {
+		return objectId;
+	}
+
+	public void setObjectId(long objectId) {
+		this.objectId = objectId;
+	}
 
 	public boolean isMigrationComplete() {
 		return migrationComplete;
